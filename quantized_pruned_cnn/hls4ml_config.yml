@@ -1,0 +1,45 @@
+Backend: Vivado
+Board: null
+ClockPeriod: 5
+HLSConfig:
+  LayerName:
+    bn_dense:
+      Precision:
+        bias: ap_fixed<16,6>
+        scale: ap_fixed<16,6>
+      ReuseFactor: 1
+    conv_act1:
+      Precision:
+        result: ap_ufixed<6,0>
+      ReuseFactor: 1
+    fused_convbn:
+      Precision:
+        bias: ap_fixed<6,1>
+        weight: ap_fixed<6,1>
+      ReuseFactor: 1
+    input_1:
+      Precision:
+        result: ap_fixed<16,6>
+    output_dense:
+      Precision:
+        bias: ap_fixed<16,6>
+        result: ap_fixed<16,6>
+        weight: ap_fixed<16,6>
+      ReuseFactor: 1
+    output_dense_linear:
+      Precision: ap_fixed<16,6>
+      ReuseFactor: 1
+      table_size: 1024
+      table_t: ap_fixed<18,8>
+    pool:
+      Precision: ap_fixed<16,6>
+  Model:
+    Precision: ap_fixed<6,0>
+    ReuseFactor: 1
+    Strategy: Latency
+IOType: io_stream
+KerasModel: !keras_model 'quantized_pruned_cnn//keras_model.h5'
+OutputDir: quantized_pruned_cnn/
+ProjectName: myproject
+Stamp: eAED100a
+XilinxPart: xc7z020clg484-1
