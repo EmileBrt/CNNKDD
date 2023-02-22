@@ -1081,7 +1081,7 @@ set RtlHierarchyInfo {[
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "1", "ap_idle" : "1",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "10", "EstimateLatencyMax" : "10",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "5", "EstimateLatencyMax" : "5",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -1476,13 +1476,13 @@ set RtlHierarchyInfo {[
 			{"Name" : "res_stream_V_data_V", "Type" : "Fifo", "Direction" : "O", "DependentProc" : "0", "DependentChan" : "0",
 				"BlockSignal" : [
 					{"Name" : "res_stream_V_data_V_blk_n", "Type" : "RtlSignal"}]}]},
-	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_dense_wrapper_ap_fixed_ap_fixed_16_6_5_3_0_config8_s_fu_2095", "Parent" : "0", "Child" : ["2", "3"],
+	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_dense_wrapper_ap_fixed_ap_fixed_16_6_5_3_0_config8_s_fu_2095", "Parent" : "0",
 		"CDFG" : "dense_wrapper_ap_fixed_ap_fixed_16_6_5_3_0_config8_s",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
 		"Pipeline" : "Aligned", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "1",
-		"VariableLatency" : "0", "ExactLatency" : "7", "EstimateLatencyMin" : "7", "EstimateLatencyMax" : "7",
+		"VariableLatency" : "0", "ExactLatency" : "3", "EstimateLatencyMin" : "3", "EstimateLatencyMax" : "3",
 		"Combinational" : "0",
 		"Datapath" : "1",
 		"ClockEnable" : "0",
@@ -1502,6 +1502,7 @@ set RtlHierarchyInfo {[
 			{"Name" : "data_9_V_read", "Type" : "None", "Direction" : "I"},
 			{"Name" : "data_10_V_read", "Type" : "None", "Direction" : "I"},
 			{"Name" : "data_11_V_read", "Type" : "None", "Direction" : "I"},
+			{"Name" : "data_12_V_read", "Type" : "None", "Direction" : "I"},
 			{"Name" : "data_13_V_read", "Type" : "None", "Direction" : "I"},
 			{"Name" : "data_14_V_read", "Type" : "None", "Direction" : "I"},
 			{"Name" : "data_15_V_read", "Type" : "None", "Direction" : "I"},
@@ -1606,7 +1607,6 @@ set RtlHierarchyInfo {[
 			{"Name" : "data_114_V_read", "Type" : "None", "Direction" : "I"},
 			{"Name" : "data_115_V_read", "Type" : "None", "Direction" : "I"},
 			{"Name" : "data_116_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "data_117_V_read", "Type" : "None", "Direction" : "I"},
 			{"Name" : "data_118_V_read", "Type" : "None", "Direction" : "I"},
 			{"Name" : "data_119_V_read", "Type" : "None", "Direction" : "I"},
 			{"Name" : "data_120_V_read", "Type" : "None", "Direction" : "I"},
@@ -1616,9 +1616,7 @@ set RtlHierarchyInfo {[
 			{"Name" : "data_124_V_read", "Type" : "None", "Direction" : "I"},
 			{"Name" : "data_125_V_read", "Type" : "None", "Direction" : "I"},
 			{"Name" : "data_126_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "data_127_V_read", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "2", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dense_wrapper_ap_fixed_ap_fixed_16_6_5_3_0_config8_s_fu_2095.myproject_mul_11s_6s_16_2_1_U623", "Parent" : "1"},
-	{"ID" : "3", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_dense_wrapper_ap_fixed_ap_fixed_16_6_5_3_0_config8_s_fu_2095.myproject_mul_11ns_6s_16_2_1_U624", "Parent" : "1"}]}
+			{"Name" : "data_127_V_read", "Type" : "None", "Direction" : "I"}]}]}
 
 
 set ArgLastReadFirstWriteLatency {
@@ -1751,7 +1749,7 @@ set ArgLastReadFirstWriteLatency {
 		data_stream_V_data_125_V {Type I LastRead 0 FirstWrite -1}
 		data_stream_V_data_126_V {Type I LastRead 0 FirstWrite -1}
 		data_stream_V_data_127_V {Type I LastRead 0 FirstWrite -1}
-		res_stream_V_data_V {Type O LastRead -1 FirstWrite 10}}
+		res_stream_V_data_V {Type O LastRead -1 FirstWrite 5}}
 	dense_wrapper_ap_fixed_ap_fixed_16_6_5_3_0_config8_s {
 		data_0_V_read {Type I LastRead 0 FirstWrite -1}
 		data_1_V_read {Type I LastRead 0 FirstWrite -1}
@@ -1765,6 +1763,7 @@ set ArgLastReadFirstWriteLatency {
 		data_9_V_read {Type I LastRead 0 FirstWrite -1}
 		data_10_V_read {Type I LastRead 0 FirstWrite -1}
 		data_11_V_read {Type I LastRead 0 FirstWrite -1}
+		data_12_V_read {Type I LastRead 0 FirstWrite -1}
 		data_13_V_read {Type I LastRead 0 FirstWrite -1}
 		data_14_V_read {Type I LastRead 0 FirstWrite -1}
 		data_15_V_read {Type I LastRead 0 FirstWrite -1}
@@ -1869,7 +1868,6 @@ set ArgLastReadFirstWriteLatency {
 		data_114_V_read {Type I LastRead 0 FirstWrite -1}
 		data_115_V_read {Type I LastRead 0 FirstWrite -1}
 		data_116_V_read {Type I LastRead 0 FirstWrite -1}
-		data_117_V_read {Type I LastRead 0 FirstWrite -1}
 		data_118_V_read {Type I LastRead 0 FirstWrite -1}
 		data_119_V_read {Type I LastRead 0 FirstWrite -1}
 		data_120_V_read {Type I LastRead 0 FirstWrite -1}
@@ -1884,8 +1882,8 @@ set ArgLastReadFirstWriteLatency {
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "10", "Max" : "10"}
-	, {"Name" : "Interval", "Min" : "10", "Max" : "10"}
+	{"Name" : "Latency", "Min" : "5", "Max" : "5"}
+	, {"Name" : "Interval", "Min" : "5", "Max" : "5"}
 ]}
 
 set PipelineEnableSignalInfo {[

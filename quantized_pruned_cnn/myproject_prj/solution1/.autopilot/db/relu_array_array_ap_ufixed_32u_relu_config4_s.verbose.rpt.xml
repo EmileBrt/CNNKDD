@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'relu_array_array_ap_ufixed_32u_relu_config4_s'" level="0">
-<item name = "Date">Mon Feb 20 14:22:39 2023
+<item name = "Date">Tue Feb 21 11:21:40 2023
 </item>
 <item name = "Version">2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)</item>
 <item name = "Project">myproject_prj</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">5.00 ns, 3.614 ns, 0.62 ns</column>
+<column name="ap_clk">10.00 ns, 6.248 ns, 1.25 ns</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">19, 19, 95.000 ns, 95.000 ns, 19, 19, none</column>
+<column name="">19, 19, 0.190 us, 0.190 us, 19, 19, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -53,7 +53,7 @@
 <column name="Instance">-, -, -, -, -</column>
 <column name="Memory">-, -, -, -, -</column>
 <column name="Multiplexer">-, -, -, 642, -</column>
-<column name="Register">-, -, 239, -, -</column>
+<column name="Register">-, -, 207, -, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
 <specialColumn name="Utilization (%)">0, 0, ~0, 2, 0</specialColumn>
 </table>
@@ -83,37 +83,37 @@
 <column name="ap_block_state4_pp0_stage0_iter2">and, 0, 0, 2, 1, 1</column>
 <column name="io_acc_block_signal_op176">and, 0, 0, 2, 1, 1</column>
 <column name="io_acc_block_signal_op76">and, 0, 0, 2, 1, 1</column>
-<column name="icmp_ln1494_10_fu_1317_p2">icmp, 0, 0, 11, 6, 1</column>
-<column name="icmp_ln1494_11_fu_1323_p2">icmp, 0, 0, 11, 6, 1</column>
-<column name="icmp_ln1494_12_fu_1329_p2">icmp, 0, 0, 11, 6, 1</column>
-<column name="icmp_ln1494_13_fu_1335_p2">icmp, 0, 0, 11, 6, 1</column>
-<column name="icmp_ln1494_14_fu_1341_p2">icmp, 0, 0, 11, 6, 1</column>
-<column name="icmp_ln1494_15_fu_1347_p2">icmp, 0, 0, 11, 6, 1</column>
-<column name="icmp_ln1494_16_fu_1353_p2">icmp, 0, 0, 11, 6, 1</column>
-<column name="icmp_ln1494_17_fu_1359_p2">icmp, 0, 0, 11, 6, 1</column>
-<column name="icmp_ln1494_18_fu_1365_p2">icmp, 0, 0, 11, 6, 1</column>
-<column name="icmp_ln1494_19_fu_1371_p2">icmp, 0, 0, 11, 6, 1</column>
-<column name="icmp_ln1494_1_fu_1263_p2">icmp, 0, 0, 11, 6, 1</column>
-<column name="icmp_ln1494_20_fu_1377_p2">icmp, 0, 0, 11, 6, 1</column>
-<column name="icmp_ln1494_21_fu_1383_p2">icmp, 0, 0, 11, 6, 1</column>
-<column name="icmp_ln1494_22_fu_1389_p2">icmp, 0, 0, 11, 6, 1</column>
-<column name="icmp_ln1494_23_fu_1395_p2">icmp, 0, 0, 11, 6, 1</column>
-<column name="icmp_ln1494_24_fu_1401_p2">icmp, 0, 0, 11, 6, 1</column>
-<column name="icmp_ln1494_25_fu_1407_p2">icmp, 0, 0, 11, 6, 1</column>
-<column name="icmp_ln1494_26_fu_1413_p2">icmp, 0, 0, 11, 6, 1</column>
-<column name="icmp_ln1494_27_fu_1419_p2">icmp, 0, 0, 11, 6, 1</column>
-<column name="icmp_ln1494_28_fu_1425_p2">icmp, 0, 0, 11, 6, 1</column>
-<column name="icmp_ln1494_29_fu_1431_p2">icmp, 0, 0, 11, 6, 1</column>
-<column name="icmp_ln1494_2_fu_1269_p2">icmp, 0, 0, 11, 6, 1</column>
-<column name="icmp_ln1494_30_fu_1437_p2">icmp, 0, 0, 11, 6, 1</column>
-<column name="icmp_ln1494_31_fu_1443_p2">icmp, 0, 0, 11, 6, 1</column>
-<column name="icmp_ln1494_3_fu_1275_p2">icmp, 0, 0, 11, 6, 1</column>
-<column name="icmp_ln1494_4_fu_1281_p2">icmp, 0, 0, 11, 6, 1</column>
-<column name="icmp_ln1494_5_fu_1287_p2">icmp, 0, 0, 11, 6, 1</column>
-<column name="icmp_ln1494_6_fu_1293_p2">icmp, 0, 0, 11, 6, 1</column>
-<column name="icmp_ln1494_7_fu_1299_p2">icmp, 0, 0, 11, 6, 1</column>
-<column name="icmp_ln1494_8_fu_1305_p2">icmp, 0, 0, 11, 6, 1</column>
-<column name="icmp_ln1494_9_fu_1311_p2">icmp, 0, 0, 11, 6, 1</column>
+<column name="icmp_ln1494_10_fu_1387_p2">icmp, 0, 0, 11, 6, 1</column>
+<column name="icmp_ln1494_11_fu_1400_p2">icmp, 0, 0, 11, 6, 1</column>
+<column name="icmp_ln1494_12_fu_1413_p2">icmp, 0, 0, 11, 6, 1</column>
+<column name="icmp_ln1494_13_fu_1426_p2">icmp, 0, 0, 11, 6, 1</column>
+<column name="icmp_ln1494_14_fu_1439_p2">icmp, 0, 0, 11, 6, 1</column>
+<column name="icmp_ln1494_15_fu_1452_p2">icmp, 0, 0, 11, 6, 1</column>
+<column name="icmp_ln1494_16_fu_1465_p2">icmp, 0, 0, 11, 6, 1</column>
+<column name="icmp_ln1494_17_fu_1478_p2">icmp, 0, 0, 11, 6, 1</column>
+<column name="icmp_ln1494_18_fu_1491_p2">icmp, 0, 0, 11, 6, 1</column>
+<column name="icmp_ln1494_19_fu_1504_p2">icmp, 0, 0, 11, 6, 1</column>
+<column name="icmp_ln1494_1_fu_1270_p2">icmp, 0, 0, 11, 6, 1</column>
+<column name="icmp_ln1494_20_fu_1517_p2">icmp, 0, 0, 11, 6, 1</column>
+<column name="icmp_ln1494_21_fu_1530_p2">icmp, 0, 0, 11, 6, 1</column>
+<column name="icmp_ln1494_22_fu_1543_p2">icmp, 0, 0, 11, 6, 1</column>
+<column name="icmp_ln1494_23_fu_1556_p2">icmp, 0, 0, 11, 6, 1</column>
+<column name="icmp_ln1494_24_fu_1569_p2">icmp, 0, 0, 11, 6, 1</column>
+<column name="icmp_ln1494_25_fu_1582_p2">icmp, 0, 0, 11, 6, 1</column>
+<column name="icmp_ln1494_26_fu_1595_p2">icmp, 0, 0, 11, 6, 1</column>
+<column name="icmp_ln1494_27_fu_1608_p2">icmp, 0, 0, 11, 6, 1</column>
+<column name="icmp_ln1494_28_fu_1621_p2">icmp, 0, 0, 11, 6, 1</column>
+<column name="icmp_ln1494_29_fu_1634_p2">icmp, 0, 0, 11, 6, 1</column>
+<column name="icmp_ln1494_2_fu_1283_p2">icmp, 0, 0, 11, 6, 1</column>
+<column name="icmp_ln1494_30_fu_1647_p2">icmp, 0, 0, 11, 6, 1</column>
+<column name="icmp_ln1494_31_fu_1660_p2">icmp, 0, 0, 11, 6, 1</column>
+<column name="icmp_ln1494_3_fu_1296_p2">icmp, 0, 0, 11, 6, 1</column>
+<column name="icmp_ln1494_4_fu_1309_p2">icmp, 0, 0, 11, 6, 1</column>
+<column name="icmp_ln1494_5_fu_1322_p2">icmp, 0, 0, 11, 6, 1</column>
+<column name="icmp_ln1494_6_fu_1335_p2">icmp, 0, 0, 11, 6, 1</column>
+<column name="icmp_ln1494_7_fu_1348_p2">icmp, 0, 0, 11, 6, 1</column>
+<column name="icmp_ln1494_8_fu_1361_p2">icmp, 0, 0, 11, 6, 1</column>
+<column name="icmp_ln1494_9_fu_1374_p2">icmp, 0, 0, 11, 6, 1</column>
 <column name="icmp_ln1494_fu_1257_p2">icmp, 0, 0, 11, 6, 1</column>
 <column name="icmp_ln60_fu_1117_p2">icmp, 0, 0, 11, 5, 6</column>
 <column name="ap_block_pp0_stage0_01001">or, 0, 0, 2, 1, 1</column>
@@ -236,73 +236,41 @@
 <column name="ap_enable_reg_pp0_iter1">1, 0, 1, 0</column>
 <column name="ap_enable_reg_pp0_iter2">1, 0, 1, 0</column>
 <column name="i_0_reg_1106">5, 0, 5, 0</column>
-<column name="icmp_ln1494_10_reg_1892">1, 0, 1, 0</column>
-<column name="icmp_ln1494_11_reg_1897">1, 0, 1, 0</column>
-<column name="icmp_ln1494_12_reg_1902">1, 0, 1, 0</column>
-<column name="icmp_ln1494_13_reg_1907">1, 0, 1, 0</column>
-<column name="icmp_ln1494_14_reg_1912">1, 0, 1, 0</column>
-<column name="icmp_ln1494_15_reg_1917">1, 0, 1, 0</column>
-<column name="icmp_ln1494_16_reg_1922">1, 0, 1, 0</column>
-<column name="icmp_ln1494_17_reg_1927">1, 0, 1, 0</column>
-<column name="icmp_ln1494_18_reg_1932">1, 0, 1, 0</column>
-<column name="icmp_ln1494_19_reg_1937">1, 0, 1, 0</column>
-<column name="icmp_ln1494_1_reg_1847">1, 0, 1, 0</column>
-<column name="icmp_ln1494_20_reg_1942">1, 0, 1, 0</column>
-<column name="icmp_ln1494_21_reg_1947">1, 0, 1, 0</column>
-<column name="icmp_ln1494_22_reg_1952">1, 0, 1, 0</column>
-<column name="icmp_ln1494_23_reg_1957">1, 0, 1, 0</column>
-<column name="icmp_ln1494_24_reg_1962">1, 0, 1, 0</column>
-<column name="icmp_ln1494_25_reg_1967">1, 0, 1, 0</column>
-<column name="icmp_ln1494_26_reg_1972">1, 0, 1, 0</column>
-<column name="icmp_ln1494_27_reg_1977">1, 0, 1, 0</column>
-<column name="icmp_ln1494_28_reg_1982">1, 0, 1, 0</column>
-<column name="icmp_ln1494_29_reg_1987">1, 0, 1, 0</column>
-<column name="icmp_ln1494_2_reg_1852">1, 0, 1, 0</column>
-<column name="icmp_ln1494_30_reg_1992">1, 0, 1, 0</column>
-<column name="icmp_ln1494_31_reg_1997">1, 0, 1, 0</column>
-<column name="icmp_ln1494_3_reg_1857">1, 0, 1, 0</column>
-<column name="icmp_ln1494_4_reg_1862">1, 0, 1, 0</column>
-<column name="icmp_ln1494_5_reg_1867">1, 0, 1, 0</column>
-<column name="icmp_ln1494_6_reg_1872">1, 0, 1, 0</column>
-<column name="icmp_ln1494_7_reg_1877">1, 0, 1, 0</column>
-<column name="icmp_ln1494_8_reg_1882">1, 0, 1, 0</column>
-<column name="icmp_ln1494_9_reg_1887">1, 0, 1, 0</column>
-<column name="icmp_ln1494_reg_1842">1, 0, 1, 0</column>
 <column name="icmp_ln60_reg_1673">1, 0, 1, 0</column>
 <column name="icmp_ln60_reg_1673_pp0_iter1_reg">1, 0, 1, 0</column>
 <column name="start_once_reg">1, 0, 1, 0</column>
 <column name="tmp_data_V_0_reg_1682">6, 0, 6, 0</column>
-<column name="tmp_data_V_10_reg_1732">6, 0, 6, 0</column>
-<column name="tmp_data_V_11_reg_1737">6, 0, 6, 0</column>
-<column name="tmp_data_V_12_reg_1742">6, 0, 6, 0</column>
-<column name="tmp_data_V_13_reg_1747">6, 0, 6, 0</column>
-<column name="tmp_data_V_140_reg_1687">6, 0, 6, 0</column>
-<column name="tmp_data_V_14_reg_1752">6, 0, 6, 0</column>
-<column name="tmp_data_V_15_reg_1757">6, 0, 6, 0</column>
-<column name="tmp_data_V_16_reg_1762">6, 0, 6, 0</column>
-<column name="tmp_data_V_17_reg_1767">6, 0, 6, 0</column>
-<column name="tmp_data_V_18_reg_1772">6, 0, 6, 0</column>
-<column name="tmp_data_V_19_reg_1777">6, 0, 6, 0</column>
-<column name="tmp_data_V_20_reg_1782">6, 0, 6, 0</column>
-<column name="tmp_data_V_21_reg_1787">6, 0, 6, 0</column>
-<column name="tmp_data_V_22_reg_1792">6, 0, 6, 0</column>
-<column name="tmp_data_V_23_reg_1797">6, 0, 6, 0</column>
-<column name="tmp_data_V_24_reg_1802">6, 0, 6, 0</column>
-<column name="tmp_data_V_25_reg_1807">6, 0, 6, 0</column>
-<column name="tmp_data_V_26_reg_1812">6, 0, 6, 0</column>
-<column name="tmp_data_V_27_reg_1817">6, 0, 6, 0</column>
-<column name="tmp_data_V_28_reg_1822">6, 0, 6, 0</column>
-<column name="tmp_data_V_29_reg_1827">6, 0, 6, 0</column>
-<column name="tmp_data_V_2_reg_1692">6, 0, 6, 0</column>
-<column name="tmp_data_V_30_reg_1832">6, 0, 6, 0</column>
-<column name="tmp_data_V_31_reg_1837">6, 0, 6, 0</column>
-<column name="tmp_data_V_3_reg_1697">6, 0, 6, 0</column>
-<column name="tmp_data_V_4_reg_1702">6, 0, 6, 0</column>
-<column name="tmp_data_V_5_reg_1707">6, 0, 6, 0</column>
-<column name="tmp_data_V_6_reg_1712">6, 0, 6, 0</column>
-<column name="tmp_data_V_7_reg_1717">6, 0, 6, 0</column>
-<column name="tmp_data_V_8_reg_1722">6, 0, 6, 0</column>
-<column name="tmp_data_V_9_reg_1727">6, 0, 6, 0</column>
+<column name="tmp_data_V_10_reg_1742">6, 0, 6, 0</column>
+<column name="tmp_data_V_11_reg_1748">6, 0, 6, 0</column>
+<column name="tmp_data_V_12_reg_1754">6, 0, 6, 0</column>
+<column name="tmp_data_V_13_reg_1760">6, 0, 6, 0</column>
+<column name="tmp_data_V_140_reg_1688">6, 0, 6, 0</column>
+<column name="tmp_data_V_14_reg_1766">6, 0, 6, 0</column>
+<column name="tmp_data_V_15_reg_1772">6, 0, 6, 0</column>
+<column name="tmp_data_V_16_reg_1778">6, 0, 6, 0</column>
+<column name="tmp_data_V_17_reg_1784">6, 0, 6, 0</column>
+<column name="tmp_data_V_18_reg_1790">6, 0, 6, 0</column>
+<column name="tmp_data_V_19_reg_1796">6, 0, 6, 0</column>
+<column name="tmp_data_V_20_reg_1802">6, 0, 6, 0</column>
+<column name="tmp_data_V_21_reg_1808">6, 0, 6, 0</column>
+<column name="tmp_data_V_22_reg_1814">6, 0, 6, 0</column>
+<column name="tmp_data_V_23_reg_1820">6, 0, 6, 0</column>
+<column name="tmp_data_V_24_reg_1826">6, 0, 6, 0</column>
+<column name="tmp_data_V_25_reg_1832">6, 0, 6, 0</column>
+<column name="tmp_data_V_26_reg_1838">6, 0, 6, 0</column>
+<column name="tmp_data_V_27_reg_1844">6, 0, 6, 0</column>
+<column name="tmp_data_V_28_reg_1850">6, 0, 6, 0</column>
+<column name="tmp_data_V_29_reg_1856">6, 0, 6, 0</column>
+<column name="tmp_data_V_2_reg_1694">6, 0, 6, 0</column>
+<column name="tmp_data_V_30_reg_1862">6, 0, 6, 0</column>
+<column name="tmp_data_V_31_reg_1868">6, 0, 6, 0</column>
+<column name="tmp_data_V_3_reg_1700">6, 0, 6, 0</column>
+<column name="tmp_data_V_4_reg_1706">6, 0, 6, 0</column>
+<column name="tmp_data_V_5_reg_1712">6, 0, 6, 0</column>
+<column name="tmp_data_V_6_reg_1718">6, 0, 6, 0</column>
+<column name="tmp_data_V_7_reg_1724">6, 0, 6, 0</column>
+<column name="tmp_data_V_8_reg_1730">6, 0, 6, 0</column>
+<column name="tmp_data_V_9_reg_1736">6, 0, 6, 0</column>
 </table>
 </item>
 </section>

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'normalize_array_array_ap_fixed_128u_config7_s'" level="0">
-<item name = "Date">Mon Feb 20 14:22:30 2023
+<item name = "Date">Tue Feb 21 11:21:31 2023
 </item>
 <item name = "Version">2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)</item>
 <item name = "Project">myproject_prj</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">5.00 ns, 4.231 ns, 0.62 ns</column>
+<column name="ap_clk">10.00 ns, 7.865 ns, 1.25 ns</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">10, 10, 50.000 ns, 50.000 ns, 10, 10, none</column>
+<column name="">8, 8, 80.000 ns, 80.000 ns, 8, 8, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,7 +35,7 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- BatchNormLoop">8, 8, 6, 1, 1, 4, yes</column>
+<column name="- BatchNormLoop">6, 6, 4, 1, 1, 4, yes</column>
 </table>
 </item>
 </section>

@@ -20351,8 +20351,8 @@
         <mDepth>-1</mDepth>
         <mMinTripCount>-1</mMinTripCount>
         <mMaxTripCount>-1</mMaxTripCount>
-        <mMinLatency>66</mMinLatency>
-        <mMaxLatency>66</mMaxLatency>
+        <mMinLatency>50</mMinLatency>
+        <mMaxLatency>50</mMaxLatency>
         <mIsDfPipe>1</mIsDfPipe>
         <mDfPipe class_id="23" tracking_level="1" version="0" object_id="_1183">
           <port_list class_id="24" tracking_level="0" version="0">
@@ -36038,38 +36038,34 @@
             </item>
             <item>
               <first>DSP48E</first>
-              <second>21</second>
+              <second>27</second>
             </item>
             <item>
               <first>FF</first>
-              <second>5222</second>
+              <second>2054</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>6901</second>
+              <second>6200</second>
             </item>
           </second>
         </item>
         <item>
           <first>dense_array_array_ap_fixed_16_6_5_3_0_1u_config8_U0 (dense_array_array_ap_fixed_16_6_5_3_0_1u_config8_s)</first>
           <second>
-            <count>4</count>
+            <count>3</count>
             <item_version>0</item_version>
-            <item>
-              <first>BRAM</first>
-              <second>0</second>
-            </item>
             <item>
               <first>DSP48E</first>
               <second>2</second>
             </item>
             <item>
               <first>FF</first>
-              <second>3292</second>
+              <second>1968</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>7735</second>
+              <second>7457</second>
             </item>
           </second>
         </item>
@@ -36118,11 +36114,11 @@
             </item>
             <item>
               <first>FF</first>
-              <second>4923</second>
+              <second>2151</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>3476</second>
+              <second>3604</second>
             </item>
           </second>
         </item>
@@ -36137,11 +36133,11 @@
             </item>
             <item>
               <first>FF</first>
-              <second>3817</second>
+              <second>3123</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>4059</second>
+              <second>3799</second>
             </item>
           </second>
         </item>
@@ -36152,7 +36148,7 @@
             <item_version>0</item_version>
             <item>
               <first>FF</first>
-              <second>239</second>
+              <second>207</second>
             </item>
             <item>
               <first>LUT</first>
@@ -51599,26 +51595,26 @@
         <second>
           <count>2</count>
           <item_version>0</item_version>
+          <item>907</item>
+          <item>907</item>
+        </second>
+      </item>
+      <item>
+        <first>5555</first>
+        <second>
+          <count>2</count>
+          <item_version>0</item_version>
           <item>902</item>
           <item>902</item>
         </second>
       </item>
       <item>
-        <first>5484</first>
+        <first>5617</first>
         <second>
           <count>2</count>
           <item_version>0</item_version>
           <item>906</item>
           <item>906</item>
-        </second>
-      </item>
-      <item>
-        <first>5648</first>
-        <second>
-          <count>2</count>
-          <item_version>0</item_version>
-          <item>907</item>
-          <item>907</item>
         </second>
       </item>
       <item>
@@ -53738,7 +53734,7 @@
         </second>
       </item>
       <item>
-        <first>grp_conv_2d_cl_array_array_ap_fixed_32u_config2_s_fu_5422</first>
+        <first>grp_conv_2d_cl_array_array_ap_fixed_32u_config2_s_fu_5555</first>
         <second>
           <count>2</count>
           <item_version>0</item_version>
@@ -53747,7 +53743,7 @@
         </second>
       </item>
       <item>
-        <first>grp_dense_array_array_ap_fixed_16_6_5_3_0_1u_config8_s_fu_5648</first>
+        <first>grp_dense_array_array_ap_fixed_16_6_5_3_0_1u_config8_s_fu_5422</first>
         <second>
           <count>2</count>
           <item_version>0</item_version>
@@ -53774,7 +53770,7 @@
         </second>
       </item>
       <item>
-        <first>grp_normalize_array_array_ap_fixed_128u_config7_s_fu_5484</first>
+        <first>grp_normalize_array_array_ap_fixed_128u_config7_s_fu_5617</first>
         <second>
           <count>2</count>
           <item_version>0</item_version>

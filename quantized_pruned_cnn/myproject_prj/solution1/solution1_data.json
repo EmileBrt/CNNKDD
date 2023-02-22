@@ -67,13 +67,13 @@
   },
   "ClockInfo": {
     "ClockName": "ap_clk",
-    "ClockPeriod": "5",
+    "ClockPeriod": "10",
     "IsCombLogic": "0",
     "II": "x",
-    "Latency": "66",
-    "Uncertainty": "0.625"
+    "Latency": "50",
+    "Uncertainty": "1.25"
   },
-  "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 5.000 [get_ports ap_clk]"]},
+  "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 10.000 [get_ports ap_clk]"]},
   "Ipx": {
     "Vendor": "xilinx.com",
     "Library": "hls",
@@ -98,14 +98,6 @@
       "impl\/vhdl\/fifo_w16_d4_A.vhd",
       "impl\/vhdl\/linear_array_array_ap_fixed_1u_linear_config9_s.vhd",
       "impl\/vhdl\/linear_array_array_ap_fixed_32u_linear_config3_s.vhd",
-      "impl\/vhdl\/myproject_mul_5ns_15s_15_2_1.vhd",
-      "impl\/vhdl\/myproject_mul_5s_15s_15_2_1.vhd",
-      "impl\/vhdl\/myproject_mul_6ns_15s_15_2_1.vhd",
-      "impl\/vhdl\/myproject_mul_6s_15s_15_2_1.vhd",
-      "impl\/vhdl\/myproject_mul_11ns_6s_16_2_1.vhd",
-      "impl\/vhdl\/myproject_mul_11s_6s_16_2_1.vhd",
-      "impl\/vhdl\/myproject_mul_16s_13ns_20_2_1.vhd",
-      "impl\/vhdl\/myproject_mul_16s_16ns_20_2_1.vhd",
       "impl\/vhdl\/myproject_mux_42_16_1_1.vhd",
       "impl\/vhdl\/myproject_mux_1287_16_1_1.vhd",
       "impl\/vhdl\/normalize_array_array_ap_fixed_128u_config7_s.vhd",
@@ -136,14 +128,6 @@
       "impl\/verilog\/fifo_w16_d4_A.v",
       "impl\/verilog\/linear_array_array_ap_fixed_1u_linear_config9_s.v",
       "impl\/verilog\/linear_array_array_ap_fixed_32u_linear_config3_s.v",
-      "impl\/verilog\/myproject_mul_5ns_15s_15_2_1.v",
-      "impl\/verilog\/myproject_mul_5s_15s_15_2_1.v",
-      "impl\/verilog\/myproject_mul_6ns_15s_15_2_1.v",
-      "impl\/verilog\/myproject_mul_6s_15s_15_2_1.v",
-      "impl\/verilog\/myproject_mul_11ns_6s_16_2_1.v",
-      "impl\/verilog\/myproject_mul_11s_6s_16_2_1.v",
-      "impl\/verilog\/myproject_mul_16s_13ns_20_2_1.v",
-      "impl\/verilog\/myproject_mul_16s_16ns_20_2_1.v",
       "impl\/verilog\/myproject_mux_42_16_1_1.v",
       "impl\/verilog\/myproject_mux_1287_16_1_1.v",
       "impl\/verilog\/normalize_array_array_ap_fixed_128u_config7_s.v",
@@ -323,24 +307,24 @@
       "ModuleName": "myproject",
       "Instances": [
         {
-          "ModuleName": "conv_2d_cl_array_array_ap_fixed_32u_config2_s",
-          "InstanceName": "conv_2d_cl_array_array_ap_fixed_32u_config2_U0",
-          "Instances": [{
-              "ModuleName": "shift_line_buffer_array_ap_fixed_1u_config2_s",
-              "InstanceName": "call_ret_shift_line_buffer_array_ap_fixed_1u_config2_s_fu_25017"
-            }]
-        },
-        {
-          "ModuleName": "normalize_array_array_ap_fixed_128u_config7_s",
-          "InstanceName": "normalize_array_array_ap_fixed_128u_config7_U0"
-        },
-        {
           "ModuleName": "dense_array_array_ap_fixed_16_6_5_3_0_1u_config8_s",
           "InstanceName": "dense_array_array_ap_fixed_16_6_5_3_0_1u_config8_U0",
           "Instances": [{
               "ModuleName": "dense_wrapper_ap_fixed_ap_fixed_16_6_5_3_0_config8_s",
               "InstanceName": "grp_dense_wrapper_ap_fixed_ap_fixed_16_6_5_3_0_config8_s_fu_2095"
             }]
+        },
+        {
+          "ModuleName": "conv_2d_cl_array_array_ap_fixed_32u_config2_s",
+          "InstanceName": "conv_2d_cl_array_array_ap_fixed_32u_config2_U0",
+          "Instances": [{
+              "ModuleName": "shift_line_buffer_array_ap_fixed_1u_config2_s",
+              "InstanceName": "call_ret_shift_line_buffer_array_ap_fixed_1u_config2_s_fu_39383"
+            }]
+        },
+        {
+          "ModuleName": "normalize_array_array_ap_fixed_128u_config7_s",
+          "InstanceName": "normalize_array_array_ap_fixed_128u_config7_U0"
         },
         {
           "ModuleName": "pooling2d_cl_array_array_ap_fixed_32u_config5_s",
@@ -352,67 +336,131 @@
             },
             {
               "ModuleName": "reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s",
-              "InstanceName": "grp_reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s_fu_1502"
+              "InstanceName": "p_0_s_reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s_fu_1502"
             },
             {
               "ModuleName": "reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s",
-              "InstanceName": "grp_reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s_fu_1510"
+              "InstanceName": "p_0_1_reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s_fu_1510"
             },
             {
               "ModuleName": "reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s",
-              "InstanceName": "grp_reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s_fu_1518"
+              "InstanceName": "p_0_2_reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s_fu_1518"
             },
             {
               "ModuleName": "reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s",
-              "InstanceName": "grp_reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s_fu_1526"
+              "InstanceName": "p_0_3_reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s_fu_1526"
             },
             {
               "ModuleName": "reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s",
-              "InstanceName": "grp_reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s_fu_1534"
+              "InstanceName": "p_0_4_reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s_fu_1534"
             },
             {
               "ModuleName": "reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s",
-              "InstanceName": "grp_reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s_fu_1542"
+              "InstanceName": "p_0_5_reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s_fu_1542"
             },
             {
               "ModuleName": "reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s",
-              "InstanceName": "grp_reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s_fu_1550"
+              "InstanceName": "p_0_6_reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s_fu_1550"
             },
             {
               "ModuleName": "reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s",
-              "InstanceName": "grp_reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s_fu_1558"
+              "InstanceName": "p_0_7_reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s_fu_1558"
             },
             {
               "ModuleName": "reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s",
-              "InstanceName": "grp_reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s_fu_1566"
+              "InstanceName": "p_0_8_reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s_fu_1566"
             },
             {
               "ModuleName": "reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s",
-              "InstanceName": "grp_reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s_fu_1574"
+              "InstanceName": "p_0_9_reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s_fu_1574"
             },
             {
               "ModuleName": "reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s",
-              "InstanceName": "grp_reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s_fu_1582"
+              "InstanceName": "p_0_10_reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s_fu_1582"
             },
             {
               "ModuleName": "reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s",
-              "InstanceName": "grp_reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s_fu_1590"
+              "InstanceName": "p_0_11_reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s_fu_1590"
             },
             {
               "ModuleName": "reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s",
-              "InstanceName": "grp_reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s_fu_1598"
+              "InstanceName": "p_0_12_reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s_fu_1598"
             },
             {
               "ModuleName": "reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s",
-              "InstanceName": "grp_reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s_fu_1606"
+              "InstanceName": "p_0_13_reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s_fu_1606"
             },
             {
               "ModuleName": "reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s",
-              "InstanceName": "grp_reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s_fu_1614"
+              "InstanceName": "p_0_14_reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s_fu_1614"
             },
             {
               "ModuleName": "reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s",
-              "InstanceName": "grp_reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s_fu_1622"
+              "InstanceName": "p_0_15_reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s_fu_1622"
+            },
+            {
+              "ModuleName": "reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s",
+              "InstanceName": "p_0_16_reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s_fu_1630"
+            },
+            {
+              "ModuleName": "reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s",
+              "InstanceName": "p_0_17_reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s_fu_1638"
+            },
+            {
+              "ModuleName": "reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s",
+              "InstanceName": "p_0_18_reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s_fu_1646"
+            },
+            {
+              "ModuleName": "reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s",
+              "InstanceName": "p_0_19_reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s_fu_1654"
+            },
+            {
+              "ModuleName": "reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s",
+              "InstanceName": "p_0_20_reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s_fu_1662"
+            },
+            {
+              "ModuleName": "reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s",
+              "InstanceName": "p_0_21_reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s_fu_1670"
+            },
+            {
+              "ModuleName": "reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s",
+              "InstanceName": "p_0_22_reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s_fu_1678"
+            },
+            {
+              "ModuleName": "reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s",
+              "InstanceName": "p_0_23_reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s_fu_1686"
+            },
+            {
+              "ModuleName": "reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s",
+              "InstanceName": "p_0_24_reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s_fu_1694"
+            },
+            {
+              "ModuleName": "reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s",
+              "InstanceName": "p_0_25_reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s_fu_1702"
+            },
+            {
+              "ModuleName": "reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s",
+              "InstanceName": "p_0_26_reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s_fu_1710"
+            },
+            {
+              "ModuleName": "reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s",
+              "InstanceName": "p_0_27_reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s_fu_1718"
+            },
+            {
+              "ModuleName": "reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s",
+              "InstanceName": "p_0_28_reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s_fu_1726"
+            },
+            {
+              "ModuleName": "reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s",
+              "InstanceName": "p_0_29_reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s_fu_1734"
+            },
+            {
+              "ModuleName": "reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s",
+              "InstanceName": "p_0_30_reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s_fu_1742"
+            },
+            {
+              "ModuleName": "reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s",
+              "InstanceName": "p_0_31_reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s_fu_1750"
             }
           ]
         },
@@ -480,8 +528,8 @@
       "reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s": {
         "FunctionProtocol": "ap_ctrl_hs",
         "isTaskLevelControl": "1",
-        "isPipelined": "1",
-        "isCombinational": "0",
+        "isPipelined": "0",
+        "isCombinational": "1",
         "isOneStateSeq": "0"
       },
       "pooling2d_cl_array_array_ap_fixed_32u_config5_s": {
@@ -538,8 +586,8 @@
           "PipelineType": "none"
         },
         "Timing": {
-          "Target": "5.00",
-          "Uncertainty": "0.62",
+          "Target": "10.00",
+          "Uncertainty": "1.25",
           "Estimate": "0.000"
         },
         "Area": {
@@ -560,8 +608,8 @@
           "PipelineType": "function"
         },
         "Timing": {
-          "Target": "5.00",
-          "Uncertainty": "0.62",
+          "Target": "10.00",
+          "Uncertainty": "1.25",
           "Estimate": "3.234"
         },
         "Area": {
@@ -574,30 +622,30 @@
       },
       "conv_2d_cl_array_array_ap_fixed_32u_config2_s": {
         "Latency": {
-          "LatencyBest": "44",
-          "LatencyAvg": "44",
-          "LatencyWorst": "44",
-          "PipelineII": "44",
+          "LatencyBest": "41",
+          "LatencyAvg": "41",
+          "LatencyWorst": "41",
+          "PipelineII": "41",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
         "Timing": {
-          "Target": "5.00",
-          "Uncertainty": "0.62",
-          "Estimate": "5.065"
+          "Target": "10.00",
+          "Uncertainty": "1.25",
+          "Estimate": "7.415"
         },
         "Loops": [{
             "Name": "ReadInputHeight_ReadInputWidth",
             "TripCount": "36",
-            "Latency": "42",
+            "Latency": "39",
             "PipelineII": "1",
-            "PipelineDepth": "8"
+            "PipelineDepth": "5"
           }],
         "Area": {
           "BRAM_18K": "0",
-          "DSP48E": "21",
-          "FF": "5222",
-          "LUT": "6901",
+          "DSP48E": "27",
+          "FF": "2054",
+          "LUT": "6200",
           "URAM": "0"
         }
       },
@@ -611,9 +659,9 @@
           "PipelineType": "none"
         },
         "Timing": {
-          "Target": "5.00",
-          "Uncertainty": "0.62",
-          "Estimate": "4.375"
+          "Target": "10.00",
+          "Uncertainty": "1.25",
+          "Estimate": "7.268"
         },
         "Loops": [{
             "Name": "LinearActLoop",
@@ -640,9 +688,9 @@
           "PipelineType": "none"
         },
         "Timing": {
-          "Target": "5.00",
-          "Uncertainty": "0.62",
-          "Estimate": "3.614"
+          "Target": "10.00",
+          "Uncertainty": "1.25",
+          "Estimate": "6.248"
         },
         "Loops": [{
             "Name": "ReLUActLoop",
@@ -652,7 +700,7 @@
             "PipelineDepth": "3"
           }],
         "Area": {
-          "FF": "239",
+          "FF": "207",
           "LUT": "1228",
           "BRAM_18K": "0",
           "DSP48E": "0",
@@ -669,8 +717,8 @@
           "PipelineType": "function"
         },
         "Timing": {
-          "Target": "5.00",
-          "Uncertainty": "0.62",
+          "Target": "10.00",
+          "Uncertainty": "1.25",
           "Estimate": "1.617"
         },
         "Area": {
@@ -683,21 +731,21 @@
       },
       "reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s": {
         "Latency": {
-          "LatencyBest": "1",
-          "LatencyAvg": "1",
-          "LatencyWorst": "1",
+          "LatencyBest": "0",
+          "LatencyAvg": "0",
+          "LatencyWorst": "0",
           "PipelineII": "1",
-          "PipelineDepth": "2",
+          "PipelineDepth": "1",
           "PipelineType": "function"
         },
         "Timing": {
-          "Target": "5.00",
-          "Uncertainty": "0.62",
-          "Estimate": "2.614"
+          "Target": "10.00",
+          "Uncertainty": "1.25",
+          "Estimate": "5.229"
         },
         "Area": {
-          "FF": "19",
-          "LUT": "60",
+          "FF": "0",
+          "LUT": "51",
           "BRAM_18K": "0",
           "DSP48E": "0",
           "URAM": "0"
@@ -705,103 +753,103 @@
       },
       "pooling2d_cl_array_array_ap_fixed_32u_config5_s": {
         "Latency": {
-          "LatencyBest": "37",
-          "LatencyAvg": "37",
-          "LatencyWorst": "37",
-          "PipelineII": "37",
+          "LatencyBest": "20",
+          "LatencyAvg": "20",
+          "LatencyWorst": "20",
+          "PipelineII": "20",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
         "Timing": {
-          "Target": "5.00",
-          "Uncertainty": "0.62",
-          "Estimate": "4.429"
+          "Target": "10.00",
+          "Uncertainty": "1.25",
+          "Estimate": "6.846"
         },
         "Loops": [{
             "Name": "ReadInputHeight_ReadInputWidth",
             "TripCount": "16",
-            "Latency": "35",
-            "PipelineII": "2",
-            "PipelineDepth": "6"
+            "Latency": "18",
+            "PipelineII": "1",
+            "PipelineDepth": "4"
           }],
         "Area": {
           "BRAM_18K": "0",
-          "FF": "3817",
-          "LUT": "4059",
+          "FF": "3123",
+          "LUT": "3799",
           "DSP48E": "0",
           "URAM": "0"
         }
       },
       "normalize_array_array_ap_fixed_128u_config7_s": {
         "Latency": {
-          "LatencyBest": "10",
-          "LatencyAvg": "10",
-          "LatencyWorst": "10",
-          "PipelineII": "10",
+          "LatencyBest": "8",
+          "LatencyAvg": "8",
+          "LatencyWorst": "8",
+          "PipelineII": "8",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
         "Timing": {
-          "Target": "5.00",
-          "Uncertainty": "0.62",
-          "Estimate": "4.231"
+          "Target": "10.00",
+          "Uncertainty": "1.25",
+          "Estimate": "7.865"
         },
         "Loops": [{
             "Name": "BatchNormLoop",
             "TripCount": "4",
-            "Latency": "8",
+            "Latency": "6",
             "PipelineII": "1",
-            "PipelineDepth": "6"
+            "PipelineDepth": "4"
           }],
         "Area": {
           "BRAM_18K": "0",
           "DSP48E": "32",
-          "FF": "4923",
-          "LUT": "3476",
+          "FF": "2151",
+          "LUT": "3604",
           "URAM": "0"
         }
       },
       "dense_wrapper_ap_fixed_ap_fixed_16_6_5_3_0_config8_s": {
         "Latency": {
-          "LatencyBest": "7",
-          "LatencyAvg": "7",
-          "LatencyWorst": "7",
+          "LatencyBest": "3",
+          "LatencyAvg": "3",
+          "LatencyWorst": "3",
           "PipelineII": "1",
-          "PipelineDepth": "8",
+          "PipelineDepth": "4",
           "PipelineType": "function"
         },
         "Timing": {
-          "Target": "5.00",
-          "Uncertainty": "0.62",
-          "Estimate": "4.520"
+          "Target": "10.00",
+          "Uncertainty": "1.25",
+          "Estimate": "8.560"
         },
         "Area": {
-          "BRAM_18K": "0",
           "DSP48E": "2",
-          "FF": "2507",
-          "LUT": "6499",
+          "FF": "1198",
+          "LUT": "6236",
+          "BRAM_18K": "0",
           "URAM": "0"
         }
       },
       "dense_array_array_ap_fixed_16_6_5_3_0_1u_config8_s": {
         "Latency": {
-          "LatencyBest": "10",
-          "LatencyAvg": "10",
-          "LatencyWorst": "10",
-          "PipelineII": "10",
+          "LatencyBest": "5",
+          "LatencyAvg": "5",
+          "LatencyWorst": "5",
+          "PipelineII": "5",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
         "Timing": {
-          "Target": "5.00",
-          "Uncertainty": "0.62",
-          "Estimate": "4.520"
+          "Target": "10.00",
+          "Uncertainty": "1.25",
+          "Estimate": "8.560"
         },
         "Area": {
-          "BRAM_18K": "0",
           "DSP48E": "2",
-          "FF": "3292",
-          "LUT": "7735",
+          "FF": "1968",
+          "LUT": "7457",
+          "BRAM_18K": "0",
           "URAM": "0"
         }
       },
@@ -815,9 +863,9 @@
           "PipelineType": "function"
         },
         "Timing": {
-          "Target": "5.00",
-          "Uncertainty": "0.62",
-          "Estimate": "2.188"
+          "Target": "10.00",
+          "Uncertainty": "1.25",
+          "Estimate": "3.634"
         },
         "Area": {
           "FF": "3",
@@ -829,23 +877,23 @@
       },
       "myproject": {
         "Latency": {
-          "LatencyBest": "66",
-          "LatencyAvg": "66",
-          "LatencyWorst": "66",
-          "PipelineII": "45",
+          "LatencyBest": "50",
+          "LatencyAvg": "50",
+          "LatencyWorst": "50",
+          "PipelineII": "42",
           "PipelineDepth": "",
           "PipelineType": "dataflow"
         },
         "Timing": {
-          "Target": "5.00",
-          "Uncertainty": "0.62",
-          "Estimate": "5.065"
+          "Target": "10.00",
+          "Uncertainty": "1.25",
+          "Estimate": "8.560"
         },
         "Area": {
           "BRAM_18K": "0",
-          "DSP48E": "55",
-          "FF": "18994",
-          "LUT": "29630",
+          "DSP48E": "61",
+          "FF": "11004",
+          "LUT": "28519",
           "URAM": "0"
         }
       }
@@ -861,7 +909,7 @@
   },
   "GenData": {
     "DataVersion": "0.2",
-    "Time": "2023-02-20 14:22:58 CET",
+    "Time": "2023-02-21 11:21:58 CET",
     "ToolName": "vivado_hls",
     "ToolVersion": "2019.2"
   }

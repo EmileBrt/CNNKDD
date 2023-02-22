@@ -668,7 +668,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>select_ln86_2_fu_66_p3</rtlName>
+              <rtlName>ap_return</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>6</bitwidth>
@@ -941,23 +941,23 @@
           <item>16</item>
         </basic_blocks>
         <mII>1</mII>
-        <mDepth>2</mDepth>
+        <mDepth>1</mDepth>
         <mMinTripCount>-1</mMinTripCount>
         <mMaxTripCount>-1</mMaxTripCount>
-        <mMinLatency>1</mMinLatency>
-        <mMaxLatency>1</mMaxLatency>
+        <mMinLatency>0</mMinLatency>
+        <mMaxLatency>0</mMaxLatency>
         <mIsDfPipe>0</mIsDfPipe>
         <mDfPipe class_id="-1"/>
       </item>
     </cdfg_regions>
     <fsm class_id="23" tracking_level="1" version="0" object_id="_38">
       <states class_id="24" tracking_level="0" version="0">
-        <count>2</count>
+        <count>1</count>
         <item_version>0</item_version>
         <item class_id="25" tracking_level="1" version="0" object_id="_39">
           <id>1</id>
           <operations class_id="26" tracking_level="0" version="0">
-            <count>8</count>
+            <count>11</count>
             <item_version>0</item_version>
             <item class_id="27" tracking_level="1" version="0" object_id="_40">
               <id>5</id>
@@ -999,24 +999,17 @@
               <stage>1</stage>
               <latency>1</latency>
             </item>
-          </operations>
-        </item>
-        <item class_id_reference="25" object_id="_48">
-          <id>2</id>
-          <operations>
-            <count>3</count>
-            <item_version>0</item_version>
-            <item class_id_reference="27" object_id="_49">
+            <item class_id_reference="27" object_id="_48">
               <id>13</id>
               <stage>1</stage>
               <latency>1</latency>
             </item>
-            <item class_id_reference="27" object_id="_50">
+            <item class_id_reference="27" object_id="_49">
               <id>14</id>
               <stage>1</stage>
               <latency>1</latency>
             </item>
-            <item class_id_reference="27" object_id="_51">
+            <item class_id_reference="27" object_id="_50">
               <id>15</id>
               <stage>1</stage>
               <latency>1</latency>
@@ -1025,39 +1018,51 @@
         </item>
       </states>
       <transitions class_id="28" tracking_level="0" version="0">
-        <count>1</count>
+        <count>0</count>
         <item_version>0</item_version>
-        <item class_id="29" tracking_level="1" version="0" object_id="_52">
-          <inState>1</inState>
-          <outState>2</outState>
-          <condition class_id="30" tracking_level="0" version="0">
-            <id>-1</id>
-            <sop class_id="31" tracking_level="0" version="0">
-              <count>1</count>
-              <item_version>0</item_version>
-              <item class_id="32" tracking_level="0" version="0">
-                <count>0</count>
-                <item_version>0</item_version>
-              </item>
-            </sop>
-          </condition>
-        </item>
       </transitions>
     </fsm>
-    <res class_id="33" tracking_level="1" version="0" object_id="_53">
-      <dp_component_resource class_id="34" tracking_level="0" version="0">
+    <res class_id="29" tracking_level="1" version="0" object_id="_51">
+      <dp_component_resource class_id="30" tracking_level="0" version="0">
         <count>0</count>
         <item_version>0</item_version>
       </dp_component_resource>
       <dp_expression_resource>
         <count>6</count>
         <item_version>0</item_version>
-        <item class_id="35" tracking_level="0" version="0">
+        <item class_id="31" tracking_level="0" version="0">
+          <first>ap_return ( select ) </first>
+          <second class_id="32" tracking_level="0" version="0">
+            <count>5</count>
+            <item_version>0</item_version>
+            <item class_id="33" tracking_level="0" version="0">
+              <first>(0P0)</first>
+              <second>1</second>
+            </item>
+            <item>
+              <first>(1P1)</first>
+              <second>6</second>
+            </item>
+            <item>
+              <first>(2P2)</first>
+              <second>6</second>
+            </item>
+            <item>
+              <first>FF</first>
+              <second>0</second>
+            </item>
+            <item>
+              <first>LUT</first>
+              <second>6</second>
+            </item>
+          </second>
+        </item>
+        <item>
           <first>icmp_ln1496_1_fu_48_p2 ( icmp ) </first>
-          <second class_id="36" tracking_level="0" version="0">
+          <second>
             <count>4</count>
             <item_version>0</item_version>
-            <item class_id="37" tracking_level="0" version="0">
+            <item>
               <first>(0P0)</first>
               <second>6</second>
             </item>
@@ -1123,33 +1128,6 @@
         </item>
         <item>
           <first>select_ln86_1_fu_54_p3 ( select ) </first>
-          <second>
-            <count>5</count>
-            <item_version>0</item_version>
-            <item>
-              <first>(0P0)</first>
-              <second>1</second>
-            </item>
-            <item>
-              <first>(1P1)</first>
-              <second>6</second>
-            </item>
-            <item>
-              <first>(2P2)</first>
-              <second>6</second>
-            </item>
-            <item>
-              <first>FF</first>
-              <second>0</second>
-            </item>
-            <item>
-              <first>LUT</first>
-              <second>6</second>
-            </item>
-          </second>
-        </item>
-        <item>
-          <first>select_ln86_2_fu_66_p3 ( select ) </first>
           <second>
             <count>5</count>
             <item_version>0</item_version>
@@ -1212,124 +1190,33 @@
         <item_version>0</item_version>
       </dp_memory_resource>
       <dp_multiplexer_resource>
-        <count>1</count>
+        <count>0</count>
         <item_version>0</item_version>
-        <item>
-          <first>ap_return</first>
-          <second>
-            <count>4</count>
-            <item_version>0</item_version>
-            <item>
-              <first>(0Size)</first>
-              <second>2</second>
-            </item>
-            <item>
-              <first>(1Bits)</first>
-              <second>6</second>
-            </item>
-            <item>
-              <first>(2Count)</first>
-              <second>12</second>
-            </item>
-            <item>
-              <first>LUT</first>
-              <second>9</second>
-            </item>
-          </second>
-        </item>
       </dp_multiplexer_resource>
       <dp_register_resource>
-        <count>4</count>
+        <count>0</count>
         <item_version>0</item_version>
-        <item>
-          <first>ap_ce_reg</first>
-          <second>
-            <count>3</count>
-            <item_version>0</item_version>
-            <item>
-              <first>(Bits)</first>
-              <second>1</second>
-            </item>
-            <item>
-              <first>(Consts)</first>
-              <second>0</second>
-            </item>
-            <item>
-              <first>FF</first>
-              <second>1</second>
-            </item>
-          </second>
-        </item>
-        <item>
-          <first>ap_return_int_reg</first>
-          <second>
-            <count>3</count>
-            <item_version>0</item_version>
-            <item>
-              <first>(Bits)</first>
-              <second>6</second>
-            </item>
-            <item>
-              <first>(Consts)</first>
-              <second>0</second>
-            </item>
-            <item>
-              <first>FF</first>
-              <second>6</second>
-            </item>
-          </second>
-        </item>
-        <item>
-          <first>select_ln86_1_reg_78</first>
-          <second>
-            <count>3</count>
-            <item_version>0</item_version>
-            <item>
-              <first>(Bits)</first>
-              <second>6</second>
-            </item>
-            <item>
-              <first>(Consts)</first>
-              <second>0</second>
-            </item>
-            <item>
-              <first>FF</first>
-              <second>6</second>
-            </item>
-          </second>
-        </item>
-        <item>
-          <first>select_ln86_reg_72</first>
-          <second>
-            <count>3</count>
-            <item_version>0</item_version>
-            <item>
-              <first>(Bits)</first>
-              <second>6</second>
-            </item>
-            <item>
-              <first>(Consts)</first>
-              <second>0</second>
-            </item>
-            <item>
-              <first>FF</first>
-              <second>6</second>
-            </item>
-          </second>
-        </item>
       </dp_register_resource>
       <dp_dsp_resource>
         <count>0</count>
         <item_version>0</item_version>
       </dp_dsp_resource>
-      <dp_component_map class_id="38" tracking_level="0" version="0">
+      <dp_component_map class_id="34" tracking_level="0" version="0">
         <count>0</count>
         <item_version>0</item_version>
       </dp_component_map>
       <dp_expression_map>
         <count>6</count>
         <item_version>0</item_version>
-        <item class_id="39" tracking_level="0" version="0">
+        <item class_id="35" tracking_level="0" version="0">
+          <first>ap_return ( select ) </first>
+          <second>
+            <count>1</count>
+            <item_version>0</item_version>
+            <item>14</item>
+          </second>
+        </item>
+        <item>
           <first>icmp_ln1496_1_fu_48_p2 ( icmp ) </first>
           <second>
             <count>1</count>
@@ -1362,14 +1249,6 @@
           </second>
         </item>
         <item>
-          <first>select_ln86_2_fu_66_p3 ( select ) </first>
-          <second>
-            <count>1</count>
-            <item_version>0</item_version>
-            <item>14</item>
-          </second>
-        </item>
-        <item>
           <first>select_ln86_fu_40_p3 ( select ) </first>
           <second>
             <count>1</count>
@@ -1387,12 +1266,12 @@
         <item_version>0</item_version>
       </dp_memory_map>
     </res>
-    <node_label_latency class_id="40" tracking_level="0" version="0">
+    <node_label_latency class_id="36" tracking_level="0" version="0">
       <count>11</count>
       <item_version>0</item_version>
-      <item class_id="41" tracking_level="0" version="0">
+      <item class_id="37" tracking_level="0" version="0">
         <first>5</first>
-        <second class_id="42" tracking_level="0" version="0">
+        <second class_id="38" tracking_level="0" version="0">
           <first>0</first>
           <second>0</second>
         </second>
@@ -1449,40 +1328,40 @@
       <item>
         <first>13</first>
         <second>
-          <first>1</first>
+          <first>0</first>
           <second>0</second>
         </second>
       </item>
       <item>
         <first>14</first>
         <second>
-          <first>1</first>
+          <first>0</first>
           <second>0</second>
         </second>
       </item>
       <item>
         <first>15</first>
         <second>
-          <first>1</first>
+          <first>0</first>
           <second>0</second>
         </second>
       </item>
     </node_label_latency>
-    <bblk_ent_exit class_id="43" tracking_level="0" version="0">
+    <bblk_ent_exit class_id="39" tracking_level="0" version="0">
       <count>1</count>
       <item_version>0</item_version>
-      <item class_id="44" tracking_level="0" version="0">
+      <item class_id="40" tracking_level="0" version="0">
         <first>16</first>
-        <second class_id="45" tracking_level="0" version="0">
+        <second class_id="41" tracking_level="0" version="0">
           <first>0</first>
-          <second>1</second>
+          <second>0</second>
         </second>
       </item>
     </bblk_ent_exit>
-    <regions class_id="46" tracking_level="0" version="0">
+    <regions class_id="42" tracking_level="0" version="0">
       <count>1</count>
       <item_version>0</item_version>
-      <item class_id="47" tracking_level="1" version="0" object_id="_54">
+      <item class_id="43" tracking_level="1" version="0" object_id="_52">
         <region_name>reduce&lt;ap_ufixed,4,Op_max&lt;ap_ufixed&lt;6,0,0,0,0&gt;&gt;&gt;</region_name>
         <basic_blocks>
           <count>1</count>
@@ -1496,13 +1375,13 @@
         <anchor_node>-1</anchor_node>
         <region_type>8</region_type>
         <interval>1</interval>
-        <pipe_depth>2</pipe_depth>
+        <pipe_depth>1</pipe_depth>
       </item>
     </regions>
-    <dp_fu_nodes class_id="48" tracking_level="0" version="0">
+    <dp_fu_nodes class_id="44" tracking_level="0" version="0">
       <count>10</count>
       <item_version>0</item_version>
-      <item class_id="49" tracking_level="0" version="0">
+      <item class_id="45" tracking_level="0" version="0">
         <first>10</first>
         <second>
           <count>1</count>
@@ -1575,7 +1454,7 @@
         </second>
       </item>
       <item>
-        <first>66</first>
+        <first>68</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -1583,10 +1462,10 @@
         </second>
       </item>
     </dp_fu_nodes>
-    <dp_fu_nodes_expression class_id="51" tracking_level="0" version="0">
+    <dp_fu_nodes_expression class_id="47" tracking_level="0" version="0">
       <count>6</count>
       <item_version>0</item_version>
-      <item class_id="52" tracking_level="0" version="0">
+      <item class_id="48" tracking_level="0" version="0">
         <first>icmp_ln1496_1_fu_48</first>
         <second>
           <count>1</count>
@@ -1619,7 +1498,7 @@
         </second>
       </item>
       <item>
-        <first>select_ln86_2_fu_66</first>
+        <first>select_ln86_2_fu_68</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -1687,49 +1566,17 @@
         </second>
       </item>
     </return_ports>
-    <dp_mem_port_nodes class_id="53" tracking_level="0" version="0">
+    <dp_mem_port_nodes class_id="49" tracking_level="0" version="0">
       <count>0</count>
       <item_version>0</item_version>
     </dp_mem_port_nodes>
     <dp_reg_nodes>
-      <count>2</count>
+      <count>0</count>
       <item_version>0</item_version>
-      <item>
-        <first>72</first>
-        <second>
-          <count>1</count>
-          <item_version>0</item_version>
-          <item>10</item>
-        </second>
-      </item>
-      <item>
-        <first>78</first>
-        <second>
-          <count>1</count>
-          <item_version>0</item_version>
-          <item>12</item>
-        </second>
-      </item>
     </dp_reg_nodes>
     <dp_regname_nodes>
-      <count>2</count>
+      <count>0</count>
       <item_version>0</item_version>
-      <item>
-        <first>select_ln86_1_reg_78</first>
-        <second>
-          <count>1</count>
-          <item_version>0</item_version>
-          <item>12</item>
-        </second>
-      </item>
-      <item>
-        <first>select_ln86_reg_72</first>
-        <second>
-          <count>1</count>
-          <item_version>0</item_version>
-          <item>10</item>
-        </second>
-      </item>
     </dp_regname_nodes>
     <dp_reg_phi>
       <count>0</count>
@@ -1739,10 +1586,10 @@
       <count>0</count>
       <item_version>0</item_version>
     </dp_regname_phi>
-    <dp_port_io_nodes class_id="54" tracking_level="0" version="0">
+    <dp_port_io_nodes class_id="50" tracking_level="0" version="0">
       <count>4</count>
       <item_version>0</item_version>
-      <item class_id="55" tracking_level="0" version="0">
+      <item class_id="51" tracking_level="0" version="0">
         <first>x_0_V_read</first>
         <second>
           <count>1</count>
@@ -1803,7 +1650,7 @@
         </second>
       </item>
     </dp_port_io_nodes>
-    <port2core class_id="56" tracking_level="0" version="0">
+    <port2core class_id="52" tracking_level="0" version="0">
       <count>0</count>
       <item_version>0</item_version>
     </port2core>

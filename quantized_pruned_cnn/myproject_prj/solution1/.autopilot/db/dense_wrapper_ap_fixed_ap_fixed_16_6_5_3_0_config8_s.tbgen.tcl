@@ -26,6 +26,7 @@ set C_modelArgList {
 	{ data_9_V_read int 6 regular  }
 	{ data_10_V_read int 6 regular  }
 	{ data_11_V_read int 6 regular  }
+	{ data_12_V_read int 6 regular  }
 	{ data_13_V_read int 6 regular  }
 	{ data_14_V_read int 6 regular  }
 	{ data_15_V_read int 6 regular  }
@@ -130,7 +131,6 @@ set C_modelArgList {
 	{ data_114_V_read int 6 regular  }
 	{ data_115_V_read int 6 regular  }
 	{ data_116_V_read int 6 regular  }
-	{ data_117_V_read int 6 regular  }
 	{ data_118_V_read int 6 regular  }
 	{ data_119_V_read int 6 regular  }
 	{ data_120_V_read int 6 regular  }
@@ -155,6 +155,7 @@ set C_modelArgMapList {[
  	{ "Name" : "data_9_V_read", "interface" : "wire", "bitwidth" : 6, "direction" : "READONLY"} , 
  	{ "Name" : "data_10_V_read", "interface" : "wire", "bitwidth" : 6, "direction" : "READONLY"} , 
  	{ "Name" : "data_11_V_read", "interface" : "wire", "bitwidth" : 6, "direction" : "READONLY"} , 
+ 	{ "Name" : "data_12_V_read", "interface" : "wire", "bitwidth" : 6, "direction" : "READONLY"} , 
  	{ "Name" : "data_13_V_read", "interface" : "wire", "bitwidth" : 6, "direction" : "READONLY"} , 
  	{ "Name" : "data_14_V_read", "interface" : "wire", "bitwidth" : 6, "direction" : "READONLY"} , 
  	{ "Name" : "data_15_V_read", "interface" : "wire", "bitwidth" : 6, "direction" : "READONLY"} , 
@@ -259,7 +260,6 @@ set C_modelArgMapList {[
  	{ "Name" : "data_114_V_read", "interface" : "wire", "bitwidth" : 6, "direction" : "READONLY"} , 
  	{ "Name" : "data_115_V_read", "interface" : "wire", "bitwidth" : 6, "direction" : "READONLY"} , 
  	{ "Name" : "data_116_V_read", "interface" : "wire", "bitwidth" : 6, "direction" : "READONLY"} , 
- 	{ "Name" : "data_117_V_read", "interface" : "wire", "bitwidth" : 6, "direction" : "READONLY"} , 
  	{ "Name" : "data_118_V_read", "interface" : "wire", "bitwidth" : 6, "direction" : "READONLY"} , 
  	{ "Name" : "data_119_V_read", "interface" : "wire", "bitwidth" : 6, "direction" : "READONLY"} , 
  	{ "Name" : "data_120_V_read", "interface" : "wire", "bitwidth" : 6, "direction" : "READONLY"} , 
@@ -288,111 +288,111 @@ set portList {
 	{ data_9_V_read sc_in sc_lv 6 signal 9 } 
 	{ data_10_V_read sc_in sc_lv 6 signal 10 } 
 	{ data_11_V_read sc_in sc_lv 6 signal 11 } 
-	{ data_13_V_read sc_in sc_lv 6 signal 12 } 
-	{ data_14_V_read sc_in sc_lv 6 signal 13 } 
-	{ data_15_V_read sc_in sc_lv 6 signal 14 } 
-	{ data_16_V_read sc_in sc_lv 6 signal 15 } 
-	{ data_17_V_read sc_in sc_lv 6 signal 16 } 
-	{ data_18_V_read sc_in sc_lv 6 signal 17 } 
-	{ data_19_V_read sc_in sc_lv 6 signal 18 } 
-	{ data_20_V_read sc_in sc_lv 6 signal 19 } 
-	{ data_21_V_read sc_in sc_lv 6 signal 20 } 
-	{ data_22_V_read sc_in sc_lv 6 signal 21 } 
-	{ data_23_V_read sc_in sc_lv 6 signal 22 } 
-	{ data_24_V_read sc_in sc_lv 6 signal 23 } 
-	{ data_25_V_read sc_in sc_lv 6 signal 24 } 
-	{ data_26_V_read sc_in sc_lv 6 signal 25 } 
-	{ data_27_V_read sc_in sc_lv 6 signal 26 } 
-	{ data_28_V_read sc_in sc_lv 6 signal 27 } 
-	{ data_29_V_read sc_in sc_lv 6 signal 28 } 
-	{ data_30_V_read sc_in sc_lv 6 signal 29 } 
-	{ data_31_V_read sc_in sc_lv 6 signal 30 } 
-	{ data_32_V_read sc_in sc_lv 6 signal 31 } 
-	{ data_33_V_read sc_in sc_lv 6 signal 32 } 
-	{ data_34_V_read sc_in sc_lv 6 signal 33 } 
-	{ data_35_V_read sc_in sc_lv 6 signal 34 } 
-	{ data_36_V_read sc_in sc_lv 6 signal 35 } 
-	{ data_37_V_read sc_in sc_lv 6 signal 36 } 
-	{ data_38_V_read sc_in sc_lv 6 signal 37 } 
-	{ data_39_V_read sc_in sc_lv 6 signal 38 } 
-	{ data_40_V_read sc_in sc_lv 6 signal 39 } 
-	{ data_41_V_read sc_in sc_lv 6 signal 40 } 
-	{ data_42_V_read sc_in sc_lv 6 signal 41 } 
-	{ data_43_V_read sc_in sc_lv 6 signal 42 } 
-	{ data_44_V_read sc_in sc_lv 6 signal 43 } 
-	{ data_45_V_read sc_in sc_lv 6 signal 44 } 
-	{ data_46_V_read sc_in sc_lv 6 signal 45 } 
-	{ data_47_V_read sc_in sc_lv 6 signal 46 } 
-	{ data_48_V_read sc_in sc_lv 6 signal 47 } 
-	{ data_49_V_read sc_in sc_lv 6 signal 48 } 
-	{ data_50_V_read sc_in sc_lv 6 signal 49 } 
-	{ data_51_V_read sc_in sc_lv 6 signal 50 } 
-	{ data_52_V_read sc_in sc_lv 6 signal 51 } 
-	{ data_53_V_read sc_in sc_lv 6 signal 52 } 
-	{ data_54_V_read sc_in sc_lv 6 signal 53 } 
-	{ data_55_V_read sc_in sc_lv 6 signal 54 } 
-	{ data_56_V_read sc_in sc_lv 6 signal 55 } 
-	{ data_57_V_read sc_in sc_lv 6 signal 56 } 
-	{ data_58_V_read sc_in sc_lv 6 signal 57 } 
-	{ data_59_V_read sc_in sc_lv 6 signal 58 } 
-	{ data_60_V_read sc_in sc_lv 6 signal 59 } 
-	{ data_61_V_read sc_in sc_lv 6 signal 60 } 
-	{ data_62_V_read sc_in sc_lv 6 signal 61 } 
-	{ data_63_V_read sc_in sc_lv 6 signal 62 } 
-	{ data_64_V_read sc_in sc_lv 6 signal 63 } 
-	{ data_65_V_read sc_in sc_lv 6 signal 64 } 
-	{ data_66_V_read sc_in sc_lv 6 signal 65 } 
-	{ data_67_V_read sc_in sc_lv 6 signal 66 } 
-	{ data_68_V_read sc_in sc_lv 6 signal 67 } 
-	{ data_69_V_read sc_in sc_lv 6 signal 68 } 
-	{ data_70_V_read sc_in sc_lv 6 signal 69 } 
-	{ data_71_V_read sc_in sc_lv 6 signal 70 } 
-	{ data_72_V_read sc_in sc_lv 6 signal 71 } 
-	{ data_73_V_read sc_in sc_lv 6 signal 72 } 
-	{ data_74_V_read sc_in sc_lv 6 signal 73 } 
-	{ data_75_V_read sc_in sc_lv 6 signal 74 } 
-	{ data_76_V_read sc_in sc_lv 6 signal 75 } 
-	{ data_77_V_read sc_in sc_lv 6 signal 76 } 
-	{ data_78_V_read sc_in sc_lv 6 signal 77 } 
-	{ data_79_V_read sc_in sc_lv 6 signal 78 } 
-	{ data_80_V_read sc_in sc_lv 6 signal 79 } 
-	{ data_81_V_read sc_in sc_lv 6 signal 80 } 
-	{ data_82_V_read sc_in sc_lv 6 signal 81 } 
-	{ data_83_V_read sc_in sc_lv 6 signal 82 } 
-	{ data_84_V_read sc_in sc_lv 6 signal 83 } 
-	{ data_85_V_read sc_in sc_lv 6 signal 84 } 
-	{ data_86_V_read sc_in sc_lv 6 signal 85 } 
-	{ data_87_V_read sc_in sc_lv 6 signal 86 } 
-	{ data_88_V_read sc_in sc_lv 6 signal 87 } 
-	{ data_89_V_read sc_in sc_lv 6 signal 88 } 
-	{ data_90_V_read sc_in sc_lv 6 signal 89 } 
-	{ data_91_V_read sc_in sc_lv 6 signal 90 } 
-	{ data_92_V_read sc_in sc_lv 6 signal 91 } 
-	{ data_93_V_read sc_in sc_lv 6 signal 92 } 
-	{ data_94_V_read sc_in sc_lv 6 signal 93 } 
-	{ data_95_V_read sc_in sc_lv 6 signal 94 } 
-	{ data_96_V_read sc_in sc_lv 6 signal 95 } 
-	{ data_97_V_read sc_in sc_lv 6 signal 96 } 
-	{ data_98_V_read sc_in sc_lv 6 signal 97 } 
-	{ data_99_V_read sc_in sc_lv 6 signal 98 } 
-	{ data_100_V_read sc_in sc_lv 6 signal 99 } 
-	{ data_101_V_read sc_in sc_lv 6 signal 100 } 
-	{ data_102_V_read sc_in sc_lv 6 signal 101 } 
-	{ data_103_V_read sc_in sc_lv 6 signal 102 } 
-	{ data_104_V_read sc_in sc_lv 6 signal 103 } 
-	{ data_105_V_read sc_in sc_lv 6 signal 104 } 
-	{ data_106_V_read sc_in sc_lv 6 signal 105 } 
-	{ data_107_V_read sc_in sc_lv 6 signal 106 } 
-	{ data_108_V_read sc_in sc_lv 6 signal 107 } 
-	{ data_109_V_read sc_in sc_lv 6 signal 108 } 
-	{ data_110_V_read sc_in sc_lv 6 signal 109 } 
-	{ data_111_V_read sc_in sc_lv 6 signal 110 } 
-	{ data_112_V_read sc_in sc_lv 6 signal 111 } 
-	{ data_113_V_read sc_in sc_lv 6 signal 112 } 
-	{ data_114_V_read sc_in sc_lv 6 signal 113 } 
-	{ data_115_V_read sc_in sc_lv 6 signal 114 } 
-	{ data_116_V_read sc_in sc_lv 6 signal 115 } 
-	{ data_117_V_read sc_in sc_lv 6 signal 116 } 
+	{ data_12_V_read sc_in sc_lv 6 signal 12 } 
+	{ data_13_V_read sc_in sc_lv 6 signal 13 } 
+	{ data_14_V_read sc_in sc_lv 6 signal 14 } 
+	{ data_15_V_read sc_in sc_lv 6 signal 15 } 
+	{ data_16_V_read sc_in sc_lv 6 signal 16 } 
+	{ data_17_V_read sc_in sc_lv 6 signal 17 } 
+	{ data_18_V_read sc_in sc_lv 6 signal 18 } 
+	{ data_19_V_read sc_in sc_lv 6 signal 19 } 
+	{ data_20_V_read sc_in sc_lv 6 signal 20 } 
+	{ data_21_V_read sc_in sc_lv 6 signal 21 } 
+	{ data_22_V_read sc_in sc_lv 6 signal 22 } 
+	{ data_23_V_read sc_in sc_lv 6 signal 23 } 
+	{ data_24_V_read sc_in sc_lv 6 signal 24 } 
+	{ data_25_V_read sc_in sc_lv 6 signal 25 } 
+	{ data_26_V_read sc_in sc_lv 6 signal 26 } 
+	{ data_27_V_read sc_in sc_lv 6 signal 27 } 
+	{ data_28_V_read sc_in sc_lv 6 signal 28 } 
+	{ data_29_V_read sc_in sc_lv 6 signal 29 } 
+	{ data_30_V_read sc_in sc_lv 6 signal 30 } 
+	{ data_31_V_read sc_in sc_lv 6 signal 31 } 
+	{ data_32_V_read sc_in sc_lv 6 signal 32 } 
+	{ data_33_V_read sc_in sc_lv 6 signal 33 } 
+	{ data_34_V_read sc_in sc_lv 6 signal 34 } 
+	{ data_35_V_read sc_in sc_lv 6 signal 35 } 
+	{ data_36_V_read sc_in sc_lv 6 signal 36 } 
+	{ data_37_V_read sc_in sc_lv 6 signal 37 } 
+	{ data_38_V_read sc_in sc_lv 6 signal 38 } 
+	{ data_39_V_read sc_in sc_lv 6 signal 39 } 
+	{ data_40_V_read sc_in sc_lv 6 signal 40 } 
+	{ data_41_V_read sc_in sc_lv 6 signal 41 } 
+	{ data_42_V_read sc_in sc_lv 6 signal 42 } 
+	{ data_43_V_read sc_in sc_lv 6 signal 43 } 
+	{ data_44_V_read sc_in sc_lv 6 signal 44 } 
+	{ data_45_V_read sc_in sc_lv 6 signal 45 } 
+	{ data_46_V_read sc_in sc_lv 6 signal 46 } 
+	{ data_47_V_read sc_in sc_lv 6 signal 47 } 
+	{ data_48_V_read sc_in sc_lv 6 signal 48 } 
+	{ data_49_V_read sc_in sc_lv 6 signal 49 } 
+	{ data_50_V_read sc_in sc_lv 6 signal 50 } 
+	{ data_51_V_read sc_in sc_lv 6 signal 51 } 
+	{ data_52_V_read sc_in sc_lv 6 signal 52 } 
+	{ data_53_V_read sc_in sc_lv 6 signal 53 } 
+	{ data_54_V_read sc_in sc_lv 6 signal 54 } 
+	{ data_55_V_read sc_in sc_lv 6 signal 55 } 
+	{ data_56_V_read sc_in sc_lv 6 signal 56 } 
+	{ data_57_V_read sc_in sc_lv 6 signal 57 } 
+	{ data_58_V_read sc_in sc_lv 6 signal 58 } 
+	{ data_59_V_read sc_in sc_lv 6 signal 59 } 
+	{ data_60_V_read sc_in sc_lv 6 signal 60 } 
+	{ data_61_V_read sc_in sc_lv 6 signal 61 } 
+	{ data_62_V_read sc_in sc_lv 6 signal 62 } 
+	{ data_63_V_read sc_in sc_lv 6 signal 63 } 
+	{ data_64_V_read sc_in sc_lv 6 signal 64 } 
+	{ data_65_V_read sc_in sc_lv 6 signal 65 } 
+	{ data_66_V_read sc_in sc_lv 6 signal 66 } 
+	{ data_67_V_read sc_in sc_lv 6 signal 67 } 
+	{ data_68_V_read sc_in sc_lv 6 signal 68 } 
+	{ data_69_V_read sc_in sc_lv 6 signal 69 } 
+	{ data_70_V_read sc_in sc_lv 6 signal 70 } 
+	{ data_71_V_read sc_in sc_lv 6 signal 71 } 
+	{ data_72_V_read sc_in sc_lv 6 signal 72 } 
+	{ data_73_V_read sc_in sc_lv 6 signal 73 } 
+	{ data_74_V_read sc_in sc_lv 6 signal 74 } 
+	{ data_75_V_read sc_in sc_lv 6 signal 75 } 
+	{ data_76_V_read sc_in sc_lv 6 signal 76 } 
+	{ data_77_V_read sc_in sc_lv 6 signal 77 } 
+	{ data_78_V_read sc_in sc_lv 6 signal 78 } 
+	{ data_79_V_read sc_in sc_lv 6 signal 79 } 
+	{ data_80_V_read sc_in sc_lv 6 signal 80 } 
+	{ data_81_V_read sc_in sc_lv 6 signal 81 } 
+	{ data_82_V_read sc_in sc_lv 6 signal 82 } 
+	{ data_83_V_read sc_in sc_lv 6 signal 83 } 
+	{ data_84_V_read sc_in sc_lv 6 signal 84 } 
+	{ data_85_V_read sc_in sc_lv 6 signal 85 } 
+	{ data_86_V_read sc_in sc_lv 6 signal 86 } 
+	{ data_87_V_read sc_in sc_lv 6 signal 87 } 
+	{ data_88_V_read sc_in sc_lv 6 signal 88 } 
+	{ data_89_V_read sc_in sc_lv 6 signal 89 } 
+	{ data_90_V_read sc_in sc_lv 6 signal 90 } 
+	{ data_91_V_read sc_in sc_lv 6 signal 91 } 
+	{ data_92_V_read sc_in sc_lv 6 signal 92 } 
+	{ data_93_V_read sc_in sc_lv 6 signal 93 } 
+	{ data_94_V_read sc_in sc_lv 6 signal 94 } 
+	{ data_95_V_read sc_in sc_lv 6 signal 95 } 
+	{ data_96_V_read sc_in sc_lv 6 signal 96 } 
+	{ data_97_V_read sc_in sc_lv 6 signal 97 } 
+	{ data_98_V_read sc_in sc_lv 6 signal 98 } 
+	{ data_99_V_read sc_in sc_lv 6 signal 99 } 
+	{ data_100_V_read sc_in sc_lv 6 signal 100 } 
+	{ data_101_V_read sc_in sc_lv 6 signal 101 } 
+	{ data_102_V_read sc_in sc_lv 6 signal 102 } 
+	{ data_103_V_read sc_in sc_lv 6 signal 103 } 
+	{ data_104_V_read sc_in sc_lv 6 signal 104 } 
+	{ data_105_V_read sc_in sc_lv 6 signal 105 } 
+	{ data_106_V_read sc_in sc_lv 6 signal 106 } 
+	{ data_107_V_read sc_in sc_lv 6 signal 107 } 
+	{ data_108_V_read sc_in sc_lv 6 signal 108 } 
+	{ data_109_V_read sc_in sc_lv 6 signal 109 } 
+	{ data_110_V_read sc_in sc_lv 6 signal 110 } 
+	{ data_111_V_read sc_in sc_lv 6 signal 111 } 
+	{ data_112_V_read sc_in sc_lv 6 signal 112 } 
+	{ data_113_V_read sc_in sc_lv 6 signal 113 } 
+	{ data_114_V_read sc_in sc_lv 6 signal 114 } 
+	{ data_115_V_read sc_in sc_lv 6 signal 115 } 
+	{ data_116_V_read sc_in sc_lv 6 signal 116 } 
 	{ data_118_V_read sc_in sc_lv 6 signal 117 } 
 	{ data_119_V_read sc_in sc_lv 6 signal 118 } 
 	{ data_120_V_read sc_in sc_lv 6 signal 119 } 
@@ -420,6 +420,7 @@ set NewPortList {[
  	{ "name": "data_9_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "data_9_V_read", "role": "default" }} , 
  	{ "name": "data_10_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "data_10_V_read", "role": "default" }} , 
  	{ "name": "data_11_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "data_11_V_read", "role": "default" }} , 
+ 	{ "name": "data_12_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "data_12_V_read", "role": "default" }} , 
  	{ "name": "data_13_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "data_13_V_read", "role": "default" }} , 
  	{ "name": "data_14_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "data_14_V_read", "role": "default" }} , 
  	{ "name": "data_15_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "data_15_V_read", "role": "default" }} , 
@@ -524,7 +525,6 @@ set NewPortList {[
  	{ "name": "data_114_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "data_114_V_read", "role": "default" }} , 
  	{ "name": "data_115_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "data_115_V_read", "role": "default" }} , 
  	{ "name": "data_116_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "data_116_V_read", "role": "default" }} , 
- 	{ "name": "data_117_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "data_117_V_read", "role": "default" }} , 
  	{ "name": "data_118_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "data_118_V_read", "role": "default" }} , 
  	{ "name": "data_119_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "data_119_V_read", "role": "default" }} , 
  	{ "name": "data_120_V_read", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "data_120_V_read", "role": "default" }} , 
@@ -538,13 +538,13 @@ set NewPortList {[
  	{ "name": "ap_return", "direction": "out", "datatype": "sc_lv", "bitwidth":10, "type": "signal", "bundle":{"name": "ap_return", "role": "default" }}  ]}
 
 set RtlHierarchyInfo {[
-	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2"],
+	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "",
 		"CDFG" : "dense_wrapper_ap_fixed_ap_fixed_16_6_5_3_0_config8_s",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
 		"Pipeline" : "Aligned", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "1",
-		"VariableLatency" : "0", "ExactLatency" : "7", "EstimateLatencyMin" : "7", "EstimateLatencyMax" : "7",
+		"VariableLatency" : "0", "ExactLatency" : "3", "EstimateLatencyMin" : "3", "EstimateLatencyMax" : "3",
 		"Combinational" : "0",
 		"Datapath" : "1",
 		"ClockEnable" : "0",
@@ -564,6 +564,7 @@ set RtlHierarchyInfo {[
 			{"Name" : "data_9_V_read", "Type" : "None", "Direction" : "I"},
 			{"Name" : "data_10_V_read", "Type" : "None", "Direction" : "I"},
 			{"Name" : "data_11_V_read", "Type" : "None", "Direction" : "I"},
+			{"Name" : "data_12_V_read", "Type" : "None", "Direction" : "I"},
 			{"Name" : "data_13_V_read", "Type" : "None", "Direction" : "I"},
 			{"Name" : "data_14_V_read", "Type" : "None", "Direction" : "I"},
 			{"Name" : "data_15_V_read", "Type" : "None", "Direction" : "I"},
@@ -668,7 +669,6 @@ set RtlHierarchyInfo {[
 			{"Name" : "data_114_V_read", "Type" : "None", "Direction" : "I"},
 			{"Name" : "data_115_V_read", "Type" : "None", "Direction" : "I"},
 			{"Name" : "data_116_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "data_117_V_read", "Type" : "None", "Direction" : "I"},
 			{"Name" : "data_118_V_read", "Type" : "None", "Direction" : "I"},
 			{"Name" : "data_119_V_read", "Type" : "None", "Direction" : "I"},
 			{"Name" : "data_120_V_read", "Type" : "None", "Direction" : "I"},
@@ -678,9 +678,7 @@ set RtlHierarchyInfo {[
 			{"Name" : "data_124_V_read", "Type" : "None", "Direction" : "I"},
 			{"Name" : "data_125_V_read", "Type" : "None", "Direction" : "I"},
 			{"Name" : "data_126_V_read", "Type" : "None", "Direction" : "I"},
-			{"Name" : "data_127_V_read", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.myproject_mul_11s_6s_16_2_1_U623", "Parent" : "0"},
-	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.myproject_mul_11ns_6s_16_2_1_U624", "Parent" : "0"}]}
+			{"Name" : "data_127_V_read", "Type" : "None", "Direction" : "I"}]}]}
 
 
 set ArgLastReadFirstWriteLatency {
@@ -697,6 +695,7 @@ set ArgLastReadFirstWriteLatency {
 		data_9_V_read {Type I LastRead 0 FirstWrite -1}
 		data_10_V_read {Type I LastRead 0 FirstWrite -1}
 		data_11_V_read {Type I LastRead 0 FirstWrite -1}
+		data_12_V_read {Type I LastRead 0 FirstWrite -1}
 		data_13_V_read {Type I LastRead 0 FirstWrite -1}
 		data_14_V_read {Type I LastRead 0 FirstWrite -1}
 		data_15_V_read {Type I LastRead 0 FirstWrite -1}
@@ -801,7 +800,6 @@ set ArgLastReadFirstWriteLatency {
 		data_114_V_read {Type I LastRead 0 FirstWrite -1}
 		data_115_V_read {Type I LastRead 0 FirstWrite -1}
 		data_116_V_read {Type I LastRead 0 FirstWrite -1}
-		data_117_V_read {Type I LastRead 0 FirstWrite -1}
 		data_118_V_read {Type I LastRead 0 FirstWrite -1}
 		data_119_V_read {Type I LastRead 0 FirstWrite -1}
 		data_120_V_read {Type I LastRead 0 FirstWrite -1}
@@ -816,7 +814,7 @@ set ArgLastReadFirstWriteLatency {
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "7", "Max" : "7"}
+	{"Name" : "Latency", "Min" : "3", "Max" : "3"}
 	, {"Name" : "Interval", "Min" : "1", "Max" : "1"}
 ]}
 
@@ -836,6 +834,7 @@ set Spec2ImplPortList {
 	data_9_V_read { ap_none {  { data_9_V_read in_data 0 6 } } }
 	data_10_V_read { ap_none {  { data_10_V_read in_data 0 6 } } }
 	data_11_V_read { ap_none {  { data_11_V_read in_data 0 6 } } }
+	data_12_V_read { ap_none {  { data_12_V_read in_data 0 6 } } }
 	data_13_V_read { ap_none {  { data_13_V_read in_data 0 6 } } }
 	data_14_V_read { ap_none {  { data_14_V_read in_data 0 6 } } }
 	data_15_V_read { ap_none {  { data_15_V_read in_data 0 6 } } }
@@ -940,7 +939,6 @@ set Spec2ImplPortList {
 	data_114_V_read { ap_none {  { data_114_V_read in_data 0 6 } } }
 	data_115_V_read { ap_none {  { data_115_V_read in_data 0 6 } } }
 	data_116_V_read { ap_none {  { data_116_V_read in_data 0 6 } } }
-	data_117_V_read { ap_none {  { data_117_V_read in_data 0 6 } } }
 	data_118_V_read { ap_none {  { data_118_V_read in_data 0 6 } } }
 	data_119_V_read { ap_none {  { data_119_V_read in_data 0 6 } } }
 	data_120_V_read { ap_none {  { data_120_V_read in_data 0 6 } } }

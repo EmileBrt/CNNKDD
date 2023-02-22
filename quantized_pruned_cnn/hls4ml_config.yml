@@ -1,6 +1,6 @@
 Backend: Vivado
 Board: null
-ClockPeriod: 5
+ClockPeriod: 10
 HLSConfig:
   LayerName:
     bn_dense:
@@ -41,5 +41,5 @@ IOType: io_stream
 KerasModel: !keras_model 'quantized_pruned_cnn//keras_model.h5'
 OutputDir: quantized_pruned_cnn/
 ProjectName: myproject
-Stamp: eAED100a
+Stamp: bAf7aEE2
 XilinxPart: xc7z020clg484-1

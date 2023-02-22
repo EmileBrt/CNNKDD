@@ -57,7 +57,7 @@ struct config2 : nnet::conv2d_config {
     static const unsigned out_height = OUT_HEIGHT_2;
     static const unsigned out_width = OUT_WIDTH_2;
     static const unsigned reuse_factor = 1;
-    static const unsigned n_zeros = 14;
+    static const unsigned n_zeros = 7;
     static const bool store_weights_in_bram = false;
     static const unsigned strategy = nnet::latency;
     static const nnet::conv_implementation implementation = nnet::conv_implementation::linebuffer;

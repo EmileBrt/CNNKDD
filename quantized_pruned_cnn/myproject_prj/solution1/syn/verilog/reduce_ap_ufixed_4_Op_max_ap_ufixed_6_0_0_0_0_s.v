@@ -8,85 +8,39 @@
 `timescale 1 ns / 1 ps 
 
 module reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s (
-        ap_clk,
-        ap_rst,
+        ap_ready,
         x_0_V_read,
         x_1_V_read,
         x_2_V_read,
         x_3_V_read,
-        ap_return,
-        ap_ce
+        ap_return
 );
 
 
-input   ap_clk;
-input   ap_rst;
+output   ap_ready;
 input  [5:0] x_0_V_read;
 input  [5:0] x_1_V_read;
 input  [5:0] x_2_V_read;
 input  [5:0] x_3_V_read;
 output  [5:0] ap_return;
-input   ap_ce;
 
-reg[5:0] ap_return;
-
-wire   [5:0] select_ln86_fu_40_p3;
-reg   [5:0] select_ln86_reg_72;
-wire    ap_block_state1_pp0_stage0_iter0;
-wire    ap_block_state2_pp0_stage0_iter1;
-wire    ap_block_pp0_stage0_11001;
-wire   [5:0] select_ln86_1_fu_54_p3;
-reg   [5:0] select_ln86_1_reg_78;
-wire    ap_block_pp0_stage0;
 wire   [0:0] icmp_ln1496_fu_34_p2;
 wire   [0:0] icmp_ln1496_1_fu_48_p2;
+wire   [5:0] select_ln86_fu_40_p3;
+wire   [5:0] select_ln86_1_fu_54_p3;
 wire   [0:0] icmp_ln1496_2_fu_62_p2;
-wire   [5:0] select_ln86_2_fu_66_p3;
-reg    ap_ce_reg;
-reg   [5:0] ap_return_int_reg;
 
-always @ (posedge ap_clk) begin
-    ap_ce_reg <= ap_ce;
-end
+assign ap_ready = 1'b1;
 
-always @ (posedge ap_clk) begin
-    if ((1'b1 == ap_ce_reg)) begin
-        ap_return_int_reg <= select_ln86_2_fu_66_p3;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (((1'b1 == 1'b1) & (1'b0 == ap_block_pp0_stage0_11001))) begin
-        select_ln86_1_reg_78 <= select_ln86_1_fu_54_p3;
-        select_ln86_reg_72 <= select_ln86_fu_40_p3;
-    end
-end
-
-always @ (*) begin
-    if ((1'b0 == ap_ce_reg)) begin
-        ap_return = ap_return_int_reg;
-    end else if ((1'b1 == ap_ce_reg)) begin
-        ap_return = select_ln86_2_fu_66_p3;
-    end
-end
-
-assign ap_block_pp0_stage0 = ~(1'b1 == 1'b1);
-
-assign ap_block_pp0_stage0_11001 = ~(1'b1 == 1'b1);
-
-assign ap_block_state1_pp0_stage0_iter0 = ~(1'b1 == 1'b1);
-
-assign ap_block_state2_pp0_stage0_iter1 = ~(1'b1 == 1'b1);
+assign ap_return = ((icmp_ln1496_2_fu_62_p2[0:0] === 1'b1) ? select_ln86_1_fu_54_p3 : select_ln86_fu_40_p3);
 
 assign icmp_ln1496_1_fu_48_p2 = ((x_2_V_read < x_3_V_read) ? 1'b1 : 1'b0);
 
-assign icmp_ln1496_2_fu_62_p2 = ((select_ln86_reg_72 < select_ln86_1_reg_78) ? 1'b1 : 1'b0);
+assign icmp_ln1496_2_fu_62_p2 = ((select_ln86_fu_40_p3 < select_ln86_1_fu_54_p3) ? 1'b1 : 1'b0);
 
 assign icmp_ln1496_fu_34_p2 = ((x_0_V_read < x_1_V_read) ? 1'b1 : 1'b0);
 
 assign select_ln86_1_fu_54_p3 = ((icmp_ln1496_1_fu_48_p2[0:0] === 1'b1) ? x_3_V_read : x_2_V_read);
-
-assign select_ln86_2_fu_66_p3 = ((icmp_ln1496_2_fu_62_p2[0:0] === 1'b1) ? select_ln86_1_reg_78 : select_ln86_reg_72);
 
 assign select_ln86_fu_40_p3 = ((icmp_ln1496_fu_34_p2[0:0] === 1'b1) ? x_1_V_read : x_0_V_read);
 

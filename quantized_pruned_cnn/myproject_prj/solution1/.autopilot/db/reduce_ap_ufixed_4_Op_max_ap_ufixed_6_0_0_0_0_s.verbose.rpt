@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s'
 ================================================================
-* Date:           Mon Feb 20 14:22:41 2023
+* Date:           Tue Feb 21 11:21:42 2023
 
 * Version:        2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)
 * Project:        myproject_prj
@@ -17,11 +17,11 @@
 ================================================================
 + Timing: 
     * Summary: 
-    +--------+---------+----------+------------+
-    |  Clock |  Target | Estimated| Uncertainty|
-    +--------+---------+----------+------------+
-    |ap_clk  | 5.00 ns | 2.614 ns |   0.62 ns  |
-    +--------+---------+----------+------------+
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  | 10.00 ns | 5.229 ns |   1.25 ns  |
+    +--------+----------+----------+------------+
 
 + Latency: 
     * Summary: 
@@ -29,7 +29,7 @@
     |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline |
     |   min   |   max   |    min   |    max   | min | max |   Type   |
     +---------+---------+----------+----------+-----+-----+----------+
-    |        1|        1| 5.000 ns | 5.000 ns |    1|    1| function |
+    |        0|        0|   0 ns   |   0 ns   |    1|    1| function |
     +---------+---------+----------+----------+-----+-----+----------+
 
     + Detail: 
@@ -53,14 +53,14 @@
 |FIFO             |        -|      -|       -|      -|    -|
 |Instance         |        -|      -|       -|      -|    -|
 |Memory           |        -|      -|       -|      -|    -|
-|Multiplexer      |        -|      -|       -|      9|    -|
-|Register         |        -|      -|      19|      -|    -|
+|Multiplexer      |        -|      -|       -|      -|    -|
+|Register         |        -|      -|       -|      -|    -|
 +-----------------+---------+-------+--------+-------+-----+
-|Total            |        0|      0|      19|     60|    0|
+|Total            |        0|      0|       0|     51|    0|
 +-----------------+---------+-------+--------+-------+-----+
 |Available        |      280|    220|  106400|  53200|    0|
 +-----------------+---------+-------+--------+-------+-----+
-|Utilization (%)  |        0|      0|   ~0   |   ~0  |    0|
+|Utilization (%)  |        0|      0|       0|   ~0  |    0|
 +-----------------+---------+-------+--------+-------+-----+
 
 + Detail: 
@@ -83,33 +83,18 @@
     |icmp_ln1496_1_fu_48_p2  |   icmp   |      0|  0|  11|           6|           6|
     |icmp_ln1496_2_fu_62_p2  |   icmp   |      0|  0|  11|           6|           6|
     |icmp_ln1496_fu_34_p2    |   icmp   |      0|  0|  11|           6|           6|
+    |ap_return               |  select  |      0|  0|   6|           1|           6|
     |select_ln86_1_fu_54_p3  |  select  |      0|  0|   6|           1|           6|
-    |select_ln86_2_fu_66_p3  |  select  |      0|  0|   6|           1|           6|
     |select_ln86_fu_40_p3    |  select  |      0|  0|   6|           1|           6|
     +------------------------+----------+-------+---+----+------------+------------+
     |Total                   |          |      0|  0|  51|          21|          36|
     +------------------------+----------+-------+---+----+------------+------------+
 
     * Multiplexer: 
-    +-----------+----+-----------+-----+-----------+
-    |    Name   | LUT| Input Size| Bits| Total Bits|
-    +-----------+----+-----------+-----+-----------+
-    |ap_return  |   9|          2|    6|         12|
-    +-----------+----+-----------+-----+-----------+
-    |Total      |   9|          2|    6|         12|
-    +-----------+----+-----------+-----+-----------+
+    N/A
 
     * Register: 
-    +----------------------+---+----+-----+-----------+
-    |         Name         | FF| LUT| Bits| Const Bits|
-    +----------------------+---+----+-----+-----------+
-    |ap_ce_reg             |  1|   0|    1|          0|
-    |ap_return_int_reg     |  6|   0|    6|          0|
-    |select_ln86_1_reg_78  |  6|   0|    6|          0|
-    |select_ln86_reg_72    |  6|   0|    6|          0|
-    +----------------------+---+----+-----+-----------+
-    |Total                 | 19|   0|   19|          0|
-    +----------------------+---+----+-----+-----------+
+    N/A
 
 
 
@@ -120,10 +105,8 @@
 +------------+-----+-----+------------+--------------------------------------------------+--------------+
 |  RTL Ports | Dir | Bits|  Protocol  |                   Source Object                  |    C Type    |
 +------------+-----+-----+------------+--------------------------------------------------+--------------+
-|ap_clk      |  in |    1| ap_ctrl_hs | reduce<ap_ufixed,4,Op_max<ap_ufixed<6,0,0,0,0>>> | return value |
-|ap_rst      |  in |    1| ap_ctrl_hs | reduce<ap_ufixed,4,Op_max<ap_ufixed<6,0,0,0,0>>> | return value |
+|ap_ready    | out |    1| ap_ctrl_hs | reduce<ap_ufixed,4,Op_max<ap_ufixed<6,0,0,0,0>>> | return value |
 |ap_return   | out |    6| ap_ctrl_hs | reduce<ap_ufixed,4,Op_max<ap_ufixed<6,0,0,0,0>>> | return value |
-|ap_ce       |  in |    1| ap_ctrl_hs | reduce<ap_ufixed,4,Op_max<ap_ufixed<6,0,0,0,0>>> | return value |
 |x_0_V_read  |  in |    6|   ap_none  |                    x_0_V_read                    |    scalar    |
 |x_1_V_read  |  in |    6|   ap_none  |                    x_1_V_read                    |    scalar    |
 |x_2_V_read  |  in |    6|   ap_none  |                    x_2_V_read                    |    scalar    |
@@ -140,50 +123,47 @@ ExposeGlobal: 0
 ============================================================
 IsTopModel: 0
 ResetActiveHigh: 1
-IsCombinational: 2
-IsDatapathOnly: 1
+IsCombinational: 1
+IsDatapathOnly: 2
 HasWiredReturn: 1
 HasMFsm: 2
 HasVarLatency: 0
 IsPipeline: 1
-IsRtlPipelined: 1
-IsInstanceOverlapped: 1
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
 IsDontTouch: 0
 HasImplIP: 0
 IsGatedGlobalClock: 0
 
 + Individual pipeline summary: 
-  * Pipeline-0: initiation interval (II) = 1, depth = 2
+  * Pipeline-0: initiation interval (II) = 1, depth = 1
 
 
 ============================================================
 + Verbose Summary: Schedule
 ============================================================
-* Number of FSM states : 2
+* Number of FSM states : 1
 * Pipeline : 1
-  Pipeline-0 : II = 1, D = 2, States = { 1 2 }
+  Pipeline-0 : II = 1, D = 1, States = { 1 }
 * Dataflow Pipeline: 0
 
 * FSM state transitions: 
-1 --> 2 
-2 --> 
+1 --> 
 
 * FSM state operations: 
 
-State 1 <SV = 0> <Delay = 2.61>
-ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%x_3_V_read_1 = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %x_3_V_read)" [firmware/nnet_utils/nnet_common.h:45]   --->   Operation 3 'read' 'x_3_V_read_1' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%x_2_V_read_1 = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %x_2_V_read)" [firmware/nnet_utils/nnet_common.h:45]   --->   Operation 4 'read' 'x_2_V_read_1' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%x_1_V_read_1 = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %x_1_V_read)" [firmware/nnet_utils/nnet_common.h:45]   --->   Operation 5 'read' 'x_1_V_read_1' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%x_0_V_read_1 = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %x_0_V_read)" [firmware/nnet_utils/nnet_common.h:45]   --->   Operation 6 'read' 'x_0_V_read_1' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 7 [1/1] (1.42ns)   --->   "%icmp_ln1496 = icmp ult i6 %x_0_V_read_1, %x_1_V_read_1" [firmware/nnet_utils/nnet_common.h:86->firmware/nnet_utils/nnet_common.h:53->firmware/nnet_utils/nnet_common.h:55]   --->   Operation 7 'icmp' 'icmp_ln1496' <Predicate = true> <Delay = 1.42> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 8 [1/1] (1.18ns)   --->   "%select_ln86 = select i1 %icmp_ln1496, i6 %x_1_V_read_1, i6 %x_0_V_read_1" [firmware/nnet_utils/nnet_common.h:86->firmware/nnet_utils/nnet_common.h:53->firmware/nnet_utils/nnet_common.h:55]   --->   Operation 8 'select' 'select_ln86' <Predicate = true> <Delay = 1.18> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.18> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_1 : Operation 9 [1/1] (1.42ns)   --->   "%icmp_ln1496_1 = icmp ult i6 %x_2_V_read_1, %x_3_V_read_1" [firmware/nnet_utils/nnet_common.h:86->firmware/nnet_utils/nnet_common.h:53->firmware/nnet_utils/nnet_common.h:55]   --->   Operation 9 'icmp' 'icmp_ln1496_1' <Predicate = true> <Delay = 1.42> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 10 [1/1] (1.18ns)   --->   "%select_ln86_1 = select i1 %icmp_ln1496_1, i6 %x_3_V_read_1, i6 %x_2_V_read_1" [firmware/nnet_utils/nnet_common.h:86->firmware/nnet_utils/nnet_common.h:53->firmware/nnet_utils/nnet_common.h:55]   --->   Operation 10 'select' 'select_ln86_1' <Predicate = true> <Delay = 1.18> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.18> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-
-State 2 <SV = 1> <Delay = 2.61>
-ST_2 : Operation 11 [1/1] (1.42ns)   --->   "%icmp_ln1496_2 = icmp ult i6 %select_ln86, %select_ln86_1" [firmware/nnet_utils/nnet_common.h:86->firmware/nnet_utils/nnet_common.h:55]   --->   Operation 11 'icmp' 'icmp_ln1496_2' <Predicate = true> <Delay = 1.42> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 12 [1/1] (1.18ns)   --->   "%select_ln86_2 = select i1 %icmp_ln1496_2, i6 %select_ln86_1, i6 %select_ln86" [firmware/nnet_utils/nnet_common.h:86->firmware/nnet_utils/nnet_common.h:55]   --->   Operation 12 'select' 'select_ln86_2' <Predicate = true> <Delay = 1.18> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.18> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_2 : Operation 13 [1/1] (0.00ns)   --->   "ret i6 %select_ln86_2" [firmware/nnet_utils/nnet_common.h:55]   --->   Operation 13 'ret' <Predicate = true> <Delay = 0.00>
+State 1 <SV = 0> <Delay = 5.22>
+ST_1 : Operation 2 [1/1] (0.00ns)   --->   "%x_3_V_read_1 = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %x_3_V_read)" [firmware/nnet_utils/nnet_common.h:45]   --->   Operation 2 'read' 'x_3_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%x_2_V_read_1 = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %x_2_V_read)" [firmware/nnet_utils/nnet_common.h:45]   --->   Operation 3 'read' 'x_2_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%x_1_V_read_1 = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %x_1_V_read)" [firmware/nnet_utils/nnet_common.h:45]   --->   Operation 4 'read' 'x_1_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%x_0_V_read_1 = call i6 @_ssdm_op_Read.ap_auto.i6(i6 %x_0_V_read)" [firmware/nnet_utils/nnet_common.h:45]   --->   Operation 5 'read' 'x_0_V_read_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (1.42ns)   --->   "%icmp_ln1496 = icmp ult i6 %x_0_V_read_1, %x_1_V_read_1" [firmware/nnet_utils/nnet_common.h:86->firmware/nnet_utils/nnet_common.h:53->firmware/nnet_utils/nnet_common.h:55]   --->   Operation 6 'icmp' 'icmp_ln1496' <Predicate = true> <Delay = 1.42> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 7 [1/1] (1.18ns)   --->   "%select_ln86 = select i1 %icmp_ln1496, i6 %x_1_V_read_1, i6 %x_0_V_read_1" [firmware/nnet_utils/nnet_common.h:86->firmware/nnet_utils/nnet_common.h:53->firmware/nnet_utils/nnet_common.h:55]   --->   Operation 7 'select' 'select_ln86' <Predicate = true> <Delay = 1.18> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.18> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 8 [1/1] (1.42ns)   --->   "%icmp_ln1496_1 = icmp ult i6 %x_2_V_read_1, %x_3_V_read_1" [firmware/nnet_utils/nnet_common.h:86->firmware/nnet_utils/nnet_common.h:53->firmware/nnet_utils/nnet_common.h:55]   --->   Operation 8 'icmp' 'icmp_ln1496_1' <Predicate = true> <Delay = 1.42> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 9 [1/1] (1.18ns)   --->   "%select_ln86_1 = select i1 %icmp_ln1496_1, i6 %x_3_V_read_1, i6 %x_2_V_read_1" [firmware/nnet_utils/nnet_common.h:86->firmware/nnet_utils/nnet_common.h:53->firmware/nnet_utils/nnet_common.h:55]   --->   Operation 9 'select' 'select_ln86_1' <Predicate = true> <Delay = 1.18> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.18> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 10 [1/1] (1.42ns)   --->   "%icmp_ln1496_2 = icmp ult i6 %select_ln86, %select_ln86_1" [firmware/nnet_utils/nnet_common.h:86->firmware/nnet_utils/nnet_common.h:55]   --->   Operation 10 'icmp' 'icmp_ln1496_2' <Predicate = true> <Delay = 1.42> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.42> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 11 [1/1] (1.18ns)   --->   "%select_ln86_2 = select i1 %icmp_ln1496_2, i6 %select_ln86_1, i6 %select_ln86" [firmware/nnet_utils/nnet_common.h:86->firmware/nnet_utils/nnet_common.h:55]   --->   Operation 11 'select' 'select_ln86_2' <Predicate = true> <Delay = 1.18> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.18> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "ret i6 %select_ln86_2" [firmware/nnet_utils/nnet_common.h:55]   --->   Operation 12 'ret' <Predicate = true> <Delay = 0.00>
 
 
 ============================================================
@@ -191,9 +171,9 @@ ST_2 : Operation 13 [1/1] (0.00ns)   --->   "ret i6 %select_ln86_2" [firmware/nn
 ============================================================
 STG Binding: 
 ---------------- STG Properties BEGIN ----------------
-- Is combinational: 0
+- Is combinational: 1
 - Is one-state seq: 0
-- Is datapath-only: 1
+- Is datapath-only: 0
 - Is pipelined: 1
 - Is top level: 0
 Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
@@ -207,17 +187,17 @@ Port [ x_3_V_read]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0;
 
 <LifeTime>
 <method=bitvector/>
-x_3_V_read_1  (read  ) [ 000]
-x_2_V_read_1  (read  ) [ 000]
-x_1_V_read_1  (read  ) [ 000]
-x_0_V_read_1  (read  ) [ 000]
-icmp_ln1496   (icmp  ) [ 000]
-select_ln86   (select) [ 011]
-icmp_ln1496_1 (icmp  ) [ 000]
-select_ln86_1 (select) [ 011]
-icmp_ln1496_2 (icmp  ) [ 000]
-select_ln86_2 (select) [ 000]
-ret_ln55      (ret   ) [ 000]
+x_3_V_read_1  (read  ) [ 00]
+x_2_V_read_1  (read  ) [ 00]
+x_1_V_read_1  (read  ) [ 00]
+x_0_V_read_1  (read  ) [ 00]
+icmp_ln1496   (icmp  ) [ 00]
+select_ln86   (select) [ 00]
+icmp_ln1496_1 (icmp  ) [ 00]
+select_ln86_1 (select) [ 00]
+icmp_ln1496_2 (icmp  ) [ 00]
+select_ln86_2 (select) [ 00]
+ret_ln55      (ret   ) [ 00]
 </LifeTime>
 
 <model>
@@ -333,7 +313,7 @@ ret_ln55      (ret   ) [ 000]
 <pin id="41" dir="0" index="0" bw="1" slack="0"/>
 <pin id="42" dir="0" index="1" bw="6" slack="0"/>
 <pin id="43" dir="0" index="2" bw="6" slack="0"/>
-<pin id="44" dir="1" index="3" bw="6" slack="1"/>
+<pin id="44" dir="1" index="3" bw="6" slack="0"/>
 </pin_list>
 <bind>
 <opcode="select(49) " fcode="select"/>
@@ -358,7 +338,7 @@ ret_ln55      (ret   ) [ 000]
 <pin id="55" dir="0" index="0" bw="1" slack="0"/>
 <pin id="56" dir="0" index="1" bw="6" slack="0"/>
 <pin id="57" dir="0" index="2" bw="6" slack="0"/>
-<pin id="58" dir="1" index="3" bw="6" slack="1"/>
+<pin id="58" dir="1" index="3" bw="6" slack="0"/>
 </pin_list>
 <bind>
 <opcode="select(49) " fcode="select"/>
@@ -368,46 +348,26 @@ ret_ln55      (ret   ) [ 000]
 
 <comp id="62" class="1004" name="icmp_ln1496_2_fu_62">
 <pin_list>
-<pin id="63" dir="0" index="0" bw="6" slack="1"/>
-<pin id="64" dir="0" index="1" bw="6" slack="1"/>
+<pin id="63" dir="0" index="0" bw="6" slack="0"/>
+<pin id="64" dir="0" index="1" bw="6" slack="0"/>
 <pin id="65" dir="1" index="2" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <opcode="icmp(45) " fcode="icmp"/>
-<opset="icmp_ln1496_2/2 "/>
+<opset="icmp_ln1496_2/1 "/>
 </bind>
 </comp>
 
-<comp id="66" class="1004" name="select_ln86_2_fu_66">
+<comp id="68" class="1004" name="select_ln86_2_fu_68">
 <pin_list>
-<pin id="67" dir="0" index="0" bw="1" slack="0"/>
-<pin id="68" dir="0" index="1" bw="6" slack="1"/>
-<pin id="69" dir="0" index="2" bw="6" slack="1"/>
-<pin id="70" dir="1" index="3" bw="6" slack="2147483647"/>
+<pin id="69" dir="0" index="0" bw="1" slack="0"/>
+<pin id="70" dir="0" index="1" bw="6" slack="0"/>
+<pin id="71" dir="0" index="2" bw="6" slack="0"/>
+<pin id="72" dir="1" index="3" bw="6" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="select(49) " fcode="select"/>
-<opset="select_ln86_2/2 "/>
-</bind>
-</comp>
-
-<comp id="72" class="1005" name="select_ln86_reg_72">
-<pin_list>
-<pin id="73" dir="0" index="0" bw="6" slack="1"/>
-<pin id="74" dir="1" index="1" bw="6" slack="1"/>
-</pin_list>
-<bind>
-<opset="select_ln86 "/>
-</bind>
-</comp>
-
-<comp id="78" class="1005" name="select_ln86_1_reg_78">
-<pin_list>
-<pin id="79" dir="0" index="0" bw="6" slack="1"/>
-<pin id="80" dir="1" index="1" bw="6" slack="1"/>
-</pin_list>
-<bind>
-<opset="select_ln86_1 "/>
+<opset="select_ln86_2/1 "/>
 </bind>
 </comp>
 
@@ -450,19 +410,15 @@ ret_ln55      (ret   ) [ 000]
 
 <net id="61"><net_src comp="16" pin="2"/><net_sink comp="54" pin=2"/></net>
 
-<net id="71"><net_src comp="62" pin="2"/><net_sink comp="66" pin=0"/></net>
+<net id="66"><net_src comp="40" pin="3"/><net_sink comp="62" pin=0"/></net>
 
-<net id="75"><net_src comp="40" pin="3"/><net_sink comp="72" pin=0"/></net>
+<net id="67"><net_src comp="54" pin="3"/><net_sink comp="62" pin=1"/></net>
 
-<net id="76"><net_src comp="72" pin="1"/><net_sink comp="62" pin=0"/></net>
+<net id="73"><net_src comp="62" pin="2"/><net_sink comp="68" pin=0"/></net>
 
-<net id="77"><net_src comp="72" pin="1"/><net_sink comp="66" pin=2"/></net>
+<net id="74"><net_src comp="54" pin="3"/><net_sink comp="68" pin=1"/></net>
 
-<net id="81"><net_src comp="54" pin="3"/><net_sink comp="78" pin=0"/></net>
-
-<net id="82"><net_src comp="78" pin="1"/><net_sink comp="62" pin=1"/></net>
-
-<net id="83"><net_src comp="78" pin="1"/><net_sink comp="66" pin=1"/></net>
+<net id="75"><net_src comp="40" pin="3"/><net_sink comp="68" pin=2"/></net>
 
 </net_list>
 
@@ -471,10 +427,6 @@ ret_ln55      (ret   ) [ 000]
 
 * FSMD analyzer results:
   - Output states:
-	Port: x_0_V_read | {}
-	Port: x_1_V_read | {}
-	Port: x_2_V_read | {}
-	Port: x_3_V_read | {}
  - Input state : 
 	Port: reduce<ap_ufixed,4,Op_max<ap_ufixed<6,0,0,0,0>>> : x_0_V_read | {1 }
 	Port: reduce<ap_ufixed,4,Op_max<ap_ufixed<6,0,0,0,0>>> : x_1_V_read | {1 }
@@ -484,9 +436,9 @@ ret_ln55      (ret   ) [ 000]
 	State 1
 		select_ln86 : 1
 		select_ln86_1 : 1
-	State 2
-		select_ln86_2 : 1
-		ret_ln55 : 2
+		icmp_ln1496_2 : 2
+		select_ln86_2 : 3
+		ret_ln55 : 4
 
 
 ============================================================
@@ -503,7 +455,7 @@ ret_ln55      (ret   ) [ 000]
 |----------|-------------------------|---------|---------|
 |          |    select_ln86_fu_40    |    0    |    6    |
 |  select  |   select_ln86_1_fu_54   |    0    |    6    |
-|          |   select_ln86_2_fu_66   |    0    |    6    |
+|          |   select_ln86_2_fu_68   |    0    |    6    |
 |----------|-------------------------|---------|---------|
 |          | x_3_V_read_1_read_fu_10 |    0    |    0    |
 |   read   | x_2_V_read_1_read_fu_16 |    0    |    0    |
@@ -517,14 +469,7 @@ Memories:
 N/A
 
 * Register list:
-+--------------------+--------+
-|                    |   FF   |
-+--------------------+--------+
-|select_ln86_1_reg_78|    6   |
-| select_ln86_reg_72 |    6   |
-+--------------------+--------+
-|        Total       |   12   |
-+--------------------+--------+
+N/A
 
 * Multiplexer (MUX) list: 
 |--------|------|------|------|--------|
@@ -542,7 +487,7 @@ N/A
 |  Function |    0   |   51   |
 |   Memory  |    -   |    -   |
 |Multiplexer|    -   |    -   |
-|  Register |   12   |    -   |
+|  Register |    -   |    -   |
 +-----------+--------+--------+
-|   Total   |   12   |   51   |
+|   Total   |    0   |   51   |
 +-----------+--------+--------+

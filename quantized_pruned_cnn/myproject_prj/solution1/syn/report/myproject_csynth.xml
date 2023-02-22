@@ -9,36 +9,36 @@
 <ProductFamily>zynq</ProductFamily>
 <Part>xc7z020-clg484-1</Part>
 <TopModelName>myproject</TopModelName>
-<TargetClockPeriod>5.00</TargetClockPeriod>
-<ClockUncertainty>0.62</ClockUncertainty>
+<TargetClockPeriod>10.00</TargetClockPeriod>
+<ClockUncertainty>1.25</ClockUncertainty>
 </UserAssignments>
 
 <PerformanceEstimates>
 <PipelineType>dataflow</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>5.065</EstimatedClockPeriod>
+<EstimatedClockPeriod>8.560</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>66</Best-caseLatency>
-<Average-caseLatency>66</Average-caseLatency>
-<Worst-caseLatency>66</Worst-caseLatency>
-<Best-caseRealTimeLatency>0.334 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>0.334 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>0.334 us</Worst-caseRealTimeLatency>
-<DataflowPipelineThroughput>45</DataflowPipelineThroughput>
-<Interval-min>45</Interval-min>
-<Interval-max>45</Interval-max>
+<Best-caseLatency>50</Best-caseLatency>
+<Average-caseLatency>50</Average-caseLatency>
+<Worst-caseLatency>50</Worst-caseLatency>
+<Best-caseRealTimeLatency>0.500 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>0.500 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>0.500 us</Worst-caseRealTimeLatency>
+<DataflowPipelineThroughput>42</DataflowPipelineThroughput>
+<Interval-min>42</Interval-min>
+<Interval-max>42</Interval-max>
 </SummaryOfOverallLatency>
 </PerformanceEstimates>
 
 <AreaEstimates>
 <Resources>
 <BRAM_18K>0</BRAM_18K>
-<DSP48E>55</DSP48E>
-<FF>18994</FF>
-<LUT>29630</LUT>
+<DSP48E>61</DSP48E>
+<FF>11004</FF>
+<LUT>28519</LUT>
 <URAM>0</URAM>
 </Resources>
 <AvailableResources>

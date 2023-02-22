@@ -18,7 +18,7 @@ set Initializer $ROMData
 set NumOfStage 1
 set MaxLatency -1
 set DelayBudget 1.617
-set ClkPeriod 5
+set ClkPeriod 10
 set RegisteredInput 0
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_shiftreg] == "ap_gen_simcore_shiftreg"} {

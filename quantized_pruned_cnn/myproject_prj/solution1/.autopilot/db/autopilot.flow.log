@@ -1,11 +1,11 @@
-INFO-FLOW: Workspace /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1 opened at Mon Feb 20 14:21:39 CET 2023
+INFO-FLOW: Workspace /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1 opened at Tue Feb 21 11:20:42 CET 2023
 Execute     config_array_partition -maximum_size 4096 
 INFO: [XFORM 203-101] Allowed max sub elements number after partition is 4096.
 Execute     config_compile -name_max_length 60 
 INFO: [XFORM 203-1161] The maximum of name length is set into 60.
 Execute     set_part xc7z020clg484-1 
 Execute       ap_part_info -name xc7z020clg484-1 -data single -quiet 
-Command       ap_part_info done; 1.32 sec.
+Command       ap_part_info done; 1.26 sec.
 Execute       ap_part_info -name xc7z020clg484-1 -data info 
 Execute       add_library xilinx/zynq/zynq:xc7z020:-clg484:-1 
 Execute         get_default_platform 
@@ -57,7 +57,7 @@ Execute         ap_part_info -name xc7z020-clg484-1 -data info
 Execute         config_chip_info -quiet -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP48E 220} {BRAM 280} {URAM 0} 
 Execute         ap_part_info -name xc7z020-clg484-1 -data info 
 Execute         config_chip_info -quiet -speed slow 
-Command       add_library done; 0.11 sec.
+Command       add_library done; 0.12 sec.
 Execute       add_library xilinx/zynq/zynq_fpv6 
 Execute         get_default_platform 
 Execute         open_platform DefaultPlatform 
@@ -75,10 +75,10 @@ Execute           source /opt/Xilinx/Vivado/2019.2/common/technology/xilinx/comm
 INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
 Execute       ap_part_info -name xc7z020-clg484-1 -data info 
 Execute       get_default_platform 
-Command     set_part done; 1.5 sec.
-Execute     create_clock -period 5 -name default 
-Execute       config_clock -quiet -name default -period 5 -default=false 
-INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+Command     set_part done; 1.45 sec.
+Execute     create_clock -period 10 -name default 
+Execute       config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 Execute     csynth_design 
 Execute       get_config_compile -dump_cfg 
 Execute       get_config_compile -effort 
@@ -105,29 +105,29 @@ INFO-FLOW: Running: GCC PP
 INFO-FLOW: Source preprocessing
 Execute         clang  -fno-limit-debug-info -gcc-toolchain "/opt/Xilinx/Vivado/2019.2/lnx64/tools/gcc" -hls  -fno-exceptions  -D__llvm__  -E "firmware/myproject.cpp"   -std=c++0x  -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/Xilinx/Vivado/2019.2/common/technology/autopilot" -I "/opt/Xilinx/Vivado/2019.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "/home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject.pp.0.cpp" 
 INFO-FLOW: exec /opt/Xilinx/Vivado/2019.2/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /opt/Xilinx/Vivado/2019.2/lnx64/tools/gcc -hls -fno-exceptions -D__llvm__ -E firmware/myproject.cpp -std=c++0x -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /opt/Xilinx/Vivado/2019.2/common/technology/autopilot -I /opt/Xilinx/Vivado/2019.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject.pp.0.cpp
-Command         clang done; 1.32 sec.
+Command         clang done; 1.31 sec.
 Execute         tidy_31 xilinx-xfmat-array-geometry /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject.pp.0.cpp std=c++0x 
 INFO-FLOW: exec /opt/Xilinx/Vivado/2019.2/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-xfmat-array-geometry -quiet -fix /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject.pp.0.cpp -- -std=c++0x -fhls -ferror-limit=0
-Command         tidy_31 done; 1.15 sec.
+Command         tidy_31 done; 1.13 sec.
 INFO-FLOW: Syntax Checking before pre-processing...
 Execute         clang -syntaxcheck -src /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject.pp.0.cpp  -fno-limit-debug-info -gcc-toolchain "/opt/Xilinx/Vivado/2019.2/lnx64/tools/gcc" -hls  -std=c++0x  -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/Xilinx/Vivado/2019.2/common/technology/autopilot" -I "/opt/Xilinx/Vivado/2019.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  "/home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject.pp.0.cpp"  -o "/home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/useless.bc"  
 INFO-FLOW: exec /opt/Xilinx/Vivado/2019.2/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /opt/Xilinx/Vivado/2019.2/lnx64/tools/gcc -hls -std=c++0x -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /opt/Xilinx/Vivado/2019.2/common/technology/autopilot -I /opt/Xilinx/Vivado/2019.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject.pp.0.cpp -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/useless.bc
-Command         clang done; 1.93 sec.
-INFO-FLOW: Done: GCC PP time: 4.4 seconds per iteration
+Command         clang done; 1.92 sec.
+INFO-FLOW: Done: GCC PP time: 4.3 seconds per iteration
 Execute         source /opt/Xilinx/Vivado/2019.2/tps/tcl/tcllib1.11.1/yaml/huddle.tcl 
 Execute         source /opt/Xilinx/Vivado/2019.2/tps/tcl/tcllib1.11.1/yaml/json2huddle.tcl 
 Execute           source /opt/Xilinx/Vivado/2019.2/tps/tcl/tcllib1.11.1/try/try.tcl 
 Execute         list_core -type functional_unit 
 Execute         tidy_31 xilinx-systemc-detector /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject.pp.0.cpp std=c++0x -directive=/home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/.systemc_flag 
 INFO-FLOW: exec /opt/Xilinx/Vivado/2019.2/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-systemc-detector -import-directive=/home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/.systemc_flag -quiet -fix-errors /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject.pp.0.cpp -- -std=c++0x -fhls -ferror-limit=0
-Command         tidy_31 done; 1.06 sec.
+Command         tidy_31 done; 1.04 sec.
 INFO-FLOW: Running: tidy-3.1 CDT preprocess
 Execute         tidy_31 xilinx-directive2pragma /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject.pp.0.cpp std=c++0x -directive=/home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/all.directive.json 
 INFO-FLOW: exec /opt/Xilinx/Vivado/2019.2/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-directive2pragma -import-directive=/home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/all.directive.json -quiet -fix-errors /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject.pp.0.cpp -- -std=c++0x -fhls -ferror-limit=0
-Command         tidy_31 done; 1.05 sec.
+Command         tidy_31 done; 1.02 sec.
 Execute         get_config_dataflow -strict_mode 
 Execute         ap_eval exec -ignorestderr /opt/Xilinx/Vivado/2019.2/lnx64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=/home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/xilinx-dataflow-lawyer.myproject.pp.0.cpp.diag.yml /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject.pp.0.cpp -- -std=c++0x -fhls -ferror-limit=0 -fstrict-dataflow > /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/xilinx-dataflow-lawyer.myproject.pp.0.cpp.out.log 2> /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/xilinx-dataflow-lawyer.myproject.pp.0.cpp.err.log 
-Command         ap_eval done; 1.21 sec.
+Command         ap_eval done; 1.17 sec.
 Execute         source /opt/Xilinx/Vivado/2019.2/tps/tcl/tcllib1.11.1/yaml/yaml.tcl 
 Execute           source /opt/Xilinx/Vivado/2019.2/tps/tcl/tcllib1.11.1/cmdline/cmdline.tcl 
 WARNING: [HLS 214-114] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region: firmware/nnet_utils/nnet_dense_latency.h:64:9
@@ -146,33 +146,33 @@ Execute         send_msg_by_id WARNING @200-471@%s%s 12 firmware/myproject.cpp
 WARNING: [HLS 200-471] Dataflow form checks found 12 issue(s) in file firmware/myproject.cpp
 Execute         tidy_31 -errorcheck xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject.pp.0.cpp std=c++0x 
 Execute           ap_eval exec -ignorestderr /opt/Xilinx/Vivado/2019.2/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -export-fixes=/home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/tidy-3.1.myproject.pp.0.cpp.diag.yml -header-filter=.* -checks=-*,xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry -quiet -fix-errors /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject.pp.0.cpp -- -std=c++0x -fhls -ferror-limit=0 > /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/tidy-3.1.myproject.pp.0.cpp.out.log 2> /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/tidy-3.1.myproject.pp.0.cpp.err.log 
-Command           ap_eval done; 1.86 sec.
+Command           ap_eval done; 1.84 sec.
 Execute           ap_eval exec -ignorestderr /opt/Xilinx/Vivado/2019.2/lnx64/tools/clang-3.9-csynth/bin/xilinx-legacy-rewriter /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject.pp.0.cpp -- -std=c++0x -fhls -ferror-limit=0 > /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/xilinx-legacy-rewriter.myproject.pp.0.cpp.out.log 2> /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/xilinx-legacy-rewriter.myproject.pp.0.cpp.err.log 
-Command           ap_eval done; 0.93 sec.
-Command         tidy_31 done; 2.85 sec.
-INFO-FLOW: Done: tidy-3.1 CDT preprocess time: 5.2 seconds per iteration
+Command           ap_eval done; 0.91 sec.
+Command         tidy_31 done; 2.81 sec.
+INFO-FLOW: Done: tidy-3.1 CDT preprocess time: 5.1 seconds per iteration
 INFO-FLOW: Pragma Handling...
 Execute         tidy_31 xilinx-ssdm-intrinsics-arguments /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject.pragma.1.cpp std=c++0x 
 INFO-FLOW: exec /opt/Xilinx/Vivado/2019.2/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-ssdm-intrinsics-arguments -quiet -fix-errors /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject.pragma.1.cpp -- -std=c++0x -fhls -ferror-limit=0
-Command         tidy_31 done; 2.29 sec.
+Command         tidy_31 done; 2.26 sec.
 Execute         ap_part_info -name xc7z020-clg484-1 -data info 
 INFO-FLOW: Processing labels
 Execute         clang -src /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject.pragma.2.cpp  -fno-limit-debug-info -gcc-toolchain /opt/Xilinx/Vivado/2019.2/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "/home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject.pragma.2.cpp"  -std=c++0x  -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/Xilinx/Vivado/2019.2/common/technology/autopilot" -I "/opt/Xilinx/Vivado/2019.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o "/home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject.bc" 
 INFO-FLOW: exec /opt/Xilinx/Vivado/2019.2/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /opt/Xilinx/Vivado/2019.2/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject.pragma.2.cpp -std=c++0x -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /opt/Xilinx/Vivado/2019.2/common/technology/autopilot -I /opt/Xilinx/Vivado/2019.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject.bc
-Command         clang done; 2.04 sec.
+Command         clang done; 2.02 sec.
 INFO-FLOW: Linking Debug ...
 Execute         llvm-ld /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject.g.bc -hls-opt -except-internalize myproject -L/opt/Xilinx/Vivado/2019.2/lnx64/lib -lhlsm -lhlsmc++ -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/a.g 
-Command         llvm-ld done; 0.96 sec.
-INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 940.711 ; gain = 526.004 ; free physical = 25462 ; free virtual = 28130
-INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 940.711 ; gain = 526.004 ; free physical = 25462 ; free virtual = 28131
+Command         llvm-ld done; 1 sec.
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 940.711 ; gain = 526.004 ; free physical = 23624 ; free virtual = 26140
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 940.711 ; gain = 526.004 ; free physical = 23624 ; free virtual = 26140
 Execute         get_config_sdx -target 
 Execute         opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
 Execute           cleanup_all_models 
 INFO: [HLS 200-10] Starting code transformations ...
 Execute           transform -promote-dbg-pointer /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/a.pp.bc -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/a.pp.0.bc -f 
-Command           transform done; 0.13 sec.
+Command           transform done; 0.12 sec.
 Execute           llvm-ld /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/a.pp.0.bc -disable-opt -L/opt/Xilinx/Vivado/2019.2/lnx64/lib -lfloatconversion -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/a.g.0 
-Command           llvm-ld done; 1.45 sec.
+Command           llvm-ld done; 1.46 sec.
 INFO-FLOW: Running Standard Transforms...
 Execute           transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -prune-eh -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top myproject -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/a.g.0.bc -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/a.g.1.bc -f -phase std-opt 
 INFO: [HLS 200-489] Unrolling loop 'ResPack' (firmware/nnet_utils/nnet_dense_stream.h:60) in function 'void nnet::dense<nnet::array<ap_fixed<6, 0, (ap_q_mode)5, (ap_o_mode)3, 0>, 128u>, nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 1u>, config8>(hls::stream<FORWARD_REFERENCE>&, hls::stream<FORWARD_REFERENCE>&, FORWARD_REFERENCE::weight_t*, FORWARD_REFERENCE::bias_t*)' completely with a factor of 1.
@@ -211,7 +211,7 @@ INFO: [XFORM 203-603] Inlining function 'nnet::array<ap_fixed<16, 6, (ap_q_mode)
 INFO: [XFORM 203-603] Inlining function 'nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 1u>::operator[]' into 'nnet::linear<nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 1u>, nnet::array<ap_fixed<16, 6, (ap_q_mode)0, (ap_o_mode)0, 0>, 1u>, linear_config9>' (firmware/nnet_utils/nnet_activation_stream.h:47).
 INFO: [XFORM 203-603] Inlining function 'nnet::array<ap_fixed<16, 6, (ap_q_mode)0, (ap_o_mode)0, 0>, 1u>::operator[]' into 'nnet::linear<nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 1u>, nnet::array<ap_fixed<16, 6, (ap_q_mode)0, (ap_o_mode)0, 0>, 1u>, linear_config9>' (firmware/nnet_utils/nnet_activation_stream.h:47).
 Command           transform done; 1.15 sec.
-INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 946.219 ; gain = 531.512 ; free physical = 25359 ; free virtual = 28037
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 946.219 ; gain = 531.512 ; free physical = 23512 ; free virtual = 26044
 INFO: [HLS 200-10] Checking synthesizability ...
 INFO-FLOW: Checking Synthesizability 1/2..
 Execute           transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -pag -array-normalize -instcombine -dce -warn-fifo-pointer -array-seg-normalize -instcombine -dce -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -resolve-double-ptr -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce -check-dspbuiltin /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/a.g.1.bc -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/a.g.2.prechk.bc -f 
@@ -228,11 +228,11 @@ INFO: [XFORM 203-602] Inlining function 'nnet::Op_max<ap_ufixed<6, 0, (ap_q_mode
 INFO: [XFORM 203-602] Inlining function 'nnet::reduce<ap_ufixed<6, 0, (ap_q_mode)0, (ap_o_mode)0, 0>, 4, nnet::Op_max<ap_ufixed<6, 0, (ap_q_mode)0, (ap_o_mode)0, 0> > >' into 'nnet::pooling2d_cl<nnet::array<ap_ufixed<6, 0, (ap_q_mode)0, (ap_o_mode)0, 0>, 32u>, nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 32u>, config5>' (firmware/nnet_utils/nnet_pooling_stream.h:22->firmware/nnet_utils/nnet_pooling_stream.h:195->firmware/nnet_utils/nnet_pooling_stream.h:238->firmware/nnet_utils/nnet_pooling_stream.h:251) automatically.
 INFO: [XFORM 203-602] Inlining function '__hls_fptosi_double_i32' into 'nnet::dense_wrapper<ap_fixed<6, 0, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config8>' (firmware/nnet_utils/nnet_dense_latency.h:56->firmware/nnet_utils/nnet_dense_stream.h:22) automatically.
 INFO: [XFORM 203-602] Inlining function 'nnet::cast<ap_fixed<6, 0, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config8>' into 'nnet::dense_wrapper<ap_fixed<6, 0, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config8>' (firmware/nnet_utils/nnet_dense_latency.h:125->firmware/nnet_utils/nnet_dense_stream.h:22) automatically.
-Command           transform done; 0.51 sec.
+Command           transform done; 0.52 sec.
 INFO-FLOW: Checking Synthesizability 2/2..
 Execute           transform -syn-check /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/a.g.2.prechk.bc -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/a.g.2.bc -f -phase syn-check 
-Command           transform done; 0.13 sec.
-INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1068.711 ; gain = 654.004 ; free physical = 25306 ; free virtual = 27987
+Command           transform done; 0.14 sec.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1068.711 ; gain = 654.004 ; free physical = 23458 ; free virtual = 25994
 INFO-FLOW: Compiler optimizing ...
 INFO-FLOW: Share syncheck's 1.bc for syn flow: copy /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/a.g.1.bc to /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/a.o.1.bc
 INFO-FLOW: Presyn 1...
@@ -349,15 +349,15 @@ INFO: [XFORM 203-712] Applying dataflow to function 'myproject', detected/extrac
 	 'nnet::normalize<nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 32u>, nnet::array<ap_fixed<6, 0, (ap_q_mode)5, (ap_o_mode)3, 0>, 128u>, config7>'
 	 'nnet::dense<nnet::array<ap_fixed<6, 0, (ap_q_mode)5, (ap_o_mode)3, 0>, 128u>, nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 1u>, config8>'
 	 'nnet::linear<nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 1u>, nnet::array<ap_fixed<16, 6, (ap_q_mode)0, (ap_o_mode)0, 0>, 1u>, linear_config9>'.
-Command           transform done; 10.47 sec.
+Command           transform done; 9.97 sec.
 INFO-FLOW: Presyn 2...
 Execute           transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -norm-name /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/a.o.1.tmp.bc -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/a.o.2.bc -f -phase presyn 
 INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (firmware/nnet_utils/nnet_activation_stream.h:60:74) to (firmware/nnet_utils/nnet_activation_stream.h:60:68) in function 'nnet::relu<nnet::array<ap_fixed<6, 0, (ap_q_mode)0, (ap_o_mode)0, 0>, 32u>, nnet::array<ap_ufixed<6, 0, (ap_q_mode)0, (ap_o_mode)0, 0>, 32u>, relu_config4>'... converting 97 basic blocks.
 INFO: [XFORM 203-11] Balancing expressions in function 'nnet::pooling2d_cl<nnet::array<ap_ufixed<6, 0, (ap_q_mode)0, (ap_o_mode)0, 0>, 32u>, nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 32u>, config5>' (firmware/nnet_utils/nnet_pooling_stream.h:22:5)...3 expression(s) balanced.
-INFO: [XFORM 203-11] Balancing expressions in function 'nnet::dense_wrapper<ap_fixed<6, 0, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config8>' (firmware/nnet_utils/nnet_mult.h:20:9)...127 expression(s) balanced.
-INFO: [XFORM 203-11] Balancing expressions in function 'nnet::conv_2d_cl<nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 1u>, nnet::array<ap_fixed<6, 0, (ap_q_mode)5, (ap_o_mode)3, 0>, 32u>, config2>' (firmware/nnet_utils/nnet_conv_stream.h:45:5)...274 expression(s) balanced.
-Command           transform done; 4.56 sec.
-INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 1100.719 ; gain = 686.012 ; free physical = 25178 ; free virtual = 27862
+INFO: [XFORM 203-11] Balancing expressions in function 'nnet::dense_wrapper<ap_fixed<6, 0, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config8>' (firmware/nnet_utils/nnet_mult.h:20:9)...126 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'nnet::conv_2d_cl<nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 1u>, nnet::array<ap_fixed<6, 0, (ap_q_mode)5, (ap_o_mode)3, 0>, 32u>, config2>' (firmware/nnet_utils/nnet_conv_stream.h:45:5)...267 expression(s) balanced.
+Command           transform done; 4.53 sec.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1100.719 ; gain = 686.012 ; free physical = 23335 ; free virtual = 25875
 INFO-FLOW: Building ssdm...
 Execute           transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -dce -reset-lda -loop-simplify -indvars -licm -loop-dep -loop-bound -licm -loop-simplify -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -ptrLegalization -axi4-lower -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -bitwidthmin -deadargelim -dce -canonicalize-dataflow -dce -scalar-propagation -deadargelim -globaldce -mem2reg -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -complex-op-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -load-elim -bitop-lower -loop-rewind -pointer-simplify -dce -cfgopt -dce -loop-bound -loop-dep -read-loop-dep -dce -check-stream -norm-name -legalize -validate-dataflow -inst-clarity -bitwidth -dump-loop-dep-to-ir -check-all-ssdm -cdfg-build /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/a.o.2.bc -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
 INFO: [XFORM 203-541] Flattening a loop nest 'ReadInputHeight' (firmware/nnet_utils/nnet_pooling_stream.h:233:80) in function 'nnet::pooling2d_cl<nnet::array<ap_ufixed<6, 0, (ap_q_mode)0, (ap_o_mode)0, 0>, 32u>, nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 32u>, config5>'.
@@ -373,11 +373,11 @@ WARNING: [XFORM 203-631] Renaming function 'nnet::linear<nnet::array<ap_fixed<16
 WARNING: [XFORM 203-631] Renaming function 'nnet::dense_wrapper<ap_fixed<6, 0, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, config8>' to 'dense_wrapper<ap_fixed,ap_fixed<16,6,5,3,0>,config8>' (firmware/nnet_utils/nnet_mult.h:20:9)
 WARNING: [XFORM 203-631] Renaming function 'nnet::dense<nnet::array<ap_fixed<6, 0, (ap_q_mode)5, (ap_o_mode)3, 0>, 128u>, nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 1u>, config8>' to 'dense<array,array<ap_fixed<16,6,5,3,0>,1u>,config8>' (firmware/nnet_utils/nnet_dense_stream.h:41:1)
 WARNING: [XFORM 203-631] Renaming function 'nnet::conv_2d_cl<nnet::array<ap_fixed<16, 6, (ap_q_mode)5, (ap_o_mode)3, 0>, 1u>, nnet::array<ap_fixed<6, 0, (ap_q_mode)5, (ap_o_mode)3, 0>, 32u>, config2>' to 'conv_2d_cl<array,array<ap_fixed,32u>,config2>' (firmware/nnet_utils/nnet_conv_stream.h:45:5)
-Command           transform done; 8.22 sec.
-INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:44 ; elapsed = 00:00:45 . Memory (MB): peak = 1276.715 ; gain = 862.008 ; free physical = 25073 ; free virtual = 27761
+Command           transform done; 8.21 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:43 ; elapsed = 00:00:44 . Memory (MB): peak = 1212.715 ; gain = 798.008 ; free physical = 23217 ; free virtual = 25769
 INFO-FLOW: Finish building internal data model.
-Command         opt_and_import_c done; 26.65 sec.
-Command       elaborate done; 43.12 sec.
+Command         opt_and_import_c done; 26.11 sec.
+Command       elaborate done; 42.39 sec.
 Execute       autosyn -from_csynth_design=1 
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO-FLOW: Synthesizing C/C++ design ...
@@ -511,7 +511,7 @@ Execute         set_default_model Block__proc
 Execute         schedule -model Block__proc 
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 44.87 seconds; current allocated memory: 482.116 MB.
+INFO: [HLS 200-111]  Elapsed time: 44.09 seconds; current allocated memory: 481.997 MB.
 Execute         syn_report -verbosereport -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/Block_proc.verbose.sched.rpt 
 Execute         db_write -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/Block_proc.sched.adb -f 
 INFO-FLOW: Finish scheduling Block__proc.
@@ -523,7 +523,7 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.01 seconds; current allocated memory: 482.160 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.01 seconds; current allocated memory: 482.041 MB.
 Execute         syn_report -verbosereport -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/Block_proc.verbose.bind.rpt 
 Execute         db_write -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/Block_proc.bind.adb -f 
 INFO-FLOW: Finish binding Block__proc.
@@ -536,7 +536,7 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining function 'shift_line_buffer<array<ap_fixed,1u>,config2>'.
 INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 1.
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 0.03 seconds; current allocated memory: 482.258 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.02 seconds; current allocated memory: 482.140 MB.
 Execute         syn_report -verbosereport -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/shift_line_buffer_array_ap_fixed_1u_config2_s.verbose.sched.rpt 
 Execute         db_write -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/shift_line_buffer_array_ap_fixed_1u_config2_s.sched.adb -f 
 INFO-FLOW: Finish scheduling shift_line_buffer<array<ap_fixed,1u>,config2>.
@@ -548,7 +548,7 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.03 seconds; current allocated memory: 482.366 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.03 seconds; current allocated memory: 482.246 MB.
 Execute         syn_report -verbosereport -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/shift_line_buffer_array_ap_fixed_1u_config2_s.verbose.bind.rpt 
 Execute         db_write -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/shift_line_buffer_array_ap_fixed_1u_config2_s.bind.adb -f 
 INFO-FLOW: Finish binding shift_line_buffer<array<ap_fixed,1u>,config2>.
@@ -559,18 +559,12 @@ Execute         set_default_model conv_2d_cl<array,array<ap_fixed,32u>,config2>
 Execute         schedule -model conv_2d_cl<array,array<ap_fixed,32u>,config2> 
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'ReadInputHeight_ReadInputWidth'.
-INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 8.
-WARNING: [SCHED 204-21] Estimated clock period (5.06475ns) exceeds the target (target clock period: 5ns, clock uncertainty: 0.625ns, effective delay budget: 4.375ns).
-WARNING: [SCHED 204-21] The critical path in module 'conv_2d_cl_array_array_ap_fixed_32u_config2_s' consists of the following:
-	'load' operation ('sX_1_loc_1_load', firmware/nnet_utils/nnet_conv_stream.h:308->firmware/nnet_utils/nnet_conv2d_stream.h:85->firmware/nnet_utils/nnet_conv2d_stream.h:103) on local variable 'sX_1_loc_1' [837]  (0 ns)
-	'add' operation ('add_ln308', firmware/nnet_utils/nnet_conv_stream.h:308->firmware/nnet_utils/nnet_conv2d_stream.h:85->firmware/nnet_utils/nnet_conv2d_stream.h:103) [840]  (2.55 ns)
-	'select' operation ('select_ln308', firmware/nnet_utils/nnet_conv_stream.h:308->firmware/nnet_utils/nnet_conv2d_stream.h:85->firmware/nnet_utils/nnet_conv2d_stream.h:103) [841]  (0.698 ns)
-	'store' operation ('sX_1_loc_1_write_ln308', firmware/nnet_utils/nnet_conv_stream.h:308->firmware/nnet_utils/nnet_conv2d_stream.h:85->firmware/nnet_utils/nnet_conv2d_stream.h:103) of variable 'select_ln308', firmware/nnet_utils/nnet_conv_stream.h:308->firmware/nnet_utils/nnet_conv2d_stream.h:85->firmware/nnet_utils/nnet_conv2d_stream.h:103 on local variable 'sX_1_loc_1' [843]  (1.81 ns)
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 5.
 INFO: [SCHED 204-11] Finished scheduling.
-Command         schedule done; 0.52 sec.
-INFO: [HLS 200-111]  Elapsed time: 0.54 seconds; current allocated memory: 486.078 MB.
+Command         schedule done; 0.39 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.41 seconds; current allocated memory: 485.423 MB.
 Execute         syn_report -verbosereport -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/conv_2d_cl_array_array_ap_fixed_32u_config2_s.verbose.sched.rpt 
-Command         syn_report done; 0.34 sec.
+Command         syn_report done; 0.33 sec.
 Execute         db_write -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/conv_2d_cl_array_array_ap_fixed_32u_config2_s.sched.adb -f 
 Command         db_write done; 0.27 sec.
 INFO-FLOW: Finish scheduling conv_2d_cl<array,array<ap_fixed,32u>,config2>.
@@ -584,9 +578,9 @@ INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Starting global binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
 Command         bind done; 0.24 sec.
-INFO: [HLS 200-111]  Elapsed time: 0.85 seconds; current allocated memory: 490.614 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.84 seconds; current allocated memory: 489.824 MB.
 Execute         syn_report -verbosereport -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/conv_2d_cl_array_array_ap_fixed_32u_config2_s.verbose.bind.rpt 
-Command         syn_report done; 0.66 sec.
+Command         syn_report done; 0.67 sec.
 Execute         db_write -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/conv_2d_cl_array_array_ap_fixed_32u_config2_s.bind.adb -f 
 Command         db_write done; 0.27 sec.
 INFO-FLOW: Finish binding conv_2d_cl<array,array<ap_fixed,32u>,config2>.
@@ -599,7 +593,7 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'LinearActLoop'.
 INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 0.98 seconds; current allocated memory: 491.130 MB.
+INFO: [HLS 200-111]  Elapsed time: 1 seconds; current allocated memory: 490.400 MB.
 Execute         syn_report -verbosereport -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/linear_array_array_ap_fixed_32u_linear_config3_s.verbose.sched.rpt 
 Execute         db_write -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/linear_array_array_ap_fixed_32u_linear_config3_s.sched.adb -f 
 INFO-FLOW: Finish scheduling linear<array,array<ap_fixed,32u>,linear_config3>.
@@ -611,7 +605,7 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.08 seconds; current allocated memory: 492.117 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.08 seconds; current allocated memory: 491.400 MB.
 Execute         syn_report -verbosereport -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/linear_array_array_ap_fixed_32u_linear_config3_s.verbose.bind.rpt 
 Execute         db_write -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/linear_array_array_ap_fixed_32u_linear_config3_s.bind.adb -f 
 INFO-FLOW: Finish binding linear<array,array<ap_fixed,32u>,linear_config3>.
@@ -624,7 +618,7 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'ReLUActLoop'.
 INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 0.14 seconds; current allocated memory: 492.589 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.14 seconds; current allocated memory: 491.826 MB.
 Execute         syn_report -verbosereport -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/relu_array_array_ap_ufixed_32u_relu_config4_s.verbose.sched.rpt 
 Execute         db_write -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/relu_array_array_ap_ufixed_32u_relu_config4_s.sched.adb -f 
 INFO-FLOW: Finish scheduling relu<array,array<ap_ufixed,32u>,relu_config4>.
@@ -636,7 +630,7 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.15 seconds; current allocated memory: 493.885 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.15 seconds; current allocated memory: 493.096 MB.
 Execute         syn_report -verbosereport -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/relu_array_array_ap_ufixed_32u_relu_config4_s.verbose.bind.rpt 
 Execute         db_write -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/relu_array_array_ap_ufixed_32u_relu_config4_s.bind.adb -f 
 INFO-FLOW: Finish binding relu<array,array<ap_ufixed,32u>,relu_config4>.
@@ -649,7 +643,7 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining function 'shift_line_buffer<array<ap_ufixed,32u>,config5>'.
 INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 1.
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 0.21 seconds; current allocated memory: 494.714 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.23 seconds; current allocated memory: 493.902 MB.
 Execute         syn_report -verbosereport -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/shift_line_buffer_array_ap_ufixed_32u_config5_s.verbose.sched.rpt 
 Execute         db_write -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/shift_line_buffer_array_ap_ufixed_32u_config5_s.sched.adb -f 
 INFO-FLOW: Finish scheduling shift_line_buffer<array<ap_ufixed,32u>,config5>.
@@ -661,7 +655,7 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.18 seconds; current allocated memory: 495.699 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.18 seconds; current allocated memory: 494.885 MB.
 Execute         syn_report -verbosereport -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/shift_line_buffer_array_ap_ufixed_32u_config5_s.verbose.bind.rpt 
 Execute         db_write -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/shift_line_buffer_array_ap_ufixed_32u_config5_s.bind.adb -f 
 INFO-FLOW: Finish binding shift_line_buffer<array<ap_ufixed,32u>,config5>.
@@ -672,9 +666,9 @@ Execute         set_default_model reduce<ap_ufixed,4,Op_max<ap_ufixed<6,0,0,0,0>
 Execute         schedule -model reduce<ap_ufixed,4,Op_max<ap_ufixed<6,0,0,0,0>>> 
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining function 'reduce<ap_ufixed,4,Op_max<ap_ufixed<6,0,0,0,0>>>'.
-INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 1.
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 0.19 seconds; current allocated memory: 495.738 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.19 seconds; current allocated memory: 494.923 MB.
 Execute         syn_report -verbosereport -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s.verbose.sched.rpt 
 Execute         db_write -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s.sched.adb -f 
 INFO-FLOW: Finish scheduling reduce<ap_ufixed,4,Op_max<ap_ufixed<6,0,0,0,0>>>.
@@ -686,7 +680,7 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.02 seconds; current allocated memory: 495.806 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.02 seconds; current allocated memory: 494.984 MB.
 Execute         syn_report -verbosereport -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s.verbose.bind.rpt 
 Execute         db_write -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s.bind.adb -f 
 INFO-FLOW: Finish binding reduce<ap_ufixed,4,Op_max<ap_ufixed<6,0,0,0,0>>>.
@@ -697,18 +691,12 @@ Execute         set_default_model pooling2d_cl<array,array<ap_fixed,32u>,config5
 Execute         schedule -model pooling2d_cl<array,array<ap_fixed,32u>,config5> 
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'ReadInputHeight_ReadInputWidth'.
-WARNING: [SCHED 204-68] The II Violation in module 'pooling2d_cl_array_array_ap_fixed_32u_config5_s' (Loop: ReadInputHeight_ReadInputWidth): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
-   between 'store' operation ('sX_write_ln218', firmware/nnet_utils/nnet_pooling_stream.h:218->firmware/nnet_utils/nnet_pooling_stream.h:238->firmware/nnet_utils/nnet_pooling_stream.h:251) of variable 'select_ln218', firmware/nnet_utils/nnet_pooling_stream.h:218->firmware/nnet_utils/nnet_pooling_stream.h:238->firmware/nnet_utils/nnet_pooling_stream.h:251 on static variable 'sX' and 'load' operation ('sX_load', firmware/nnet_utils/nnet_pooling_stream.h:185->firmware/nnet_utils/nnet_pooling_stream.h:238->firmware/nnet_utils/nnet_pooling_stream.h:251) on static variable 'sX'.
-INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 2, Depth = 6.
-WARNING: [SCHED 204-21] Estimated clock period (4.429ns) exceeds the target (target clock period: 5ns, clock uncertainty: 0.625ns, effective delay budget: 4.375ns).
-WARNING: [SCHED 204-21] The critical path in module 'pooling2d_cl_array_array_ap_fixed_32u_config5_s' consists of the following:
-	'icmp' operation ('icmp_ln203', firmware/nnet_utils/nnet_pooling_stream.h:203->firmware/nnet_utils/nnet_pooling_stream.h:238->firmware/nnet_utils/nnet_pooling_stream.h:251) [646]  (2.47 ns)
-	blocking operation 1.96 ns on control path)
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 4.
 INFO: [SCHED 204-11] Finished scheduling.
-Command         schedule done; 0.12 sec.
-INFO: [HLS 200-111]  Elapsed time: 0.14 seconds; current allocated memory: 497.438 MB.
+Command         schedule done; 0.11 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.12 seconds; current allocated memory: 496.610 MB.
 Execute         syn_report -verbosereport -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/pooling2d_cl_array_array_ap_fixed_32u_config5_s.verbose.sched.rpt 
-Command         syn_report done; 0.18 sec.
+Command         syn_report done; 0.17 sec.
 Execute         db_write -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/pooling2d_cl_array_array_ap_fixed_32u_config5_s.sched.adb -f 
 Command         db_write done; 0.16 sec.
 INFO-FLOW: Finish scheduling pooling2d_cl<array,array<ap_fixed,32u>,config5>.
@@ -720,11 +708,11 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.41 seconds; current allocated memory: 500.016 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.41 seconds; current allocated memory: 499.051 MB.
 Execute         syn_report -verbosereport -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/pooling2d_cl_array_array_ap_fixed_32u_config5_s.verbose.bind.rpt 
-Command         syn_report done; 0.26 sec.
+Command         syn_report done; 0.27 sec.
 Execute         db_write -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/pooling2d_cl_array_array_ap_fixed_32u_config5_s.bind.adb -f 
-Command         db_write done; 0.17 sec.
+Command         db_write done; 0.16 sec.
 INFO-FLOW: Finish binding pooling2d_cl<array,array<ap_fixed,32u>,config5>.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'normalize_array_array_ap_fixed_128u_config7_s' 
@@ -733,14 +721,14 @@ Execute         set_default_model normalize<array,array<ap_fixed,128u>,config7>
 Execute         schedule -model normalize<array,array<ap_fixed,128u>,config7> 
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'BatchNormLoop'.
-INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 6.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 4.
 INFO: [SCHED 204-11] Finished scheduling.
-Command         schedule done; 0.41 sec.
-INFO: [HLS 200-111]  Elapsed time: 0.85 seconds; current allocated memory: 502.824 MB.
+Command         schedule done; 0.2 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.65 seconds; current allocated memory: 501.221 MB.
 Execute         syn_report -verbosereport -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/normalize_array_array_ap_fixed_128u_config7_s.verbose.sched.rpt 
-Command         syn_report done; 0.25 sec.
+Command         syn_report done; 0.24 sec.
 Execute         db_write -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/normalize_array_array_ap_fixed_128u_config7_s.sched.adb -f 
-Command         db_write done; 0.21 sec.
+Command         db_write done; 0.2 sec.
 INFO-FLOW: Finish scheduling normalize<array,array<ap_fixed,128u>,config7>.
 Execute         set_default_model normalize<array,array<ap_fixed,128u>,config7> 
 Execute         bind -model normalize<array,array<ap_fixed,128u>,config7> 
@@ -751,9 +739,9 @@ INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Starting global binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.56 seconds; current allocated memory: 508.063 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.54 seconds; current allocated memory: 506.252 MB.
 Execute         syn_report -verbosereport -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/normalize_array_array_ap_fixed_128u_config7_s.verbose.bind.rpt 
-Command         syn_report done; 0.39 sec.
+Command         syn_report done; 0.33 sec.
 Execute         db_write -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/normalize_array_array_ap_fixed_128u_config7_s.bind.adb -f 
 Command         db_write done; 0.21 sec.
 INFO-FLOW: Finish binding normalize<array,array<ap_fixed,128u>,config7>.
@@ -764,18 +752,14 @@ Execute         set_default_model dense_wrapper<ap_fixed,ap_fixed<16,6,5,3,0>,co
 Execute         schedule -model dense_wrapper<ap_fixed,ap_fixed<16,6,5,3,0>,config8> 
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining function 'dense_wrapper<ap_fixed,ap_fixed<16,6,5,3,0>,config8>'.
-INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 8.
-WARNING: [SCHED 204-21] Estimated clock period (4.52ns) exceeds the target (target clock period: 5ns, clock uncertainty: 0.625ns, effective delay budget: 4.375ns).
-WARNING: [SCHED 204-21] The critical path in module 'dense_wrapper_ap_fixed_ap_fixed_16_6_5_3_0_config8_s' consists of the following:
-	wire read on port 'data_120_V_read' (firmware/nnet_utils/nnet_dense_stream.h:14) [135]  (0 ns)
-	'mul' operation ('mul_ln1118_128', firmware/nnet_utils/nnet_mult.h:77->firmware/nnet_utils/nnet_dense_latency.h:96->firmware/nnet_utils/nnet_dense_stream.h:22) [763]  (4.52 ns)
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 4.
 INFO: [SCHED 204-11] Finished scheduling.
-Command         schedule done; 0.4 sec.
-INFO: [HLS 200-111]  Elapsed time: 1.01 seconds; current allocated memory: 511.172 MB.
+Command         schedule done; 0.28 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.83 seconds; current allocated memory: 509.021 MB.
 Execute         syn_report -verbosereport -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/dense_wrapper_ap_fixed_ap_fixed_16_6_5_3_0_config8_s.verbose.sched.rpt 
-Command         syn_report done; 0.29 sec.
+Command         syn_report done; 0.3 sec.
 Execute         db_write -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/dense_wrapper_ap_fixed_ap_fixed_16_6_5_3_0_config8_s.sched.adb -f 
-Command         db_write done; 0.26 sec.
+Command         db_write done; 0.27 sec.
 INFO-FLOW: Finish scheduling dense_wrapper<ap_fixed,ap_fixed<16,6,5,3,0>,config8>.
 Execute         set_default_model dense_wrapper<ap_fixed,ap_fixed<16,6,5,3,0>,config8> 
 Execute         bind -model dense_wrapper<ap_fixed,ap_fixed<16,6,5,3,0>,config8> 
@@ -786,10 +770,10 @@ INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Starting global binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-Command         bind done; 0.2 sec.
-INFO: [HLS 200-111]  Elapsed time: 0.75 seconds; current allocated memory: 515.406 MB.
+Command         bind done; 0.21 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.78 seconds; current allocated memory: 513.016 MB.
 Execute         syn_report -verbosereport -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/dense_wrapper_ap_fixed_ap_fixed_16_6_5_3_0_config8_s.verbose.bind.rpt 
-Command         syn_report done; 0.49 sec.
+Command         syn_report done; 0.48 sec.
 Execute         db_write -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/dense_wrapper_ap_fixed_ap_fixed_16_6_5_3_0_config8_s.bind.adb -f 
 Command         db_write done; 0.26 sec.
 INFO-FLOW: Finish binding dense_wrapper<ap_fixed,ap_fixed<16,6,5,3,0>,config8>.
@@ -800,7 +784,7 @@ Execute         set_default_model dense<array,array<ap_fixed<16,6,5,3,0>,1u>,con
 Execute         schedule -model dense<array,array<ap_fixed<16,6,5,3,0>,1u>,config8> 
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 0.8 seconds; current allocated memory: 516.331 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.79 seconds; current allocated memory: 513.933 MB.
 Execute         syn_report -verbosereport -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/dense_array_array_ap_fixed_16_6_5_3_0_1u_config8_s.verbose.sched.rpt 
 Execute         db_write -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/dense_array_array_ap_fixed_16_6_5_3_0_1u_config8_s.sched.adb -f 
 INFO-FLOW: Finish scheduling dense<array,array<ap_fixed<16,6,5,3,0>,1u>,config8>.
@@ -812,9 +796,9 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.26 seconds; current allocated memory: 519.395 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.24 seconds; current allocated memory: 516.817 MB.
 Execute         syn_report -verbosereport -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/dense_array_array_ap_fixed_16_6_5_3_0_1u_config8_s.verbose.bind.rpt 
-Command         syn_report done; 0.29 sec.
+Command         syn_report done; 0.27 sec.
 Execute         db_write -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/dense_array_array_ap_fixed_16_6_5_3_0_1u_config8_s.bind.adb -f 
 INFO-FLOW: Finish binding dense<array,array<ap_fixed<16,6,5,3,0>,1u>,config8>.
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -826,7 +810,7 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining function 'linear<array,array<ap_fixed,1u>,linear_config9>'.
 INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 0.41 seconds; current allocated memory: 519.723 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.38 seconds; current allocated memory: 517.183 MB.
 Execute         syn_report -verbosereport -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/linear_array_array_ap_fixed_1u_linear_config9_s.verbose.sched.rpt 
 Execute         db_write -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/linear_array_array_ap_fixed_1u_linear_config9_s.sched.adb -f 
 INFO-FLOW: Finish scheduling linear<array,array<ap_fixed,1u>,linear_config9>.
@@ -838,7 +822,7 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.02 seconds; current allocated memory: 519.800 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.02 seconds; current allocated memory: 517.259 MB.
 Execute         syn_report -verbosereport -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/linear_array_array_ap_fixed_1u_linear_config9_s.verbose.bind.rpt 
 Execute         db_write -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/linear_array_array_ap_fixed_1u_linear_config9_s.bind.adb -f 
 INFO-FLOW: Finish binding linear<array,array<ap_fixed,1u>,linear_config9>.
@@ -850,11 +834,11 @@ Execute         schedule -model myproject
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
 Command         schedule done; 0.11 sec.
-INFO: [HLS 200-111]  Elapsed time: 0.13 seconds; current allocated memory: 521.100 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.12 seconds; current allocated memory: 518.579 MB.
 Execute         syn_report -verbosereport -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject.verbose.sched.rpt 
-Command         syn_report done; 0.27 sec.
+Command         syn_report done; 0.28 sec.
 Execute         db_write -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject.sched.adb -f 
-Command         db_write done; 0.24 sec.
+Command         db_write done; 0.23 sec.
 INFO-FLOW: Finish scheduling myproject.
 Execute         set_default_model myproject 
 Execute         bind -model myproject 
@@ -864,10 +848,10 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-Command         bind done; 1.88 sec.
-INFO: [HLS 200-111]  Elapsed time: 2.39 seconds; current allocated memory: 529.414 MB.
+Command         bind done; 1.8 sec.
+INFO: [HLS 200-111]  Elapsed time: 2.31 seconds; current allocated memory: 527.092 MB.
 Execute         syn_report -verbosereport -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject.verbose.bind.rpt 
-Command         syn_report done; 1.07 sec.
+Command         syn_report done; 1.05 sec.
 Execute         db_write -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject.bind.adb -f 
 Command         db_write done; 0.25 sec.
 INFO-FLOW: Finish binding myproject.
@@ -894,7 +878,7 @@ Execute         get_config_rtl -module_prefix
 Execute         get_config_rtl -module_auto_prefix 
 Execute         create_rtl_model Block__proc -vendor xilinx -mg_file /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/Block_proc.compgen.tcl 
 INFO: [RTGEN 206-100] Finished creating RTL model for 'Block_proc'.
-INFO: [HLS 200-111]  Elapsed time: 1.33 seconds; current allocated memory: 530.338 MB.
+INFO: [HLS 200-111]  Elapsed time: 1.31 seconds; current allocated memory: 528.135 MB.
 Execute         source /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject.rtl_wrap.cfg.tcl 
 Execute         gen_rtl Block__proc -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/syn/systemc/Block_proc -synmodules Block__proc shift_line_buffer<array<ap_fixed,1u>,config2> conv_2d_cl<array,array<ap_fixed,32u>,config2> linear<array,array<ap_fixed,32u>,linear_config3> relu<array,array<ap_ufixed,32u>,relu_config4> shift_line_buffer<array<ap_ufixed,32u>,config5> reduce<ap_ufixed,4,Op_max<ap_ufixed<6,0,0,0,0>>> pooling2d_cl<array,array<ap_fixed,32u>,config5> normalize<array,array<ap_fixed,128u>,config7> dense_wrapper<ap_fixed,ap_fixed<16,6,5,3,0>,config8> dense<array,array<ap_fixed<16,6,5,3,0>,1u>,config8> linear<array,array<ap_fixed,1u>,linear_config9> myproject 
 Execute         gen_rtl Block__proc -style xilinx -f -lang vhdl -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/syn/vhdl/Block_proc 
@@ -913,7 +897,7 @@ Execute         create_rtl_model shift_line_buffer<array<ap_fixed,1u>,config2> -
 INFO: [SYN 201-210] Renamed object name 'shift_line_buffer_array_ap_fixed_1u_config2_s_line_buffer_Array_V_0_0' to 'shift_line_buffer_array_ap_fixed_1u_config2_s_line_bufferbkb' due to the length limit 60
 INFO: [SYN 201-210] Renamed object name 'shift_line_buffer_array_ap_fixed_1u_config2_s_line_buffer_Array_V_1182_0' to 'shift_line_buffer_array_ap_fixed_1u_config2_s_line_buffercud' due to the length limit 60
 INFO: [RTGEN 206-100] Finished creating RTL model for 'shift_line_buffer_array_ap_fixed_1u_config2_s'.
-INFO: [HLS 200-111]  Elapsed time: 0.03 seconds; current allocated memory: 530.989 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.03 seconds; current allocated memory: 528.754 MB.
 Execute         source /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject.rtl_wrap.cfg.tcl 
 Execute         gen_rtl shift_line_buffer<array<ap_fixed,1u>,config2> -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/syn/systemc/shift_line_buffer_array_ap_fixed_1u_config2_s -synmodules Block__proc shift_line_buffer<array<ap_fixed,1u>,config2> conv_2d_cl<array,array<ap_fixed,32u>,config2> linear<array,array<ap_fixed,32u>,linear_config3> relu<array,array<ap_ufixed,32u>,relu_config4> shift_line_buffer<array<ap_ufixed,32u>,config5> reduce<ap_ufixed,4,Op_max<ap_ufixed<6,0,0,0,0>>> pooling2d_cl<array,array<ap_fixed,32u>,config5> normalize<array,array<ap_fixed,128u>,config7> dense_wrapper<ap_fixed,ap_fixed<16,6,5,3,0>,config8> dense<array,array<ap_fixed<16,6,5,3,0>,1u>,config8> linear<array,array<ap_fixed,1u>,linear_config9> myproject 
 Execute         gen_rtl shift_line_buffer<array<ap_fixed,1u>,config2> -style xilinx -f -lang vhdl -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/syn/vhdl/shift_line_buffer_array_ap_fixed_1u_config2_s 
@@ -939,25 +923,21 @@ WARNING: [RTGEN 206-101] Register 'sX_1' is power-on initialization.
 WARNING: [RTGEN 206-101] Register 'sY_1' is power-on initialization.
 WARNING: [RTGEN 206-101] Register 'pY_1' is power-on initialization.
 WARNING: [RTGEN 206-101] Register 'pX_1' is power-on initialization.
-INFO: [RTGEN 206-100] Generating core module 'myproject_mul_5ns_15s_15_2_1': 7 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'myproject_mul_5s_15s_15_2_1': 7 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'myproject_mul_6ns_15s_15_2_1': 2 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'myproject_mul_6s_15s_15_2_1': 5 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'conv_2d_cl_array_array_ap_fixed_32u_config2_s'.
-Command         create_rtl_model done; 0.14 sec.
-INFO: [HLS 200-111]  Elapsed time: 0.17 seconds; current allocated memory: 537.582 MB.
+Command         create_rtl_model done; 0.11 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.14 seconds; current allocated memory: 534.593 MB.
 Execute         source /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject.rtl_wrap.cfg.tcl 
 Execute         gen_rtl conv_2d_cl<array,array<ap_fixed,32u>,config2> -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/syn/systemc/conv_2d_cl_array_array_ap_fixed_32u_config2_s -synmodules Block__proc shift_line_buffer<array<ap_fixed,1u>,config2> conv_2d_cl<array,array<ap_fixed,32u>,config2> linear<array,array<ap_fixed,32u>,linear_config3> relu<array,array<ap_ufixed,32u>,relu_config4> shift_line_buffer<array<ap_ufixed,32u>,config5> reduce<ap_ufixed,4,Op_max<ap_ufixed<6,0,0,0,0>>> pooling2d_cl<array,array<ap_fixed,32u>,config5> normalize<array,array<ap_fixed,128u>,config7> dense_wrapper<ap_fixed,ap_fixed<16,6,5,3,0>,config8> dense<array,array<ap_fixed<16,6,5,3,0>,1u>,config8> linear<array,array<ap_fixed,1u>,linear_config9> myproject 
 Execute         gen_rtl conv_2d_cl<array,array<ap_fixed,32u>,config2> -style xilinx -f -lang vhdl -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/syn/vhdl/conv_2d_cl_array_array_ap_fixed_32u_config2_s 
 Execute         gen_rtl conv_2d_cl<array,array<ap_fixed,32u>,config2> -style xilinx -f -lang vlog -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/syn/verilog/conv_2d_cl_array_array_ap_fixed_32u_config2_s 
 Execute         syn_report -csynth -model conv_2d_cl<array,array<ap_fixed,32u>,config2> -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/syn/report/conv_2d_cl_array_array_ap_fixed_32u_config2_s_csynth.rpt 
-Command         syn_report done; 0.26 sec.
+Command         syn_report done; 0.24 sec.
 Execute         syn_report -rtlxml -model conv_2d_cl<array,array<ap_fixed,32u>,config2> -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/syn/report/conv_2d_cl_array_array_ap_fixed_32u_config2_s_csynth.xml 
-Command         syn_report done; 0.13 sec.
+Command         syn_report done; 0.12 sec.
 Execute         syn_report -verbosereport -model conv_2d_cl<array,array<ap_fixed,32u>,config2> -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/conv_2d_cl_array_array_ap_fixed_32u_config2_s.verbose.rpt 
-Command         syn_report done; 0.79 sec.
+Command         syn_report done; 0.78 sec.
 Execute         db_write -model conv_2d_cl<array,array<ap_fixed,32u>,config2> -f -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/conv_2d_cl_array_array_ap_fixed_32u_config2_s.adb 
-Command         db_write done; 0.53 sec.
+Command         db_write done; 0.52 sec.
 Execute         gen_tb_info conv_2d_cl<array,array<ap_fixed,32u>,config2> -p /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/conv_2d_cl_array_array_ap_fixed_32u_config2_s 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'linear_array_array_ap_fixed_32u_linear_config3_s' 
@@ -966,7 +946,7 @@ Execute         get_config_rtl -module_prefix
 Execute         get_config_rtl -module_auto_prefix 
 Execute         create_rtl_model linear<array,array<ap_fixed,32u>,linear_config3> -vendor xilinx -mg_file /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/linear_array_array_ap_fixed_32u_linear_config3_s.compgen.tcl 
 INFO: [RTGEN 206-100] Finished creating RTL model for 'linear_array_array_ap_fixed_32u_linear_config3_s'.
-INFO: [HLS 200-111]  Elapsed time: 1.92 seconds; current allocated memory: 555.590 MB.
+INFO: [HLS 200-111]  Elapsed time: 1.85 seconds; current allocated memory: 551.876 MB.
 Execute         source /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject.rtl_wrap.cfg.tcl 
 Execute         gen_rtl linear<array,array<ap_fixed,32u>,linear_config3> -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/syn/systemc/linear_array_array_ap_fixed_32u_linear_config3_s -synmodules Block__proc shift_line_buffer<array<ap_fixed,1u>,config2> conv_2d_cl<array,array<ap_fixed,32u>,config2> linear<array,array<ap_fixed,32u>,linear_config3> relu<array,array<ap_ufixed,32u>,relu_config4> shift_line_buffer<array<ap_ufixed,32u>,config5> reduce<ap_ufixed,4,Op_max<ap_ufixed<6,0,0,0,0>>> pooling2d_cl<array,array<ap_fixed,32u>,config5> normalize<array,array<ap_fixed,128u>,config7> dense_wrapper<ap_fixed,ap_fixed<16,6,5,3,0>,config8> dense<array,array<ap_fixed<16,6,5,3,0>,1u>,config8> linear<array,array<ap_fixed,1u>,linear_config9> myproject 
 Execute         gen_rtl linear<array,array<ap_fixed,32u>,linear_config3> -style xilinx -f -lang vhdl -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/syn/vhdl/linear_array_array_ap_fixed_32u_linear_config3_s 
@@ -975,7 +955,7 @@ Execute         syn_report -csynth -model linear<array,array<ap_fixed,32u>,linea
 Execute         syn_report -rtlxml -model linear<array,array<ap_fixed,32u>,linear_config3> -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/syn/report/linear_array_array_ap_fixed_32u_linear_config3_s_csynth.xml 
 Execute         syn_report -verbosereport -model linear<array,array<ap_fixed,32u>,linear_config3> -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/linear_array_array_ap_fixed_32u_linear_config3_s.verbose.rpt 
 Execute         db_write -model linear<array,array<ap_fixed,32u>,linear_config3> -f -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/linear_array_array_ap_fixed_32u_linear_config3_s.adb 
-Command         db_write done; 0.14 sec.
+Command         db_write done; 0.15 sec.
 Execute         gen_tb_info linear<array,array<ap_fixed,32u>,linear_config3> -p /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/linear_array_array_ap_fixed_32u_linear_config3_s 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'relu_array_array_ap_ufixed_32u_relu_config4_s' 
@@ -984,7 +964,7 @@ Execute         get_config_rtl -module_prefix
 Execute         get_config_rtl -module_auto_prefix 
 Execute         create_rtl_model relu<array,array<ap_ufixed,32u>,relu_config4> -vendor xilinx -mg_file /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/relu_array_array_ap_ufixed_32u_relu_config4_s.compgen.tcl 
 INFO: [RTGEN 206-100] Finished creating RTL model for 'relu_array_array_ap_ufixed_32u_relu_config4_s'.
-INFO: [HLS 200-111]  Elapsed time: 0.28 seconds; current allocated memory: 559.732 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.28 seconds; current allocated memory: 555.983 MB.
 Execute         source /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject.rtl_wrap.cfg.tcl 
 Execute         gen_rtl relu<array,array<ap_ufixed,32u>,relu_config4> -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/syn/systemc/relu_array_array_ap_ufixed_32u_relu_config4_s -synmodules Block__proc shift_line_buffer<array<ap_fixed,1u>,config2> conv_2d_cl<array,array<ap_fixed,32u>,config2> linear<array,array<ap_fixed,32u>,linear_config3> relu<array,array<ap_ufixed,32u>,relu_config4> shift_line_buffer<array<ap_ufixed,32u>,config5> reduce<ap_ufixed,4,Op_max<ap_ufixed<6,0,0,0,0>>> pooling2d_cl<array,array<ap_fixed,32u>,config5> normalize<array,array<ap_fixed,128u>,config7> dense_wrapper<ap_fixed,ap_fixed<16,6,5,3,0>,config8> dense<array,array<ap_fixed<16,6,5,3,0>,1u>,config8> linear<array,array<ap_fixed,1u>,linear_config9> myproject 
 Execute         gen_rtl relu<array,array<ap_ufixed,32u>,relu_config4> -style xilinx -f -lang vhdl -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/syn/vhdl/relu_array_array_ap_ufixed_32u_relu_config4_s 
@@ -992,9 +972,9 @@ Execute         gen_rtl relu<array,array<ap_ufixed,32u>,relu_config4> -style xil
 Execute         syn_report -csynth -model relu<array,array<ap_ufixed,32u>,relu_config4> -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/syn/report/relu_array_array_ap_ufixed_32u_relu_config4_s_csynth.rpt 
 Execute         syn_report -rtlxml -model relu<array,array<ap_ufixed,32u>,relu_config4> -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/syn/report/relu_array_array_ap_ufixed_32u_relu_config4_s_csynth.xml 
 Execute         syn_report -verbosereport -model relu<array,array<ap_ufixed,32u>,relu_config4> -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/relu_array_array_ap_ufixed_32u_relu_config4_s.verbose.rpt 
-Command         syn_report done; 0.14 sec.
+Command         syn_report done; 0.13 sec.
 Execute         db_write -model relu<array,array<ap_ufixed,32u>,relu_config4> -f -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/relu_array_array_ap_ufixed_32u_relu_config4_s.adb 
-Command         db_write done; 0.2 sec.
+Command         db_write done; 0.19 sec.
 Execute         gen_tb_info relu<array,array<ap_ufixed,32u>,relu_config4> -p /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/relu_array_array_ap_ufixed_32u_relu_config4_s 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'shift_line_buffer_array_ap_ufixed_32u_config5_s' 
@@ -1036,7 +1016,7 @@ INFO: [SYN 201-210] Renamed object name 'shift_line_buffer_array_ap_ufixed_32u_c
 INFO: [SYN 201-210] Renamed object name 'shift_line_buffer_array_ap_ufixed_32u_config5_s_line_buffer_Array_V_1_0_31' to 'shift_line_buffer_array_ap_ufixed_32u_config5_s_line_buffIfE' due to the length limit 60
 INFO: [RTGEN 206-100] Finished creating RTL model for 'shift_line_buffer_array_ap_ufixed_32u_config5_s'.
 Command         create_rtl_model done; 0.61 sec.
-INFO: [HLS 200-111]  Elapsed time: 1.04 seconds; current allocated memory: 601.566 MB.
+INFO: [HLS 200-111]  Elapsed time: 1.03 seconds; current allocated memory: 597.664 MB.
 Execute         source /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject.rtl_wrap.cfg.tcl 
 Execute         gen_rtl shift_line_buffer<array<ap_ufixed,32u>,config5> -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/syn/systemc/shift_line_buffer_array_ap_ufixed_32u_config5_s -synmodules Block__proc shift_line_buffer<array<ap_fixed,1u>,config2> conv_2d_cl<array,array<ap_fixed,32u>,config2> linear<array,array<ap_fixed,32u>,linear_config3> relu<array,array<ap_ufixed,32u>,relu_config4> shift_line_buffer<array<ap_ufixed,32u>,config5> reduce<ap_ufixed,4,Op_max<ap_ufixed<6,0,0,0,0>>> pooling2d_cl<array,array<ap_fixed,32u>,config5> normalize<array,array<ap_fixed,128u>,config7> dense_wrapper<ap_fixed,ap_fixed<16,6,5,3,0>,config8> dense<array,array<ap_fixed<16,6,5,3,0>,1u>,config8> linear<array,array<ap_fixed,1u>,linear_config9> myproject 
 Execute         gen_rtl shift_line_buffer<array<ap_ufixed,32u>,config5> -style xilinx -f -lang vhdl -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/syn/vhdl/shift_line_buffer_array_ap_ufixed_32u_config5_s 
@@ -1054,7 +1034,7 @@ Execute         get_config_rtl -module_prefix
 Execute         get_config_rtl -module_auto_prefix 
 Execute         create_rtl_model reduce<ap_ufixed,4,Op_max<ap_ufixed<6,0,0,0,0>>> -vendor xilinx -mg_file /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s.compgen.tcl 
 INFO: [RTGEN 206-100] Finished creating RTL model for 'reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s'.
-INFO: [HLS 200-111]  Elapsed time: 0.39 seconds; current allocated memory: 604.669 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.39 seconds; current allocated memory: 600.717 MB.
 Execute         source /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject.rtl_wrap.cfg.tcl 
 Execute         gen_rtl reduce<ap_ufixed,4,Op_max<ap_ufixed<6,0,0,0,0>>> -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/syn/systemc/reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s -synmodules Block__proc shift_line_buffer<array<ap_fixed,1u>,config2> conv_2d_cl<array,array<ap_fixed,32u>,config2> linear<array,array<ap_fixed,32u>,linear_config3> relu<array,array<ap_ufixed,32u>,relu_config4> shift_line_buffer<array<ap_ufixed,32u>,config5> reduce<ap_ufixed,4,Op_max<ap_ufixed<6,0,0,0,0>>> pooling2d_cl<array,array<ap_fixed,32u>,config5> normalize<array,array<ap_fixed,128u>,config7> dense_wrapper<ap_fixed,ap_fixed<16,6,5,3,0>,config8> dense<array,array<ap_fixed<16,6,5,3,0>,1u>,config8> linear<array,array<ap_fixed,1u>,linear_config9> myproject 
 Execute         gen_rtl reduce<ap_ufixed,4,Op_max<ap_ufixed<6,0,0,0,0>>> -style xilinx -f -lang vhdl -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/syn/vhdl/reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s 
@@ -1141,7 +1121,7 @@ WARNING: [RTGEN 206-101] Register 'kernel_data_V_1_126' is power-on initializati
 WARNING: [RTGEN 206-101] Register 'kernel_data_V_1_127' is power-on initialization.
 INFO: [RTGEN 206-100] Finished creating RTL model for 'pooling2d_cl_array_array_ap_fixed_32u_config5_s'.
 Command         create_rtl_model done; 0.72 sec.
-INFO: [HLS 200-111]  Elapsed time: 0.86 seconds; current allocated memory: 629.883 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.87 seconds; current allocated memory: 625.621 MB.
 Execute         source /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject.rtl_wrap.cfg.tcl 
 Execute         gen_rtl pooling2d_cl<array,array<ap_fixed,32u>,config5> -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/syn/systemc/pooling2d_cl_array_array_ap_fixed_32u_config5_s -synmodules Block__proc shift_line_buffer<array<ap_fixed,1u>,config2> conv_2d_cl<array,array<ap_fixed,32u>,config2> linear<array,array<ap_fixed,32u>,linear_config3> relu<array,array<ap_ufixed,32u>,relu_config4> shift_line_buffer<array<ap_ufixed,32u>,config5> reduce<ap_ufixed,4,Op_max<ap_ufixed<6,0,0,0,0>>> pooling2d_cl<array,array<ap_fixed,32u>,config5> normalize<array,array<ap_fixed,128u>,config7> dense_wrapper<ap_fixed,ap_fixed<16,6,5,3,0>,config8> dense<array,array<ap_fixed<16,6,5,3,0>,1u>,config8> linear<array,array<ap_fixed,1u>,linear_config9> myproject 
 Execute         gen_rtl pooling2d_cl<array,array<ap_fixed,32u>,config5> -style xilinx -f -lang vhdl -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/syn/vhdl/pooling2d_cl_array_array_ap_fixed_32u_config5_s 
@@ -1149,9 +1129,9 @@ Execute         gen_rtl pooling2d_cl<array,array<ap_fixed,32u>,config5> -style x
 Execute         syn_report -csynth -model pooling2d_cl<array,array<ap_fixed,32u>,config5> -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/syn/report/pooling2d_cl_array_array_ap_fixed_32u_config5_s_csynth.rpt 
 Execute         syn_report -rtlxml -model pooling2d_cl<array,array<ap_fixed,32u>,config5> -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/syn/report/pooling2d_cl_array_array_ap_fixed_32u_config5_s_csynth.xml 
 Execute         syn_report -verbosereport -model pooling2d_cl<array,array<ap_fixed,32u>,config5> -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/pooling2d_cl_array_array_ap_fixed_32u_config5_s.verbose.rpt 
-Command         syn_report done; 0.29 sec.
+Command         syn_report done; 0.3 sec.
 Execute         db_write -model pooling2d_cl<array,array<ap_fixed,32u>,config5> -f -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/pooling2d_cl_array_array_ap_fixed_32u_config5_s.adb 
-Command         db_write done; 0.34 sec.
+Command         db_write done; 0.32 sec.
 Execute         gen_tb_info pooling2d_cl<array,array<ap_fixed,32u>,config5> -p /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/pooling2d_cl_array_array_ap_fixed_32u_config5_s 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'normalize_array_array_ap_fixed_128u_config7_s' 
@@ -1159,24 +1139,22 @@ INFO: [HLS 200-10] -------------------------------------------------------------
 Execute         get_config_rtl -module_prefix 
 Execute         get_config_rtl -module_auto_prefix 
 Execute         create_rtl_model normalize<array,array<ap_fixed,128u>,config7> -vendor xilinx -mg_file /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/normalize_array_array_ap_fixed_128u_config7_s.compgen.tcl 
-INFO: [RTGEN 206-100] Generating core module 'myproject_mul_16s_13ns_20_2_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'myproject_mul_16s_16ns_20_2_1': 31 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'myproject_mux_1287_16_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'myproject_mux_42_16_1_1': 62 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'normalize_array_array_ap_fixed_128u_config7_s'.
 Command         create_rtl_model done; 0.14 sec.
-INFO: [HLS 200-111]  Elapsed time: 0.94 seconds; current allocated memory: 645.887 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.9 seconds; current allocated memory: 640.818 MB.
 Execute         source /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject.rtl_wrap.cfg.tcl 
 Execute         gen_rtl normalize<array,array<ap_fixed,128u>,config7> -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/syn/systemc/normalize_array_array_ap_fixed_128u_config7_s -synmodules Block__proc shift_line_buffer<array<ap_fixed,1u>,config2> conv_2d_cl<array,array<ap_fixed,32u>,config2> linear<array,array<ap_fixed,32u>,linear_config3> relu<array,array<ap_ufixed,32u>,relu_config4> shift_line_buffer<array<ap_ufixed,32u>,config5> reduce<ap_ufixed,4,Op_max<ap_ufixed<6,0,0,0,0>>> pooling2d_cl<array,array<ap_fixed,32u>,config5> normalize<array,array<ap_fixed,128u>,config7> dense_wrapper<ap_fixed,ap_fixed<16,6,5,3,0>,config8> dense<array,array<ap_fixed<16,6,5,3,0>,1u>,config8> linear<array,array<ap_fixed,1u>,linear_config9> myproject 
 Execute         gen_rtl normalize<array,array<ap_fixed,128u>,config7> -style xilinx -f -lang vhdl -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/syn/vhdl/normalize_array_array_ap_fixed_128u_config7_s 
 Execute         gen_rtl normalize<array,array<ap_fixed,128u>,config7> -style xilinx -f -lang vlog -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/syn/verilog/normalize_array_array_ap_fixed_128u_config7_s 
 Execute         syn_report -csynth -model normalize<array,array<ap_fixed,128u>,config7> -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/syn/report/normalize_array_array_ap_fixed_128u_config7_s_csynth.rpt 
-Command         syn_report done; 0.12 sec.
+Command         syn_report done; 0.11 sec.
 Execute         syn_report -rtlxml -model normalize<array,array<ap_fixed,128u>,config7> -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/syn/report/normalize_array_array_ap_fixed_128u_config7_s_csynth.xml 
 Execute         syn_report -verbosereport -model normalize<array,array<ap_fixed,128u>,config7> -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/normalize_array_array_ap_fixed_128u_config7_s.verbose.rpt 
 Command         syn_report done; 0.42 sec.
 Execute         db_write -model normalize<array,array<ap_fixed,128u>,config7> -f -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/normalize_array_array_ap_fixed_128u_config7_s.adb 
-Command         db_write done; 0.48 sec.
+Command         db_write done; 0.49 sec.
 Execute         gen_tb_info normalize<array,array<ap_fixed,128u>,config7> -p /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/normalize_array_array_ap_fixed_128u_config7_s 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'dense_wrapper_ap_fixed_ap_fixed_16_6_5_3_0_config8_s' 
@@ -1184,22 +1162,20 @@ INFO: [HLS 200-10] -------------------------------------------------------------
 Execute         get_config_rtl -module_prefix 
 Execute         get_config_rtl -module_auto_prefix 
 Execute         create_rtl_model dense_wrapper<ap_fixed,ap_fixed<16,6,5,3,0>,config8> -vendor xilinx -mg_file /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/dense_wrapper_ap_fixed_ap_fixed_16_6_5_3_0_config8_s.compgen.tcl 
-INFO: [RTGEN 206-100] Generating core module 'myproject_mul_11ns_6s_16_2_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'myproject_mul_11s_6s_16_2_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'dense_wrapper_ap_fixed_ap_fixed_16_6_5_3_0_config8_s'.
-Command         create_rtl_model done; 0.16 sec.
-INFO: [HLS 200-111]  Elapsed time: 1.39 seconds; current allocated memory: 661.870 MB.
+Command         create_rtl_model done; 0.13 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.3 seconds; current allocated memory: 656.095 MB.
 Execute         source /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject.rtl_wrap.cfg.tcl 
 Execute         gen_rtl dense_wrapper<ap_fixed,ap_fixed<16,6,5,3,0>,config8> -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/syn/systemc/dense_wrapper_ap_fixed_ap_fixed_16_6_5_3_0_config8_s -synmodules Block__proc shift_line_buffer<array<ap_fixed,1u>,config2> conv_2d_cl<array,array<ap_fixed,32u>,config2> linear<array,array<ap_fixed,32u>,linear_config3> relu<array,array<ap_ufixed,32u>,relu_config4> shift_line_buffer<array<ap_ufixed,32u>,config5> reduce<ap_ufixed,4,Op_max<ap_ufixed<6,0,0,0,0>>> pooling2d_cl<array,array<ap_fixed,32u>,config5> normalize<array,array<ap_fixed,128u>,config7> dense_wrapper<ap_fixed,ap_fixed<16,6,5,3,0>,config8> dense<array,array<ap_fixed<16,6,5,3,0>,1u>,config8> linear<array,array<ap_fixed,1u>,linear_config9> myproject 
 Execute         gen_rtl dense_wrapper<ap_fixed,ap_fixed<16,6,5,3,0>,config8> -style xilinx -f -lang vhdl -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/syn/vhdl/dense_wrapper_ap_fixed_ap_fixed_16_6_5_3_0_config8_s 
 Execute         gen_rtl dense_wrapper<ap_fixed,ap_fixed<16,6,5,3,0>,config8> -style xilinx -f -lang vlog -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/syn/verilog/dense_wrapper_ap_fixed_ap_fixed_16_6_5_3_0_config8_s 
 Execute         syn_report -csynth -model dense_wrapper<ap_fixed,ap_fixed<16,6,5,3,0>,config8> -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/syn/report/dense_wrapper_ap_fixed_ap_fixed_16_6_5_3_0_config8_s_csynth.rpt 
-Command         syn_report done; 0.15 sec.
+Command         syn_report done; 0.14 sec.
 Execute         syn_report -rtlxml -model dense_wrapper<ap_fixed,ap_fixed<16,6,5,3,0>,config8> -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/syn/report/dense_wrapper_ap_fixed_ap_fixed_16_6_5_3_0_config8_s_csynth.xml 
 Execute         syn_report -verbosereport -model dense_wrapper<ap_fixed,ap_fixed<16,6,5,3,0>,config8> -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/dense_wrapper_ap_fixed_ap_fixed_16_6_5_3_0_config8_s.verbose.rpt 
-Command         syn_report done; 0.56 sec.
+Command         syn_report done; 0.59 sec.
 Execute         db_write -model dense_wrapper<ap_fixed,ap_fixed<16,6,5,3,0>,config8> -f -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/dense_wrapper_ap_fixed_ap_fixed_16_6_5_3_0_config8_s.adb 
-Command         db_write done; 0.64 sec.
+Command         db_write done; 0.67 sec.
 Execute         gen_tb_info dense_wrapper<ap_fixed,ap_fixed<16,6,5,3,0>,config8> -p /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/dense_wrapper_ap_fixed_ap_fixed_16_6_5_3_0_config8_s 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'dense_array_array_ap_fixed_16_6_5_3_0_1u_config8_s' 
@@ -1208,8 +1184,8 @@ Execute         get_config_rtl -module_prefix
 Execute         get_config_rtl -module_auto_prefix 
 Execute         create_rtl_model dense<array,array<ap_fixed<16,6,5,3,0>,1u>,config8> -vendor xilinx -mg_file /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/dense_array_array_ap_fixed_16_6_5_3_0_1u_config8_s.compgen.tcl 
 INFO: [RTGEN 206-100] Finished creating RTL model for 'dense_array_array_ap_fixed_16_6_5_3_0_1u_config8_s'.
-Command         create_rtl_model done; 0.35 sec.
-INFO: [HLS 200-111]  Elapsed time: 1.91 seconds; current allocated memory: 698.504 MB.
+Command         create_rtl_model done; 0.38 sec.
+INFO: [HLS 200-111]  Elapsed time: 2 seconds; current allocated memory: 691.744 MB.
 Execute         source /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject.rtl_wrap.cfg.tcl 
 Execute         gen_rtl dense<array,array<ap_fixed<16,6,5,3,0>,1u>,config8> -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/syn/systemc/dense_array_array_ap_fixed_16_6_5_3_0_1u_config8_s -synmodules Block__proc shift_line_buffer<array<ap_fixed,1u>,config2> conv_2d_cl<array,array<ap_fixed,32u>,config2> linear<array,array<ap_fixed,32u>,linear_config3> relu<array,array<ap_ufixed,32u>,relu_config4> shift_line_buffer<array<ap_ufixed,32u>,config5> reduce<ap_ufixed,4,Op_max<ap_ufixed<6,0,0,0,0>>> pooling2d_cl<array,array<ap_fixed,32u>,config5> normalize<array,array<ap_fixed,128u>,config7> dense_wrapper<ap_fixed,ap_fixed<16,6,5,3,0>,config8> dense<array,array<ap_fixed<16,6,5,3,0>,1u>,config8> linear<array,array<ap_fixed,1u>,linear_config9> myproject 
 Execute         gen_rtl dense<array,array<ap_fixed<16,6,5,3,0>,1u>,config8> -style xilinx -f -lang vhdl -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/syn/vhdl/dense_array_array_ap_fixed_16_6_5_3_0_1u_config8_s 
@@ -1217,9 +1193,9 @@ Execute         gen_rtl dense<array,array<ap_fixed<16,6,5,3,0>,1u>,config8> -sty
 Execute         syn_report -csynth -model dense<array,array<ap_fixed<16,6,5,3,0>,1u>,config8> -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/syn/report/dense_array_array_ap_fixed_16_6_5_3_0_1u_config8_s_csynth.rpt 
 Execute         syn_report -rtlxml -model dense<array,array<ap_fixed<16,6,5,3,0>,1u>,config8> -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/syn/report/dense_array_array_ap_fixed_16_6_5_3_0_1u_config8_s_csynth.xml 
 Execute         syn_report -verbosereport -model dense<array,array<ap_fixed<16,6,5,3,0>,1u>,config8> -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/dense_array_array_ap_fixed_16_6_5_3_0_1u_config8_s.verbose.rpt 
-Command         syn_report done; 0.33 sec.
+Command         syn_report done; 0.29 sec.
 Execute         db_write -model dense<array,array<ap_fixed<16,6,5,3,0>,1u>,config8> -f -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/dense_array_array_ap_fixed_16_6_5_3_0_1u_config8_s.adb 
-Command         db_write done; 0.38 sec.
+Command         db_write done; 0.39 sec.
 Execute         gen_tb_info dense<array,array<ap_fixed<16,6,5,3,0>,1u>,config8> -p /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/dense_array_array_ap_fixed_16_6_5_3_0_1u_config8_s 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'linear_array_array_ap_fixed_1u_linear_config9_s' 
@@ -1228,7 +1204,7 @@ Execute         get_config_rtl -module_prefix
 Execute         get_config_rtl -module_auto_prefix 
 Execute         create_rtl_model linear<array,array<ap_fixed,1u>,linear_config9> -vendor xilinx -mg_file /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/linear_array_array_ap_fixed_1u_linear_config9_s.compgen.tcl 
 INFO: [RTGEN 206-100] Finished creating RTL model for 'linear_array_array_ap_fixed_1u_linear_config9_s'.
-INFO: [HLS 200-111]  Elapsed time: 0.81 seconds; current allocated memory: 702.161 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.78 seconds; current allocated memory: 695.431 MB.
 Execute         source /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject.rtl_wrap.cfg.tcl 
 Execute         gen_rtl linear<array,array<ap_fixed,1u>,linear_config9> -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/syn/systemc/linear_array_array_ap_fixed_1u_linear_config9_s -synmodules Block__proc shift_line_buffer<array<ap_fixed,1u>,config2> conv_2d_cl<array,array<ap_fixed,32u>,config2> linear<array,array<ap_fixed,32u>,linear_config3> relu<array,array<ap_ufixed,32u>,relu_config4> shift_line_buffer<array<ap_ufixed,32u>,config5> reduce<ap_ufixed,4,Op_max<ap_ufixed<6,0,0,0,0>>> pooling2d_cl<array,array<ap_fixed,32u>,config5> normalize<array,array<ap_fixed,128u>,config7> dense_wrapper<ap_fixed,ap_fixed<16,6,5,3,0>,config8> dense<array,array<ap_fixed<16,6,5,3,0>,1u>,config8> linear<array,array<ap_fixed,1u>,linear_config9> myproject 
 Execute         gen_rtl linear<array,array<ap_fixed,1u>,linear_config9> -style xilinx -f -lang vhdl -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/syn/vhdl/linear_array_array_ap_fixed_1u_linear_config9_s 
@@ -1237,7 +1213,7 @@ Execute         syn_report -csynth -model linear<array,array<ap_fixed,1u>,linear
 Execute         syn_report -rtlxml -model linear<array,array<ap_fixed,1u>,linear_config9> -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/syn/report/linear_array_array_ap_fixed_1u_linear_config9_s_csynth.xml 
 Execute         syn_report -verbosereport -model linear<array,array<ap_fixed,1u>,linear_config9> -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/linear_array_array_ap_fixed_1u_linear_config9_s.verbose.rpt 
 Execute         db_write -model linear<array,array<ap_fixed,1u>,linear_config9> -f -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/linear_array_array_ap_fixed_1u_linear_config9_s.adb 
-Command         db_write done; 0.29 sec.
+Command         db_write done; 0.31 sec.
 Execute         gen_tb_info linear<array,array<ap_fixed,1u>,linear_config9> -p /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/linear_array_array_ap_fixed_1u_linear_config9_s 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'myproject' 
@@ -1253,25 +1229,25 @@ INFO: [RTGEN 206-500] Setting interface mode on function 'myproject' to 'ap_ctrl
 INFO: [SYN 201-210] Renamed object name 'start_for_dense_array_array_ap_fixed_16_6_5_3_0_1u_config8_U0' to 'start_for_dense_array_array_ap_fixed_16_6_5_3_0_1u_configJfO' due to the length limit 60
 INFO: [RTGEN 206-100] Finished creating RTL model for 'myproject'.
 Command         create_rtl_model done; 0.55 sec.
-INFO: [HLS 200-111]  Elapsed time: 0.87 seconds; current allocated memory: 712.471 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.88 seconds; current allocated memory: 705.679 MB.
 Execute         source /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject.rtl_wrap.cfg.tcl 
 Execute         gen_rtl myproject -istop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/syn/systemc/myproject -synmodules Block__proc shift_line_buffer<array<ap_fixed,1u>,config2> conv_2d_cl<array,array<ap_fixed,32u>,config2> linear<array,array<ap_fixed,32u>,linear_config3> relu<array,array<ap_ufixed,32u>,relu_config4> shift_line_buffer<array<ap_ufixed,32u>,config5> reduce<ap_ufixed,4,Op_max<ap_ufixed<6,0,0,0,0>>> pooling2d_cl<array,array<ap_fixed,32u>,config5> normalize<array,array<ap_fixed,128u>,config7> dense_wrapper<ap_fixed,ap_fixed<16,6,5,3,0>,config8> dense<array,array<ap_fixed<16,6,5,3,0>,1u>,config8> linear<array,array<ap_fixed,1u>,linear_config9> myproject 
 Execute         gen_rtl myproject -istop -style xilinx -f -lang vhdl -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/syn/vhdl/myproject 
 Command         gen_rtl done; 0.4 sec.
 Execute         gen_rtl myproject -istop -style xilinx -f -lang vlog -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/syn/verilog/myproject 
-Command         gen_rtl done; 0.19 sec.
+Command         gen_rtl done; 0.2 sec.
 Execute         syn_report -csynth -model myproject -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/syn/report/myproject_csynth.rpt 
-Command         syn_report done; 0.2 sec.
+Command         syn_report done; 0.19 sec.
 Execute         syn_report -rtlxml -model myproject -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/syn/report/myproject_csynth.xml 
 Command         syn_report done; 0.19 sec.
 Execute         syn_report -verbosereport -model myproject -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject.verbose.rpt 
 Command         syn_report done; 1.26 sec.
 Execute         db_write -model myproject -f -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject.adb 
-Command         db_write done; 0.75 sec.
+Command         db_write done; 0.76 sec.
 Execute         gen_tb_info myproject -p /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject 
 Execute         export_constraint_db -f -tool general -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject.constraint.tcl 
 Execute         syn_report -designview -model myproject -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject.design.xml 
-Command         syn_report done; 1.06 sec.
+Command         syn_report done; 1.02 sec.
 Execute         get_config_rtl -disable_wave_debug 
 Execute         syn_report -wcfg -model myproject -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject_dataflow_ana.wcfg 
 Execute         syn_report -protoinst -model myproject -o /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject.protoinst 
@@ -1288,14 +1264,6 @@ INFO-FLOW: Found component shift_line_buffer_array_ap_fixed_1u_config2_s_line_bu
 INFO-FLOW: Append model shift_line_buffer_array_ap_fixed_1u_config2_s_line_bufferbkb
 INFO-FLOW: Handling components in module [conv_2d_cl_array_array_ap_fixed_32u_config2_s] ... 
 Execute         source /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/conv_2d_cl_array_array_ap_fixed_32u_config2_s.compgen.tcl 
-INFO-FLOW: Found component myproject_mul_5ns_15s_15_2_1.
-INFO-FLOW: Append model myproject_mul_5ns_15s_15_2_1
-INFO-FLOW: Found component myproject_mul_5s_15s_15_2_1.
-INFO-FLOW: Append model myproject_mul_5s_15s_15_2_1
-INFO-FLOW: Found component myproject_mul_6s_15s_15_2_1.
-INFO-FLOW: Append model myproject_mul_6s_15s_15_2_1
-INFO-FLOW: Found component myproject_mul_6ns_15s_15_2_1.
-INFO-FLOW: Append model myproject_mul_6ns_15s_15_2_1
 INFO-FLOW: Found component regslice_core.
 INFO-FLOW: Append model regslice_core
 INFO-FLOW: Handling components in module [linear_array_array_ap_fixed_32u_linear_config3_s] ... 
@@ -1312,22 +1280,14 @@ INFO-FLOW: Handling components in module [pooling2d_cl_array_array_ap_fixed_32u_
 Execute         source /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/pooling2d_cl_array_array_ap_fixed_32u_config5_s.compgen.tcl 
 INFO-FLOW: Handling components in module [normalize_array_array_ap_fixed_128u_config7_s] ... 
 Execute         source /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/normalize_array_array_ap_fixed_128u_config7_s.compgen.tcl 
-INFO-FLOW: Found component myproject_mul_16s_16ns_20_2_1.
-INFO-FLOW: Append model myproject_mul_16s_16ns_20_2_1
-INFO-FLOW: Found component myproject_mul_16s_13ns_20_2_1.
-INFO-FLOW: Append model myproject_mul_16s_13ns_20_2_1
+INFO-FLOW: Found component myproject_mux_42_16_1_1.
+INFO-FLOW: Append model myproject_mux_42_16_1_1
 INFO-FLOW: Found component myproject_mux_42_16_1_1.
 INFO-FLOW: Append model myproject_mux_42_16_1_1
 INFO-FLOW: Found component myproject_mux_1287_16_1_1.
 INFO-FLOW: Append model myproject_mux_1287_16_1_1
-INFO-FLOW: Found component myproject_mux_42_16_1_1.
-INFO-FLOW: Append model myproject_mux_42_16_1_1
 INFO-FLOW: Handling components in module [dense_wrapper_ap_fixed_ap_fixed_16_6_5_3_0_config8_s] ... 
 Execute         source /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/dense_wrapper_ap_fixed_ap_fixed_16_6_5_3_0_config8_s.compgen.tcl 
-INFO-FLOW: Found component myproject_mul_11s_6s_16_2_1.
-INFO-FLOW: Append model myproject_mul_11s_6s_16_2_1
-INFO-FLOW: Found component myproject_mul_11ns_6s_16_2_1.
-INFO-FLOW: Append model myproject_mul_11ns_6s_16_2_1
 INFO-FLOW: Handling components in module [dense_array_array_ap_fixed_16_6_5_3_0_1u_config8_s] ... 
 Execute         source /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/dense_array_array_ap_fixed_16_6_5_3_0_1u_config8_s.compgen.tcl 
 INFO-FLOW: Handling components in module [linear_array_array_ap_fixed_1u_linear_config9_s] ... 
@@ -1878,21 +1838,13 @@ INFO-FLOW: Append model dense_array_array_ap_fixed_16_6_5_3_0_1u_config8_s
 INFO-FLOW: Append model linear_array_array_ap_fixed_1u_linear_config9_s
 INFO-FLOW: Append model myproject
 INFO-FLOW: Generating RTL model list ...
-INFO-FLOW: All models in this session: shift_line_buffer_array_ap_fixed_1u_config2_s_line_bufferbkb myproject_mul_5ns_15s_15_2_1 myproject_mul_5s_15s_15_2_1 myproject_mul_6s_15s_15_2_1 myproject_mul_6ns_15s_15_2_1 regslice_core shift_line_buffer_array_ap_ufixed_32u_config5_s_line_buffdEe myproject_mul_16s_16ns_20_2_1 myproject_mul_16s_13ns_20_2_1 myproject_mux_42_16_1_1 myproject_mux_1287_16_1_1 myproject_mux_42_16_1_1 myproject_mul_11s_6s_16_2_1 myproject_mul_11ns_6s_16_2_1 regslice_core fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w16_d1_A start_for_linear_array_array_ap_fixed_32u_linear_config3_U0 start_for_relu_array_array_ap_ufixed_32u_relu_config4_U0 start_for_pooling2d_cl_array_array_ap_fixed_32u_config5_U0 start_for_normalize_array_array_ap_fixed_128u_config7_U0 start_for_dense_array_array_ap_fixed_16_6_5_3_0_1u_configJfO start_for_linear_array_array_ap_fixed_1u_linear_config9_U0 regslice_core Block_proc shift_line_buffer_array_ap_fixed_1u_config2_s conv_2d_cl_array_array_ap_fixed_32u_config2_s linear_array_array_ap_fixed_32u_linear_config3_s relu_array_array_ap_ufixed_32u_relu_config4_s shift_line_buffer_array_ap_ufixed_32u_config5_s reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s pooling2d_cl_array_array_ap_fixed_32u_config5_s normalize_array_array_ap_fixed_128u_config7_s dense_wrapper_ap_fixed_ap_fixed_16_6_5_3_0_config8_s dense_array_array_ap_fixed_16_6_5_3_0_1u_config8_s linear_array_array_ap_fixed_1u_linear_config9_s myproject
+INFO-FLOW: All models in this session: shift_line_buffer_array_ap_fixed_1u_config2_s_line_bufferbkb regslice_core shift_line_buffer_array_ap_ufixed_32u_config5_s_line_buffdEe myproject_mux_42_16_1_1 myproject_mux_42_16_1_1 myproject_mux_1287_16_1_1 regslice_core fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w6_d16_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w16_d4_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w6_d1_A fifo_w16_d1_A start_for_linear_array_array_ap_fixed_32u_linear_config3_U0 start_for_relu_array_array_ap_ufixed_32u_relu_config4_U0 start_for_pooling2d_cl_array_array_ap_fixed_32u_config5_U0 start_for_normalize_array_array_ap_fixed_128u_config7_U0 start_for_dense_array_array_ap_fixed_16_6_5_3_0_1u_configJfO start_for_linear_array_array_ap_fixed_1u_linear_config9_U0 regslice_core Block_proc shift_line_buffer_array_ap_fixed_1u_config2_s conv_2d_cl_array_array_ap_fixed_32u_config2_s linear_array_array_ap_fixed_32u_linear_config3_s relu_array_array_ap_ufixed_32u_relu_config4_s shift_line_buffer_array_ap_ufixed_32u_config5_s reduce_ap_ufixed_4_Op_max_ap_ufixed_6_0_0_0_0_s pooling2d_cl_array_array_ap_fixed_32u_config5_s normalize_array_array_ap_fixed_128u_config7_s dense_wrapper_ap_fixed_ap_fixed_16_6_5_3_0_config8_s dense_array_array_ap_fixed_16_6_5_3_0_1u_config8_s linear_array_array_ap_fixed_1u_linear_config9_s myproject
 INFO-FLOW: To file: write model shift_line_buffer_array_ap_fixed_1u_config2_s_line_bufferbkb
-INFO-FLOW: To file: write model myproject_mul_5ns_15s_15_2_1
-INFO-FLOW: To file: write model myproject_mul_5s_15s_15_2_1
-INFO-FLOW: To file: write model myproject_mul_6s_15s_15_2_1
-INFO-FLOW: To file: write model myproject_mul_6ns_15s_15_2_1
 INFO-FLOW: To file: write model regslice_core
 INFO-FLOW: To file: write model shift_line_buffer_array_ap_ufixed_32u_config5_s_line_buffdEe
-INFO-FLOW: To file: write model myproject_mul_16s_16ns_20_2_1
-INFO-FLOW: To file: write model myproject_mul_16s_13ns_20_2_1
+INFO-FLOW: To file: write model myproject_mux_42_16_1_1
 INFO-FLOW: To file: write model myproject_mux_42_16_1_1
 INFO-FLOW: To file: write model myproject_mux_1287_16_1_1
-INFO-FLOW: To file: write model myproject_mux_42_16_1_1
-INFO-FLOW: To file: write model myproject_mul_11s_6s_16_2_1
-INFO-FLOW: To file: write model myproject_mul_11ns_6s_16_2_1
 INFO-FLOW: To file: write model regslice_core
 INFO-FLOW: To file: write model fifo_w6_d16_A
 INFO-FLOW: To file: write model fifo_w6_d16_A
@@ -2178,8 +2130,8 @@ INFO-FLOW: RTL Generation done.
 INFO-FLOW: CAS Generation done.
 INFO-FLOW: CBC Generation done.
 Execute         syn_report -model myproject -printsummary 
-INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
-INFO: [HLS 200-789] **** Estimated Fmax: 197.44 MHz
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 116.82 MHz
 INFO-FLOW: DBG:CMD: auto_generate_csynth_design
 INFO-FLOW: DBG:CMD:     auto_generate --sim-model -phase csynth_design -d /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1
 Execute         source /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/global.setting.tcl 
@@ -2207,7 +2159,7 @@ Execute             source /opt/Xilinx/Vivado/2019.2/common/technology/xilinx/ip
 Execute             source /opt/Xilinx/Vivado/2019.2/common/technology/xilinx/common/dsp48.gen 
 Execute         source /opt/Xilinx/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
 Execute           source /opt/Xilinx/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
-INFO-FLOW: DBG:CMD:   using AESL_AUTOCG::g_clock_period=5.000 (was NA)
+INFO-FLOW: DBG:CMD:   using AESL_AUTOCG::g_clock_period=10.000 (was NA)
 INFO-FLOW: DBG:CMD:       generate_ip_cores sim=1 export=0 expOnly=0 dstVlogDir=syn/verilog
 Execute         source /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/global.setting.tcl 
 Execute         ap_part_info -name xc7z020-clg484-1 -data names -quiet 
@@ -2217,27 +2169,6 @@ Execute         source /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/mypr
 Execute         source /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/Block_proc.compgen.tcl 
 Execute         source /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/shift_line_buffer_array_ap_fixed_1u_config2_s.compgen.tcl 
 Execute         source /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/conv_2d_cl_array_array_ap_fixed_32u_config2_s.compgen.tcl 
-Execute           ap_part_info -name xc7z020-clg484-1 -data names -quiet 
-Execute           ap_part_info -name xc7z020-clg484-1 -data info -quiet 
-Execute           ap_part_info -name xc7z020-clg484-1 -data names -quiet 
-Execute           ap_part_info -name xc7z020-clg484-1 -data info -quiet 
-INFO: [RTMG 210-282] Generating pipelined core: 'myproject_mul_5ns_15s_15_2_1_MulnS_0'
-Execute           ap_part_info -name xc7z020-clg484-1 -data names -quiet 
-Execute           ap_part_info -name xc7z020-clg484-1 -data info -quiet 
-Execute           ap_part_info -name xc7z020-clg484-1 -data names -quiet 
-Execute           ap_part_info -name xc7z020-clg484-1 -data info -quiet 
-INFO: [RTMG 210-282] Generating pipelined core: 'myproject_mul_5s_15s_15_2_1_MulnS_1'
-Execute           ap_part_info -name xc7z020-clg484-1 -data names -quiet 
-Execute           ap_part_info -name xc7z020-clg484-1 -data info -quiet 
-Execute           ap_part_info -name xc7z020-clg484-1 -data names -quiet 
-Execute           ap_part_info -name xc7z020-clg484-1 -data info -quiet 
-INFO: [RTMG 210-282] Generating pipelined core: 'myproject_mul_6s_15s_15_2_1_MulnS_2'
-Execute           ap_part_info -name xc7z020-clg484-1 -data names -quiet 
-Execute           ap_part_info -name xc7z020-clg484-1 -data info -quiet 
-Execute           ap_part_info -name xc7z020-clg484-1 -data names -quiet 
-Execute           ap_part_info -name xc7z020-clg484-1 -data info -quiet 
-INFO: [RTMG 210-282] Generating pipelined core: 'myproject_mul_6ns_15s_15_2_1_MulnS_3'
-Command         ap_source done; 0.12 sec.
 Execute         source /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/linear_array_array_ap_fixed_32u_linear_config3_s.compgen.tcl 
 Execute         source /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/relu_array_array_ap_ufixed_32u_relu_config4_s.compgen.tcl 
 Execute         source /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/shift_line_buffer_array_ap_ufixed_32u_config5_s.compgen.tcl 
@@ -2248,29 +2179,9 @@ Execute           ap_part_info -name xc7z020-clg484-1 -data names -quiet
 Execute           ap_part_info -name xc7z020-clg484-1 -data info -quiet 
 Execute           ap_part_info -name xc7z020-clg484-1 -data names -quiet 
 Execute           ap_part_info -name xc7z020-clg484-1 -data info -quiet 
-INFO: [RTMG 210-282] Generating pipelined core: 'myproject_mul_16s_16ns_20_2_1_MulnS_4'
-Execute           ap_part_info -name xc7z020-clg484-1 -data names -quiet 
-Execute           ap_part_info -name xc7z020-clg484-1 -data info -quiet 
-Execute           ap_part_info -name xc7z020-clg484-1 -data names -quiet 
-Execute           ap_part_info -name xc7z020-clg484-1 -data info -quiet 
-INFO: [RTMG 210-282] Generating pipelined core: 'myproject_mul_16s_13ns_20_2_1_MulnS_5'
-Execute           ap_part_info -name xc7z020-clg484-1 -data names -quiet 
-Execute           ap_part_info -name xc7z020-clg484-1 -data info -quiet 
-Execute           ap_part_info -name xc7z020-clg484-1 -data names -quiet 
-Execute           ap_part_info -name xc7z020-clg484-1 -data info -quiet 
 Execute           ap_part_info -name xc7z020-clg484-1 -data names -quiet 
 Execute           ap_part_info -name xc7z020-clg484-1 -data info -quiet 
 Execute         source /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/dense_wrapper_ap_fixed_ap_fixed_16_6_5_3_0_config8_s.compgen.tcl 
-Execute           ap_part_info -name xc7z020-clg484-1 -data names -quiet 
-Execute           ap_part_info -name xc7z020-clg484-1 -data info -quiet 
-Execute           ap_part_info -name xc7z020-clg484-1 -data names -quiet 
-Execute           ap_part_info -name xc7z020-clg484-1 -data info -quiet 
-INFO: [RTMG 210-282] Generating pipelined core: 'myproject_mul_11s_6s_16_2_1_MulnS_6'
-Execute           ap_part_info -name xc7z020-clg484-1 -data names -quiet 
-Execute           ap_part_info -name xc7z020-clg484-1 -data info -quiet 
-Execute           ap_part_info -name xc7z020-clg484-1 -data names -quiet 
-Execute           ap_part_info -name xc7z020-clg484-1 -data info -quiet 
-INFO: [RTMG 210-282] Generating pipelined core: 'myproject_mul_11ns_6s_16_2_1_MulnS_7'
 Execute         source /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/dense_array_array_ap_fixed_16_6_5_3_0_1u_config8_s.compgen.tcl 
 Execute         source /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/linear_array_array_ap_fixed_1u_linear_config9_s.compgen.tcl 
 Execute         source /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject.compgen.tcl 
@@ -2934,7 +2845,7 @@ INFO: [RTMG 210-285] Implementing FIFO 'start_for_dense_array_array_ap_fixed_16_
 Execute           ap_part_info -name xc7z020-clg484-1 -data names -quiet 
 Execute           ap_part_info -name xc7z020-clg484-1 -data info -quiet 
 INFO: [RTMG 210-285] Implementing FIFO 'start_for_linear_array_array_ap_fixed_1u_linear_config9_U0_U(start_for_linear_array_array_ap_fixed_1u_linear_config9_U0)' using Shift Registers.
-Command         ap_source done; 5.22 sec.
+Command         ap_source done; 5.08 sec.
 INFO-FLOW: DBG:CMD:     auto_generate -export -impltomg_flag -rtl both -tool Vivado -pcore_version 1.00.a -phase csynth_design -d /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1
 Execute         source /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/global.setting.tcl 
 INFO-FLOW: DBG:CMD: read_platform_lib /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/global.setting.tcl
@@ -3048,7 +2959,7 @@ Execute         source /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/mypr
 Execute         source /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/myproject.tbgen.tcl 
 INFO-FLOW: DBG:CMD:       hasPcoreIpAdapter=false #gSsdmPorts=10
 INFO-FLOW: DBG:CMD: Skipping loadAnalyze_DB, #g_database=4
-INFO-FLOW: DBG:CMD:       generate_json is_phase_csynth=1 g_has_adaptors=false generate_bd_files=1 #modelList=292 #gSsdmPorts=10
+INFO-FLOW: DBG:CMD:       generate_json is_phase_csynth=1 g_has_adaptors=false generate_bd_files=1 #modelList=284 #gSsdmPorts=10
 Execute         source /opt/Xilinx/Vivado/2019.2/tps/tcl/tcllib1.11.1/fileutil/fileutil.tcl 
 Execute         source /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/global.setting.tcl 
 Execute         source /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/global.setting.tcl 
@@ -3091,10 +3002,10 @@ Execute         get_config_rtl -stall_sig_gen
 Execute         get_config_rtl -profile 
 INFO-FLOW: DBG:CMD: add_json_sdx_info kernel file does not exist, skipping opencl info: /home/bertelem/Documents/CNNKDD/quantized_pruned_cnn/myproject_prj/solution1/.autopilot/db/kernel.internal.xml
 INFO-FLOW: DBG:CMD:       delete-temp-dirs (skipped for debug)
-INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:14 ; elapsed = 00:01:18 . Memory (MB): peak = 1468.715 ; gain = 1054.008 ; free physical = 24729 ; free virtual = 27503
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:13 ; elapsed = 00:01:16 . Memory (MB): peak = 1468.715 ; gain = 1054.008 ; free physical = 22891 ; free virtual = 25517
 INFO: [VHDL 208-304] Generating VHDL RTL for myproject.
 INFO: [VLOG 209-307] Generating Verilog RTL for myproject.
-Command       autosyn done; 33.64 sec.
-Command     csynth_design done; 76.76 sec.
+Command       autosyn done; 32.53 sec.
+Command     csynth_design done; 74.92 sec.
 Execute     cleanup_all 
 Command     cleanup_all done; 0.2 sec.

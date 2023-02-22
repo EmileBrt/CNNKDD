@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'conv_2d_cl_array_array_ap_fixed_32u_config2_s'" level="0">
-<item name = "Date">Mon Feb 20 14:22:26 2023
+<item name = "Date">Tue Feb 21 11:21:27 2023
 </item>
 <item name = "Version">2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)</item>
 <item name = "Project">myproject_prj</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">5.00 ns, 5.065 ns, 0.62 ns</column>
+<column name="ap_clk">10.00 ns, 7.415 ns, 1.25 ns</column>
 </table>
 </item>
 </section>
@@ -24,19 +24,19 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">44, 44, 0.223 us, 0.223 us, 44, 44, none</column>
+<column name="">41, 41, 0.410 us, 0.410 us, 41, 41, none</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="call_ret_shift_line_buffer_array_ap_fixed_1u_config2_s_fu_25017">shift_line_buffer_array_ap_fixed_1u_config2_s, 0, 0, 0 ns, 0 ns, 1, 1, function</column>
+<column name="call_ret_shift_line_buffer_array_ap_fixed_1u_config2_s_fu_39383">shift_line_buffer_array_ap_fixed_1u_config2_s, 0, 0, 0 ns, 0 ns, 1, 1, function</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- ReadInputHeight_ReadInputWidth">42, 42, 8, 1, 1, 36, yes</column>
+<column name="- ReadInputHeight_ReadInputWidth">39, 39, 5, 1, 1, 36, yes</column>
 </table>
 </item>
 </section>

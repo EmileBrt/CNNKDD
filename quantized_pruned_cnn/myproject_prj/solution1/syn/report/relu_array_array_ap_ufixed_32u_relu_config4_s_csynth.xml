@@ -9,24 +9,24 @@
 <ProductFamily>zynq</ProductFamily>
 <Part>xc7z020-clg484-1</Part>
 <TopModelName>relu_array_array_ap_ufixed_32u_relu_config4_s</TopModelName>
-<TargetClockPeriod>5.00</TargetClockPeriod>
-<ClockUncertainty>0.62</ClockUncertainty>
+<TargetClockPeriod>10.00</TargetClockPeriod>
+<ClockUncertainty>1.25</ClockUncertainty>
 </UserAssignments>
 
 <PerformanceEstimates>
 <PipelineType>none</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>3.614</EstimatedClockPeriod>
+<EstimatedClockPeriod>6.248</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
 <Best-caseLatency>19</Best-caseLatency>
 <Average-caseLatency>19</Average-caseLatency>
 <Worst-caseLatency>19</Worst-caseLatency>
-<Best-caseRealTimeLatency>95.000 ns</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>95.000 ns</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>95.000 ns</Worst-caseRealTimeLatency>
+<Best-caseRealTimeLatency>0.190 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>0.190 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>0.190 us</Worst-caseRealTimeLatency>
 <Interval-min>19</Interval-min>
 <Interval-max>19</Interval-max>
 </SummaryOfOverallLatency>
@@ -42,7 +42,7 @@
 
 <AreaEstimates>
 <Resources>
-<FF>239</FF>
+<FF>207</FF>
 <LUT>1228</LUT>
 <BRAM_18K>0</BRAM_18K>
 <DSP48E>0</DSP48E>
